@@ -1,4 +1,4 @@
-package com.example.saprigrat;
+package com.saprigrat.ui;
 
 import javax.servlet.annotation.WebServlet;
 
@@ -6,9 +6,8 @@ import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
-import com.vaadin.ui.Button;
-import com.vaadin.ui.Button.ClickEvent;
-import com.vaadin.ui.Label;
+import com.vaadin.ui.HorizontalLayout;
+import com.vaadin.ui.MenuBar;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
 
@@ -18,7 +17,7 @@ public class SaprigratUI extends UI
 {
 
 	@WebServlet(value = "/*", asyncSupported = true)
-	@VaadinServletConfiguration(productionMode = false, ui = SaprigratUI.class)
+	@VaadinServletConfiguration(productionMode = false, ui = SaprigratUI.class, widgetset = "com.saprigrat.ui.widgetset.SaprigratWidgetset")
 	public static class Servlet extends VaadinServlet
 	{
 	}
@@ -28,17 +27,17 @@ public class SaprigratUI extends UI
 	{
 		final VerticalLayout layout = new VerticalLayout();
 		layout.setMargin(true);
-		setContent(layout);
+		/*setContent(layout);
 
-		Button button = new Button("Click Me");
-		button.addClickListener(new Button.ClickListener()
-								{
-									public void buttonClick(ClickEvent event)
-									{
-										layout.addComponent(new Label("Thank you for clicking"));
-									}
-								});
-		layout.addComponent(button);
+		
+		
+		MenuBar menu = new MenuBar();
+		menu.addItem("Supervisores", null);
+		layout.addComponent(menu);
+		
+		supervisorInfo supInf = new supervisorInfo();
+		layout.addComponent(supInf);*/
+		setContent(new supervisorInfo());
 	}
 
 }
