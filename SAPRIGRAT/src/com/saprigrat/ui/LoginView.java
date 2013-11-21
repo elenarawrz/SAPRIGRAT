@@ -59,6 +59,7 @@ public class LoginView extends CustomComponent
 	
 	private void btnGoActionPerformed(ClickEvent evt)
 	{
+		setWidth("-1px");
 		mainLayout.removeAllComponents();
 		mainLayout.addComponent(new MainView());
 		Notification.show("Bienvenido");
@@ -70,13 +71,13 @@ public class LoginView extends CustomComponent
 		mainLayout = new VerticalLayout();
 		mainLayout.setImmediate(false);
 		mainLayout.setWidth("100%");
-		mainLayout.setHeight("100%");
+		mainLayout.setHeight("-1px");
 		mainLayout.setMargin(true);
 		mainLayout.setSpacing(true);
 		
 		// top-level component properties
 		setWidth("100.0%");
-		setHeight("100.0%");
+		setHeight("-1px");
 		
 		// verticalLayout_2
 		verticalLayout_2 = buildVerticalLayout_2();

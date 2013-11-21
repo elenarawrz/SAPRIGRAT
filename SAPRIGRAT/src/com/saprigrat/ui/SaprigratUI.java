@@ -23,7 +23,7 @@ public class SaprigratUI extends UI
 	protected void init(VaadinRequest request)
 	{
 		getPage().setTitle("SAPRIGRAT");
-		setContent(new LoginView());
+		setContent(new MainView());
 
 	}
 
