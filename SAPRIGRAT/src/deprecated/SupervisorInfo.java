@@ -160,7 +160,7 @@ public class SupervisorInfo extends CustomComponent implements Formulario
 		cmbLoc.setNewItemsAllowed(true);
 		cmbSRL.setNewItemsAllowed(true);
 		
-		for(String item : arrEdos)		cmbEdo.addItem(item);
+//		for(String item : arrEdos)		cmbEdo.addItem(item);
 		for(String item : arrFormacion)	cmbFormacion.addItem(item);
 		for(String item : arrOrgsCca)	cmbOrgCuenca.addItem(item);
 		for(String item : arrDtosR)		cmbDtoR.addItem(item);

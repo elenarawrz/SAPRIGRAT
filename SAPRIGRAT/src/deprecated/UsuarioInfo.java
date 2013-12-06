@@ -141,8 +141,8 @@ public class UsuarioInfo extends CustomComponent implements Formulario
 		datIngreso.setDateTimeFormatter(DateTimeFormat.longDate());
 		datIngreso.setDateTextReadOnly(true);
 		
-		for(String item : arrEdos)
-			cmbEdo.addItem(item);
+//		for(String item : arrEdos)
+//			cmbEdo.addItem(item);
 		for(String item : arrOrgsCca)
 			cmbOrgCuenca.addItem(item);
 		for(String item : arrDtosR)

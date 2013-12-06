@@ -179,8 +179,8 @@ public class TecnicoInfo extends CustomComponent implements Formulario
 		datIngreso.setDateTimeFormatter(DateTimeFormat.longDate());
 		datIngreso.setDateTextReadOnly(true);
 		
-		for(String item : arrEdos)
-			cmbEdo.addItem(item);
+//		for(String item : arrEdos)
+//			cmbEdo.addItem(item);
 		for(String item : arrFormacion)
 			cmbFormacion.addItem(item);
 		for(String item : arrOrgsCca)
