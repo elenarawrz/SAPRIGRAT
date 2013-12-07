@@ -24,6 +24,7 @@ public class ManejoDeImagenes implements Receiver, SucceededListener
 	public void uploadSucceeded(SucceededEvent event)
 	{
 		contenedor.setSource(new FileResource(img));
+		contenedor.setAlternateText(img.getAbsolutePath());
 	}
 
 	@Override

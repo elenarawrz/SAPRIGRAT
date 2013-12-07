@@ -5,8 +5,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.LinkedList;
 
-import org.apache.commons.lang.StringUtils;
-
 public class InterfazConsulta
 {
 	private ConexionBD conexion;
@@ -39,7 +37,7 @@ public class InterfazConsulta
 	public LinkedList<String> getMunicipios(String edo)
 	{
 		String sql = "SELECT municipio FROM \"infoAdministrativa\".municipios WHERE estado=?";
-		ResultSet rs = conexion.querySelect(con, sql, edo);
+		ResultSet rs = conexion.querySelect(con, sql, edo, 1);
 		
 		LinkedList<String> mpios = new LinkedList<String>();
 		try
@@ -58,21 +56,25 @@ public class InterfazConsulta
 	public LinkedList<String[]> getBusqueda(String columnas, String parametro, String busqueda)
 	{
 		if(columnas.indexOf("Nombre") != -1)
-			columnas += ",apPat,apMat";
-		String sql = "SELECT " + columnas + " FROM \"infoAdministrativa\".participantes WHERE " + parametro + " LIKE ?";
+			columnas += "apPat,apMat";
+		String sql = "SELECT " + columnas + " FROM \"infoAdministrativa\".personas WHERE LOWER(" + parametro + ") LIKE LOWER(?)";
+		int rep = 1;
 		if(parametro.equals("Nombre"))
-			sql += " OR apPat LIKE ? OR apMat LIKE ?";
-		ResultSet rs = conexion.querySelect(con, sql, "%" + busqueda + "%");
+		{
+			sql += " OR LOWER(apPat) LIKE LOWER(?) OR LOWER(apMat) LIKE LOWER(?)";
+			rep = 3;
+		}
+		ResultSet rs = conexion.querySelect(con, sql, "%" + busqueda + "%", rep);
 		
 		LinkedList<String[]> resultado = new LinkedList<String[]>();
 		try
 		{
-			int cols = StringUtils.split(columnas, ",").length;
+			int cols = columnas.split(",").length;
 			while (rs.next())
 			{
 				String[] res = new String[cols];
 				for(int i=0; i<cols; i++)
-					res[i] = rs.getString(i);
+					res[i] = rs.getString(i + 1);
 				resultado.add(res);
 			}
 		}
@@ -82,5 +84,23 @@ public class InterfazConsulta
 			e.printStackTrace();
 		}
 		return resultado;
+	}
+
+	public int getConteo(String entidad, String parametro1, String parametro2, int valorInt, String valorStr)
+	{
+		String sql = "SELECT COUNT(*) FROM \"infoAdministrativa\"." + entidad + " WHERE " + parametro1 + "=?" + " AND " + parametro2 + "=?";
+		ResultSet rs = conexion.querySelect(con, sql, valorInt, valorStr);
+		int cont = 0;
+		try
+		{
+			rs.next();
+			cont = rs.getInt(1);
+		}
+		catch (SQLException e)
+		{
+			System.out.println("Error al realizar conteo.");
+			e.printStackTrace();
+		}
+		return cont;
 	}
 }
