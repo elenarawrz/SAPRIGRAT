@@ -102,7 +102,8 @@ public interface Formulario extends Component
 						"111",
 						"112" };
 
-
-	
-	void setTipo (int tipo);
+	public void setTipo (int tipo);
+	public void inicializar ();
+	public int getEntidad();
+	public Object[] getRestricciones();
 }

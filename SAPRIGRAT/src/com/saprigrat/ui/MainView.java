@@ -1,6 +1,7 @@
 package com.saprigrat.ui;
 
 import com.saprigrat.ui.forms.Aprovechamiento;
+import com.saprigrat.ui.forms.Listado;
 import com.saprigrat.ui.forms.Parcela;
 import com.saprigrat.ui.forms.Persona;
 import com.saprigrat.ui.forms.Pozo;
@@ -85,12 +86,12 @@ public class MainView extends CustomComponent
 		menu.addItem("Agregar nuevo", com(form, 1));
 		menu.addItem("Modificar existente", com(form, 2));
 		menu.addSeparator();
-		menu.addItem("Listado", null);//com(new Listado(), 0));
+		menu.addItem("Listado", com(new Listado(form.getRestricciones()), form.getEntidad()));
 	}
 	
 	Command com(final Formulario form, final int tipo)
 	{
-		return new Command()
+		return  new Command()
 				{
 					@Override
 					public void menuSelected(MenuItem selectedItem)
@@ -101,8 +102,8 @@ public class MainView extends CustomComponent
 						lblOpcionSel.setValue(path + selectedItem.getText());
 						absLOpcionSel.setVisible(true);
 						lblOpcionSel.setVisible(true);
-						if(tipo>0)
-							form.setTipo(tipo);
+						form.inicializar();
+						form.setTipo(tipo);
 						horLBody.removeAllComponents();
 						horLBody.addComponent(form);
 						horLBody.setComponentAlignment(form, new Alignment(20));

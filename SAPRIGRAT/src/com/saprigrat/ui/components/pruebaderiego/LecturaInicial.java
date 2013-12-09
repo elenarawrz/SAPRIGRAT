@@ -1,4 +1,4 @@
-package com.saprigrat.ui.forms.pruebaderiego;
+package com.saprigrat.ui.components.pruebaderiego;
 
 import org.joda.time.format.DateTimeFormat;
 import org.vaadin.addons.tuningdatefield.TuningDateField;

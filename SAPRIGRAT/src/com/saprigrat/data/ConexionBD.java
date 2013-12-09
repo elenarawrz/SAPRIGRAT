@@ -8,6 +8,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.LinkedList;
 
+import com.vaadin.data.util.sqlcontainer.SQLContainer;
+import com.vaadin.data.util.sqlcontainer.connection.JDBCConnectionPool;
+import com.vaadin.data.util.sqlcontainer.connection.SimpleJDBCConnectionPool;
+import com.vaadin.data.util.sqlcontainer.query.TableQuery;
+
 public class ConexionBD
 {
 	private String  driver = "org.postgresql.Driver",
@@ -146,9 +151,8 @@ public class ConexionBD
 			{
 				switch(i)
 				{
-					case 1: ps.setInt(i + 1, (Integer)valores.get(i)); break;
-					case 5: case 7: ps.setDate(i + 1, (Date)valores.get(i)); break;
-					case 20: case 21: ps.setBoolean(i + 1, (Boolean)valores.get(i)); break;
+					case 3: ps.setDate(i + 1, (Date)valores.get(i)); break;
+					case 16: case 17: ps.setBoolean(i + 1, (Boolean)valores.get(i)); break;
 					default: ps.setString(i + 1, (String)valores.get(i)); break;
 				}
 			}
@@ -156,10 +160,28 @@ public class ConexionBD
 		}
 		catch (SQLException e)
 		{
-			System.out.println("Error al insertar el registro.");
+			System.out.println("Error al modificar el registro.");
 			e.printStackTrace();
 		}
 		
 		return result;
+	}
+	
+	public SQLContainer getSQLContainer(String tabla)
+	{
+		SQLContainer sql = null;
+		try
+		{
+			JDBCConnectionPool pool = new SimpleJDBCConnectionPool(driver, url, user, pass);
+			TableQuery entidad = new TableQuery(tabla, pool);
+			entidad.setVersionColumn("OPTLOCK");
+			sql = new SQLContainer(entidad);
+		}
+		catch (SQLException e)
+		{
+			System.out.println("Error al conectarse con la base de datos.");
+			e.printStackTrace();
+		}
+		return sql;
 	}
 }

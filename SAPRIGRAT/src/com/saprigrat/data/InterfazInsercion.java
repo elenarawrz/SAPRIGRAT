@@ -15,7 +15,7 @@ public class InterfazInsercion
 
 	public boolean registrar(String entidad, LinkedList<Object> valores)
 	{
-		String  sql = "INSERT INTO \"infoAdministrativa\"." + entidad + " (",
+		String  sql = "INSERT INTO " + entidad + " (",
 				vars = "";
 		for(int i = 0; i<valores.size(); i++)
 		{
@@ -29,8 +29,8 @@ public class InterfazInsercion
 
 	public boolean modificar(String entidad, String claveUnica, LinkedList<Object> valores)
 	{
-		String  sql = "UPDATE \"infoAdministrativa\"." + entidad + " SET ";
-		for(int i = 0; i<valores.size(); i++)
+		String  sql = "UPDATE " + entidad + " SET ";
+		for(int i = 0; i<valores.size()-1; i++)
 			sql += valores.remove(i) + "=?,";
 		sql = sql.substring(0, sql.length() - 1) + " WHERE " + claveUnica + "=?";
 		int result = conexion.queryUpdate(con, sql, valores);

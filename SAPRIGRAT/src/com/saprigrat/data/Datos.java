@@ -2,35 +2,56 @@ package com.saprigrat.data;
 
 import java.util.LinkedList;
 
+import com.vaadin.data.util.sqlcontainer.SQLContainer;
+
+
 public class Datos
 {
+	InterfazConsulta cons;
+	InterfazInsercion ins;
+	public Datos()
+	{
+		cons = new InterfazConsulta();
+		ins = new InterfazInsercion();
+	}
+	
 	public LinkedList<String> getEstados()
 	{
-		return new InterfazConsulta().getEstados();
+		return cons.getEstados();
 	}
 	
-	public LinkedList<String> getMunicipios(String edo)
+	public LinkedList<Object> getMunicipios(String edo)
 	{
-		return new InterfazConsulta().getMunicipios(edo);
+		return cons.getValores("municipio", "municipios", "estado", edo);
 	}
 	
-	public LinkedList<String[]> getBusqueda(String columnas, String parametro, String busqueda)
+	public LinkedList<Object> getRegistro(String curr)
 	{
-		return new InterfazConsulta().getBusqueda(columnas, parametro, busqueda);
+		return cons.getValores("*", "personas", "CURR", curr);
+	}
+	
+	public LinkedList<Object[]> getBusqueda(String columnas, String parametro, String busqueda)
+	{
+		return cons.getBusqueda(columnas, parametro, busqueda);
 	}
 
 	public int getContadorEstatal(int tipo, String edo)
 	{
-		return new InterfazConsulta().getConteo("personas", "tipo", "estado", tipo, edo);
+		return cons.getConteo("personas", "tipo", "estado", tipo, edo);
 	}
 
 	public boolean registrar(String entidad, LinkedList<Object> valores)
 	{
-		return new InterfazInsercion().registrar(entidad, valores);
+		return ins.registrar(entidad, valores);
 	}
 
 	public boolean modificar(String entidad, LinkedList<Object> valores)
 	{
-		return new InterfazInsercion().modificar(entidad, "CURR", valores);
+		return ins.modificar(entidad, "CURR", valores);
+	}
+	
+	public SQLContainer getContainer(String tabla)
+	{
+		return cons.getSQLContainer(tabla);
 	}
 }
