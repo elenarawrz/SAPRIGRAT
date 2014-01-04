@@ -116,7 +116,6 @@ public class Busqueda extends CustomComponent
 							String currSel = tblResultados.getItemCaption(event.getItem());
 							currSel = currSel.substring(0, currSel.indexOf(' '));
 							campo.setValue(currSel);
-		//					Notification.show(currSel, Notification.Type.TRAY_NOTIFICATION);
 						}
 					}
 				};

@@ -124,22 +124,22 @@ public class Aprovechamiento extends CustomComponent implements Formulario
 	{
 		if(tipo == 1)
 		{
-			btnAccion.setCaption("Agregar");
-			panCURR.setVisible(false);
+			panBusqueda.setVisible(false);
 			verLDatos.setVisible(true);
 		}
 		else
 		{
-			btnAccion.setCaption("Modificar");
-			panCURR.setVisible(true);
+			panBusqueda.setListado(new String[]{"CURR", "Nombre"}, txtCURR);
+			panBusqueda.setVisible(true);
 			verLDatos.setVisible(false);
+			btnAccion.setCaption("Modificar");
 		}
 	}
 
 	@Override
 	public int getEntidad()
 	{
-		return 3;
+		return 2;
 	}
 	
 	@Override
@@ -208,7 +208,7 @@ public class Aprovechamiento extends CustomComponent implements Formulario
 		
 		// btnAccion
 		btnAccion = new Button();
-		btnAccion.setCaption("Button");
+		btnAccion.setCaption("Agregar");
 		btnAccion.setImmediate(true);
 		btnAccion.setWidth("120px");
 		btnAccion.setHeight("-1px");

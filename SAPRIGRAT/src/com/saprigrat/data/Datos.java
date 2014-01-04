@@ -14,6 +14,36 @@ public class Datos
 		cons = new InterfazConsulta();
 		ins = new InterfazInsercion();
 	}
+
+	public String registrarPersona(LinkedList<Object> valores)
+	{
+		return ins.insertarRegistro("Persona", valores);
+	}
+	
+	public LinkedList<Object[]> getTabla(int tabla, Object[] restricciones)
+	{
+		String[] tablas = {"Personas", "Parcelas", "Aprovechamiento", "Pozos", "Pruebas"};
+		return cons.getTabla(tablas[tabla], restricciones);
+	}
+	
+	public LinkedList<String> getTecnicos(String estado)
+	{
+		return cons.getResponsablesDirectos("Tecnicos", estado);
+	}
+	
+	public LinkedList<String> getProductores(String estado)
+	{
+		return cons.getResponsablesDirectos("Productores", estado);
+	}
+	
+	
+	
+	
+	
+	public LinkedList<Object[]> getBusqueda(String columnas, String parametro, String busqueda)
+	{
+		return cons.getBusqueda(columnas, parametro, busqueda);
+	}
 	
 	public LinkedList<String> getEstados()
 	{
@@ -28,21 +58,6 @@ public class Datos
 	public LinkedList<Object> getRegistro(String curr)
 	{
 		return cons.getValores("*", "personas", "CURR", curr);
-	}
-	
-	public LinkedList<Object[]> getBusqueda(String columnas, String parametro, String busqueda)
-	{
-		return cons.getBusqueda(columnas, parametro, busqueda);
-	}
-
-	public int getContadorEstatal(int tipo, String edo)
-	{
-		return cons.getConteo("personas", "tipo", "estado", tipo, edo);
-	}
-
-	public boolean registrar(String entidad, LinkedList<Object> valores)
-	{
-		return ins.registrar(entidad, valores);
 	}
 
 	public boolean modificar(String entidad, LinkedList<Object> valores)

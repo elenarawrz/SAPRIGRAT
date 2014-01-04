@@ -145,7 +145,7 @@ public class Aforo extends CustomComponent
 		lblGastoComp.setImmediate(false);
 		lblGastoComp.setWidth("-1px");
 		lblGastoComp.setHeight("-1px");
-		lblGastoComp.setValue("l/s");
+		lblGastoComp.setValue("L/s");
 		absLParcelas.addComponent(lblGastoComp, "top:157.0px;left:305.0px;");
 		
 		// txtVolAplicado
@@ -185,7 +185,7 @@ public class Aforo extends CustomComponent
 		lblGastoSurco.setImmediate(false);
 		lblGastoSurco.setWidth("-1px");
 		lblGastoSurco.setHeight("-1px");
-		lblGastoSurco.setValue("l/s");
+		lblGastoSurco.setValue("L/s");
 		absLParcelas.addComponent(lblGastoSurco, "top:201.0px;left:305.0px;");
 		
 		return absLParcelas;
@@ -246,7 +246,7 @@ public class Aforo extends CustomComponent
 		lblRegadera.setImmediate(false);
 		lblRegadera.setWidth("-1px");
 		lblRegadera.setHeight("-1px");
-		lblRegadera.setValue("l/s");
+		lblRegadera.setValue("L/s");
 		absLRegadera.addComponent(lblRegadera, "top:14.0px;left:220.0px;");
 		
 		return absLRegadera;
@@ -288,7 +288,7 @@ public class Aforo extends CustomComponent
 		lblSalida.setImmediate(false);
 		lblSalida.setWidth("-1px");
 		lblSalida.setHeight("-1px");
-		lblSalida.setValue("l/s");
+		lblSalida.setValue("L/s");
 		absSalida.addComponent(lblSalida, "top:14.0px;left:220.0px;");
 		
 		return absSalida;

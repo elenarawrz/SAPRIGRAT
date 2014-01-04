@@ -54,6 +54,11 @@ public class ConexionBD
 		}
 	}
 	
+	
+	
+	
+	
+	
 	public ResultSet querySelect(Connection con, String sql)
 	{
 		PreparedStatement ps = null;
@@ -110,34 +115,6 @@ public class ConexionBD
 		}
 		
 		return rs;
-	}
-	
-	public int queryInsert(Connection con, String sql, LinkedList<Object> valores)
-	{
-		PreparedStatement ps = null;
-		int result = -1;
-		try
-		{
-			ps = con.prepareStatement(sql);
-			for(int i = 0; i<valores.size(); i++)
-			{
-				switch(i)
-				{
-					case 1: ps.setInt(i + 1, (Integer)valores.get(i)); break;
-					case 5: case 7: ps.setDate(i + 1, (Date)valores.get(i)); break;
-					case 20: case 21: ps.setBoolean(i + 1, (Boolean)valores.get(i)); break;
-					default: ps.setString(i + 1, (String)valores.get(i)); break;
-				}
-			}
-			result = ps.executeUpdate();
-		}
-		catch (SQLException e)
-		{
-			System.out.println("Error al insertar el registro.");
-			e.printStackTrace();
-		}
-		
-		return result;
 	}
 	
 	public int queryUpdate(Connection con, String sql, LinkedList<Object> valores)

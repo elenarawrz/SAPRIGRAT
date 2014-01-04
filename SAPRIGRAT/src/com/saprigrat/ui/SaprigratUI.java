@@ -12,7 +12,6 @@ import com.vaadin.ui.UI;
 @Theme("saprigrat")
 public class SaprigratUI extends UI
 {
-
 	@WebServlet(value = "/*", asyncSupported = true)
 	@VaadinServletConfiguration(productionMode = false, ui = SaprigratUI.class, widgetset = "com.saprigrat.ui.widgetset.SaprigratWidgetset")
 	public static class Servlet extends VaadinServlet
@@ -23,8 +22,6 @@ public class SaprigratUI extends UI
 	protected void init(VaadinRequest request)
 	{
 		getPage().setTitle("SAPRIGRAT");
-		setContent(new MainView());
-
+		setContent(new LoginView());
 	}
-
 }
