@@ -1,5 +1,6 @@
 package com.saprigrat.data;
 
+import java.math.BigDecimal;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.Date;
@@ -120,7 +121,10 @@ public class InterfazConsulta
 							if(valores[i] instanceof Date)
 								cs.setDate(i + 2, (Date) valores[i]);
 							else
-								System.out.println(valores[i].getClass().toString());
+								if(valores[i] instanceof Double)
+									cs.setBigDecimal(i + 2, new BigDecimal((Double)valores[i]));
+								else
+									System.out.println(valores[i].getClass().toString());
 			else
 				cs.setString(i + 2, null);
 		}

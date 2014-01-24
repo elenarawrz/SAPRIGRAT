@@ -7,7 +7,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.LinkedList;
-
 import com.vaadin.data.util.sqlcontainer.SQLContainer;
 import com.vaadin.data.util.sqlcontainer.connection.JDBCConnectionPool;
 import com.vaadin.data.util.sqlcontainer.connection.SimpleJDBCConnectionPool;
@@ -15,10 +14,19 @@ import com.vaadin.data.util.sqlcontainer.query.TableQuery;
 
 public class ConexionBD
 {
+	//region credenciales jelastic
+//	private String  driver = "org.postgresql.Driver",
+//					url = "jdbc:postgresql://postgres-saprigratEnv.jelastic.servint.net/saprigrat",
+//					user = "webadmin",
+//					pass = "adminsaprigrat";
+	//endRegion
+	
+	//region credenciales localhost
 	private String  driver = "org.postgresql.Driver",
-					url = "jdbc:postgresql://localhost:5432/saprigrat",
-					user = "postgres",
-					pass = "admin";
+			url = "jdbc:postgresql://localhost:5432/saprigrat",
+			user = "postgres",
+			pass = "admin";
+	//endRegion
 	
 	public Connection openConexion()
 	{

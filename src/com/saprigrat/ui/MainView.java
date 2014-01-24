@@ -113,14 +113,14 @@ public class MainView extends CustomComponent
 		menu.addItem("Usuario/Productor", com(new Productor(usuario)));
 		
 		menu = mbrMenu.addItem("Parcelas", null);
-		menu.addItem("Aprovechamiento", com(new Aprovechamiento()));
-		menu.addItem("Parcela", com(new Parcela()));
-		menu.addItem("Riego", com(new Riego(usuario)));
+		menu.addItem("Aprovechamiento", com(new Aprovechamiento(usuario)));
+//		menu.addItem("Parcela", com(new Parcela(usuario)));
+//		menu.addItem("Riego", com(new Riego(usuario)));
 		menu.addItem("Regador", com(new Regador(usuario)));
 		
 //		mbrMenu.addItem("Pozo", com(new Pozo()));
-		mbrMenu.addItem("Prueba de Riego", com(new PruebaRiego()));
-		mbrMenu.addItem("Reporte de Visita", com(new ReporteVisita()));
+//		mbrMenu.addItem("Prueba de Riego", com(new PruebaRiego()));
+//		mbrMenu.addItem("Reporte de Visita", com(new ReporteVisita()));
 //		mbrMenu.addItem("Reportes", null);
 	}
 	

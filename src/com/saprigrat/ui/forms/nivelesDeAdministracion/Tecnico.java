@@ -24,6 +24,7 @@ import com.vaadin.event.ShortcutAction.ModifierKey;
 import com.vaadin.server.ThemeResource;
 import com.vaadin.shared.ui.combobox.FilteringMode;
 import com.vaadin.ui.AbsoluteLayout;
+import com.vaadin.ui.AbstractField;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
@@ -249,7 +250,7 @@ public class Tecnico extends CustomComponent implements Formulario
 																	while(!resultados.isEmpty())
 																		tblListado.addItem(resultados.remove(), null);
 																else
-																	Notification.show("No se econtró ningún resultado.", Notification.Type.HUMANIZED_MESSAGE);
+																	Notification.show("No se encontró ningún resultado.", Notification.Type.HUMANIZED_MESSAGE);
 															}
 													
 															private void setHeaders(String[] encabezado)
@@ -335,25 +336,19 @@ public class Tecnico extends CustomComponent implements Formulario
 												}
 											};
 	private ValueChangeListener llenarMpiosListener =   new ValueChangeListener()
-												{
-													@Override
-													public void valueChange(ValueChangeEvent event)
-													{
-														//Vaciar la lista
-														cmbMpio.removeAllItems();
-														//Obtener el nuevo listado de la base de datos
-														LinkedList<String>lista = datos.getMunicipios((String)cmbEdo.getValue());
-														//Poblar la lista nuevamente
-														while(!lista.isEmpty())
-															cmbMpio.addItem(lista.remove());
-													}
-												};
+														{
+															@Override
+															public void valueChange(ValueChangeEvent event)
+															{
+																llenarLista(datos.getMunicipios((String)cmbEdo.getValue()), cmbMpio);
+															}
+														};
 	
 	public Tecnico(int tipo, Usuario user)
 	{
 		tipoPersona = tipo;
 		usuario = user;
-		inicializar();
+//		inicializar();
 	}
 	
 	@Override
@@ -379,16 +374,14 @@ public class Tecnico extends CustomComponent implements Formulario
 		for(String edo : estados) cmbEdo.addItem(edo);
 		//Agregar un listener a la lista para poblar la lista 'Municipio' dependiendo del estado seleccionado
 		cmbEdo.addValueChangeListener(llenarMpiosListener);
+		cmbEdo.setNullSelectionAllowed(false);
+		cmbMpio.setNullSelectionAllowed(false);
 		cmbEdo.select("Sonora");
 		cmbMpio.select("Cajeme");
 		//Poblar la lista de 'Formación'
-		cmbFormacion.addItem("Ing. Agrónomo");
-		cmbFormacion.addItem("Ing. en Irrigación");
-		cmbFormacion.addItem("Ing. Civil");
-		cmbFormacion.addItem("Ing. Agropecuario");
-		cmbFormacion.addItem("Otra Ingeniería");
-		cmbFormacion.addItem("Otro");
-		//Ocultar boton de reseteo
+		llenarLista(datos.getFormacion(), cmbFormacion);
+		cmbFormacion.setNullSelectionAllowed(false);
+		
 		btnNuevo.addClickListener(nuevoListener);
 		btnVolver.addClickListener(listadoListener);
 		//Inicializar en modo lista
@@ -487,6 +480,13 @@ public class Tecnico extends CustomComponent implements Formulario
 		datIngreso.setEnabled(habilitado);
 		cmbEdo.setEnabled(habilitado);
 	}
+	
+	private void llenarLista(LinkedList<String>elementos, ComboBox cmb)
+	{
+		cmb.removeAllItems();
+		for(String elemento : elementos)
+			cmb.addItem(elemento);
+	}
 
 	private void setValidaciones()
 	{
@@ -516,12 +516,41 @@ public class Tecnico extends CustomComponent implements Formulario
 
 	private boolean validar()
 	{
+		if(cmbResponsable.getValue() == null)
+			return notificar("Se requiere especificar el responsable directo", cmbResponsable);
+		if(txtNombre.getValue().isEmpty())
+			return notificar("Se requiere especificar el nombre", txtNombre);
+		if(txtApP.getValue().isEmpty() || txtApM.getValue().isEmpty())
+			return notificar("Se requiere especificar ambos apellidos", txtApP);
+		if(datNacimiento.getValue() == null)
+			return notificar("Se requiere especificar la fecha de nacimiento", datNacimiento);
+		if(datIngreso.getValue() == null)
+			return notificar("Se requiere especificar la fecha de ingreso", datIngreso);
+		if(txtLoc.getValue().isEmpty())
+			return notificar("Se requiere especificar la localidad", txtLoc);
+		if(txtCalle.getValue().isEmpty())
+			return notificar("Se requiere especificar la calle", txtCalle);
+		if(txtNoExt.getValue().isEmpty())
+			return notificar("Se requiere especificar el número exterior", txtNoExt);
+		if(txtTel.getValue().isEmpty() && txtCel.getValue().isEmpty())
+			return notificar("Se requiere especificar al menos un número de teléfono", txtTel);
+		if(txtUser.getValue().isEmpty())
+			return notificar("Se requiere especificar el nombre de usuario", txtUser);
+		if(txtPass.getValue().isEmpty())
+			return notificar("Se requiere especificar la contraseña", txtPass);
+		
 		if(!txtPass.getValue().equals(txtPass2.getValue()))
-		{
-			Notification.show("Los valores de contraseña no coinciden", Notification.Type.ERROR_MESSAGE);
-			return false;
-		}
+			return notificar("Los valores de contraseña no coinciden", txtPass);
+		
 		return true;
+	}
+	
+	@SuppressWarnings("rawtypes")
+	private boolean notificar(String notificacion, AbstractField field)
+	{
+		Notification.show(notificacion, Notification.Type.ERROR_MESSAGE);
+		field.focus();
+		return false;
 	}
 	
 	private LinkedList<Object> llenarListaDeParametros(LinkedList<Object>valores)
@@ -585,6 +614,7 @@ public class Tecnico extends CustomComponent implements Formulario
 		else
 			return new Date(calendario.getLocalDate().toDate().getTime());
 	}
+	//region UI
 	
 	@AutoGenerated
 	private VerticalLayout buildMainLayout() {
@@ -1304,4 +1334,6 @@ public class Tecnico extends CustomComponent implements Formulario
 		
 		return horLBotones;
 	}
+	
+	//endregion
 }
