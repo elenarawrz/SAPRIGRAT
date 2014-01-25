@@ -28,7 +28,7 @@ public class InterfazInsercion
 		catch (SQLException e)
 		{
 			System.out.println("Error al insertar el registro.");
-			e.printStackTrace();
+			conexion.notificar(e.getStackTrace());//e.printStackTrace();
 		}
 		return curr;
 	}
@@ -45,7 +45,7 @@ public class InterfazInsercion
 		catch (SQLException e)
 		{
 			System.out.println("Error al modificar el registro.");
-			e.printStackTrace();
+			conexion.notificar(e.getStackTrace());//e.printStackTrace();
 		}
 		return registro;
 	}
@@ -62,7 +62,7 @@ public class InterfazInsercion
 		catch (SQLException e)
 		{
 			System.out.println("Error al modificar el registro.");
-			e.printStackTrace();
+			conexion.notificar(e.getStackTrace());//e.printStackTrace();
 		}
 		return status;
 	}

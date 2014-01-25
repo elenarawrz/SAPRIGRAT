@@ -1,31 +1,31 @@
 package com.saprigrat.data;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.LinkedList;
-import com.vaadin.data.util.sqlcontainer.SQLContainer;
-import com.vaadin.data.util.sqlcontainer.connection.JDBCConnectionPool;
-import com.vaadin.data.util.sqlcontainer.connection.SimpleJDBCConnectionPool;
-import com.vaadin.data.util.sqlcontainer.query.TableQuery;
+import com.vaadin.ui.Notification;
 
 public class ConexionBD
 {
 	//region credenciales jelastic
+	private String  driver = "org.postgresql.Driver",
+					url = "jdbc:postgresql://postgres-saprigratEnv.jelastic.servint.net/saprigrat",
+					user = "webadmin",
+					pass = "adminsaprigrat";
+	//endRegion
+	
+	//region credenciales openshift
 //	private String  driver = "org.postgresql.Driver",
-//					url = "jdbc:postgresql://postgres-saprigratEnv.jelastic.servint.net/saprigrat",
-//					user = "webadmin",
-//					pass = "adminsaprigrat";
+//			url = "jdbc:postgresql://$OPENSHIFT_POSTGRESQL_DB_HOST:$OPENSHIFT_POSTGRESQL_DB_PORT/saprigrat",
+//			user = "adminpupzwb7",
+//			pass = "nzdcv13WHMju";
 	//endRegion
 	
 	//region credenciales localhost
-	private String  driver = "org.postgresql.Driver",
-			url = "jdbc:postgresql://localhost:5432/saprigrat",
-			user = "postgres",
-			pass = "admin";
+//	private String  driver = "org.postgresql.Driver",
+//			url = "jdbc:postgresql://localhost:5432/saprigrat",
+//			user = "postgres",
+//			pass = "admin";
 	//endRegion
 	
 	public Connection openConexion()
@@ -62,111 +62,11 @@ public class ConexionBD
 		}
 	}
 	
-	
-	
-	
-	
-	
-	public ResultSet querySelect(Connection con, String sql)
+	public void notificar(StackTraceElement[] st)
 	{
-		PreparedStatement ps = null;
-		ResultSet rs = null;
-		try
-		{
-			ps = con.prepareStatement(sql);
-			rs = ps.executeQuery();
-		}
-		catch (SQLException e)
-		{
-			System.out.println("Error al realizar la consulta.");
-			e.printStackTrace();
-		}
-		
-		return rs;
-	}
-	
-	public ResultSet querySelect(Connection con, String sql, String criterio, int repeticionParam)
-	{
-		PreparedStatement ps = null;
-		ResultSet rs = null;
-		try
-		{
-			ps = con.prepareStatement(sql);
-			for(int i = 1; i<=repeticionParam; i++)
-				ps.setString(i, criterio);
-			rs = ps.executeQuery();
-		}
-		catch (SQLException e)
-		{
-			System.out.println("Error al realizar la consulta.");
-			e.printStackTrace();
-		}
-		
-		return rs;
-	}
-	
-	public ResultSet querySelect(Connection con, String sql, int criterioInt, String criterioStr)
-	{
-		PreparedStatement ps = null;
-		ResultSet rs = null;
-		try
-		{
-			ps = con.prepareStatement(sql);
-			ps.setInt(1, criterioInt);
-			ps.setString(2, criterioStr);
-			rs = ps.executeQuery();
-		}
-		catch (SQLException e)
-		{
-			System.out.println("Error al realizar la consulta.");
-			e.printStackTrace();
-		}
-		
-		return rs;
-	}
-	
-	public int queryUpdate(Connection con, String sql, LinkedList<Object> valores)
-	{
-		PreparedStatement ps = null;
-		int result = -1;
-		try
-		{
-			ps = con.prepareStatement(sql);
-			for(int i = 0; i<valores.size(); i++)
-			{
-				switch(i)
-				{
-					case 3: ps.setDate(i + 1, (Date)valores.get(i)); break;
-					case 16: case 17: ps.setBoolean(i + 1, (Boolean)valores.get(i)); break;
-					default: ps.setString(i + 1, (String)valores.get(i)); break;
-				}
-			}
-			result = ps.executeUpdate();
-		}
-		catch (SQLException e)
-		{
-			System.out.println("Error al modificar el registro.");
-			e.printStackTrace();
-		}
-		
-		return result;
-	}
-	
-	public SQLContainer getSQLContainer(String tabla)
-	{
-		SQLContainer sql = null;
-		try
-		{
-			JDBCConnectionPool pool = new SimpleJDBCConnectionPool(driver, url, user, pass);
-			TableQuery entidad = new TableQuery(tabla, pool);
-			entidad.setVersionColumn("OPTLOCK");
-			sql = new SQLContainer(entidad);
-		}
-		catch (SQLException e)
-		{
-			System.out.println("Error al conectarse con la base de datos.");
-			e.printStackTrace();
-		}
-		return sql;
+		String s = "";
+		for(int i=0; i<st.length; i++)
+			s += st[i].toString() + "\n";
+		Notification.show(s, Notification.Type.ERROR_MESSAGE);
 	}
 }

@@ -42,7 +42,7 @@ public class InterfazConsulta
 		catch (SQLException e)
 		{
 			System.out.println("Error al obtener el contenido de la tabla.");
-			e.printStackTrace();
+			conexion.notificar(e.getStackTrace());//e.printStackTrace();
 		}
 		return listado;
 	}
@@ -66,7 +66,7 @@ public class InterfazConsulta
 			System.out.println("Error al obtener el " + (tabla.indexOf("Resp") == -1
 													  ? "registro."
 									  				  : "listado."));
-			e.printStackTrace();
+			conexion.notificar(e.getStackTrace());//e.printStackTrace();
 		}
 		return listado;
 	}
@@ -86,7 +86,7 @@ public class InterfazConsulta
 			System.out.println("Error al obtener el " + (tabla.indexOf("Resp") == -1
 													  ? "registro."
 									  				  : "listado."));
-			e.printStackTrace();
+			conexion.notificar(e.getStackTrace());//e.printStackTrace();
 		}
 		return listado;
 	}
