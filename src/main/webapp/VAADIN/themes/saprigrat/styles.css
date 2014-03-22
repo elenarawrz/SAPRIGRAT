@@ -1,0 +1,7029 @@
+.v-assistive-device-only {
+	position: absolute;
+	top: -2000px;
+	left: -2000px;
+	width: 10px;
+	overflow: hidden;
+}
+
+.v-vaadin-version:after {
+	content: "7.1.12";
+}
+
+.v-generated-body {
+	width: 100%;
+	height: 100%;
+	border: 0;
+	margin: 0;
+	overflow: hidden;
+}
+
+.v-modal-window-open {
+	overflow: hidden;
+}
+
+.v-debug-console {
+	background: #fff;
+	opacity: 0.9;
+	border: 1px solid #000;
+	font-family: sans-serif;
+}
+
+.v-debug-console-caption {
+	background: #000;
+	border-bottom: 1px solid grey;
+	color: white;
+	font-weight: bold;
+}
+
+.v-debug-console-content {
+	font-size: x-small;
+	overflow: auto;
+	white-space: pre;
+}
+
+.v-debug-console-content input {
+	font-size: xx-small;
+}
+
+.v-app .invalidlayout, .v-app .invalidlayout * {
+	background: #f99 !important;
+}
+
+@font-face {
+	font-family: "vdebugfont";
+	src: url(../base/debug/fonts/font.eot);
+	src: url(../base/debug/fonts/font.eot?#iefix) format("embedded-opentype"), url(../base/debug/fonts/font.woff) format("woff"), url(../base/debug/fonts/font.ttf) format("truetype"), url(../base/debug/fonts/font.svg#fontawesome) format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+
+.v-debugwindow [data-icon]:before, .v-debugwindow-menu [data-icon]:before {
+	font-family: "vdebugfont";
+	content: attr(data-icon);
+	speak: none;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	font-style: normal;
+	vertical-align: text-bottom;
+}
+
+.v-debugwindow {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-moz-opacity: 0.8;
+	-webkit-opacity: 0.8;
+	opacity: 0.8;
+	color: #666;
+	font-family: Arial, Helvetica, Tahoma, Verdana, sans-serif;
+	font-size: 13px;
+}
+
+.v-debugwindow .v-debugwindow-handle {
+	position: absolute;
+	bottom: 0;
+	background-color: #fff;
+	-moz-opacity: 0;
+	-webkit-opacity: 0;
+	opacity: 0;
+	z-index: 1000;
+}
+
+.v-debugwindow .v-debugwindow-handle-sw {
+	width: 7px;
+	height: 7px;
+}
+
+.v-debugwindow .v-debugwindow-handle-se {
+	right: 0;
+	width: 14px;
+	height: 14px;
+}
+
+.v-debugwindow:hover {
+	-moz-opacity: 1;
+	-webkit-opacity: 1;
+	opacity: 1;
+}
+
+.v-debugwindow * {
+	font-size: inherit !important;
+}
+
+.v-debugwindow-size0, .v-debugwindow-menu .v-debugwindow-button-size0 {
+	font-size: 10px;
+}
+
+.v-debugwindow-size1, .v-debugwindow-menu .v-debugwindow-button-size1 {
+	font-size: 13px;
+}
+
+.v-debugwindow-size2, .v-debugwindow-menu .v-debugwindow-button-size2 {
+	font-size: 16px;
+}
+
+.v-debugwindow-head {
+	text-align: right;
+	background-color: transparent;
+}
+
+.v-debugwindow-tabs {
+	display: inline-block;
+	background-color: #fff;
+}
+
+.v-debugwindow-tab, .v-debugwindow-controls > * {
+	width: 2em;
+	border: none;
+	margin: 0;
+	line-height: 1.5em;
+	background-color: #fff;
+	color: #666;
+}
+
+.v-debugwindow-tab {
+	position: relative;
+	top: 1px;
+	border-width: 1px 0 1px 1px;
+	border-style: solid;
+	border-color: #666;
+	border-radius: 2px 2px 0 0;
+}
+
+.v-debugwindow-tab-selected {
+	color: #666;
+	background-color: #fff;
+	border-bottom: 1px solid #fff;
+}
+
+.v-debugwindow-controls {
+	position: relative;
+	top: 1px;
+	display: inline-block;
+	background-color: #fff;
+	border: 1px solid #666;
+	border-radius: 2px 2px 0 0;
+}
+
+.v-debugwindow-section-head {
+	text-align: left;
+	background-color: #fff;
+	border: 1px solid #666;
+	border-bottom: 1px solid #999;
+	box-shadow: 0px 0px 7px 0 rgba(55, 55, 55, 0.6);
+	min-height: 1.5em;
+	line-height: 1.5em;
+	padding-left: 5px;
+}
+
+.v-debugwindow-button {
+	border: none;
+	background-color: transparent;
+	color: #666;
+}
+
+.v-debugwindow-button:hover {
+	color: #000;
+	text-decoration: underline;
+}
+
+.v-debugwindow-button-active {
+	color: #666;
+	box-shadow: 1px 1px 3px 0 inset;
+}
+
+.v-debugwindow-content {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	box-shadow: 0px 0px 7px 0 rgba(55, 55, 55, 0.6);
+	background-color: #fff;
+	border: 1px solid #666;
+	border-top: none;
+}
+
+.v-debugwindow-menu {
+	background-color: #fff;
+	padding: 4px;
+	border: 1px solid #999;
+	border-top: none;
+	border-radius: 0 0 5px 5px;
+	box-shadow: 0px 0px 7px 0 rgba(55, 55, 55, 0.6);
+}
+
+.v-debugwindow-menu-content {
+	min-width: 100px;
+}
+
+.v-debugwindow-menu-content .v-debugwindow-button {
+	line-height: 22px;
+}
+
+.v-debugwindow-menu-content > div > .v-debugwindow-button {
+	width: 33%;
+}
+
+.v-debugwindow-row {
+	display: table-row;
+}
+
+.v-debugwindow-row:nth-child(odd) {
+	background-color: rgba(0, 61, 255, 0.11);
+}
+
+.v-debugwindow-row > span {
+	display: table-cell;
+	padding: 4px;
+}
+
+.v-debugwindow-row.SEVERE {
+	color: #550000;
+	background-color: #FFC5C5;
+}
+
+.v-debugwindow-row.WARNING {
+	background-color: #FFFF99;
+}
+
+.v-debugwindow-row.FINE {
+	color: #777;
+}
+
+.v-debugwindow-row.FINER {
+	color: #888;
+}
+
+.v-debugwindow-row.FINEST {
+	color: #888;
+}
+
+.v-debugwindow-row > span.caption {
+	color: #999;
+	text-align: right;
+	white-space: nowrap;
+}
+
+.v-debugwindow-row > span.value {
+	width: 100%;
+}
+
+.v-debugwindow-log {
+	font-family: monospace;
+}
+
+.v-debugwindow-log .v-debugwindow-reset {
+	color: #fff;
+	background-color: #4C92ED;
+	padding: 4px;
+}
+
+.v-debugwindow-log .v-debugwindow-time {
+	text-align: right;
+	color: #999;
+}
+
+.v-debugwindow-log .v-debugwindow-message {
+	white-space: nowrap;
+	width: 100%;
+}
+
+.v-debugwindow-log .v-debugwindow-message:hover {
+	white-space: normal;
+	word-wrap: break-word;
+}
+
+.v-debugwindow-log .v-debugwindow-message em {
+	background-color: #C4E6F8;
+}
+
+.v-debugwindow-hierarchy .v-debugwindow-info {
+	padding: 1em;
+}
+
+.v-debugwindow-network .v-debugwindow-row {
+	display: block !important;
+}
+
+.v-debugwindow-network .v-debugwindow-row > span {
+	display: inline;
+}
+
+/** sprite: verticals; sprite-image: url(common/img/vertical-sprites.png); sprite-layout: vertical */
+
+/** sprite: horizontals; sprite-image: url(common/img/horizontal-sprites.png); sprite-layout: horizontal */
+
+/** sprite: black-verticals; sprite-image: url(common/img/black-vertical-sprites.png); sprite-layout: vertical; sprite-matte-color: #1e2022 */
+
+/** sprite: black-horizontals; sprite-image: url(common/img/black-horizontal-sprites.png); sprite-layout: horizontal; sprite-matte-color: #1e2022 */
+
+/** sprite: buttons; sprite-image: url(button/img/button-sprites.png); sprite-layout: vertical */
+
+/** sprite: black-buttons; sprite-image: url(button/img/black-button-sprites.png); sprite-layout: vertical */
+
+.v-generated-body {
+	background: #f5f5f5;
+}
+
+.saprigrat .v-widget {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	text-align: left;
+	display: inline-block;
+	white-space: normal;
+	vertical-align: bottom;
+	font-size: 12px;
+	line-height: normal;
+}
+
+.saprigrat .v-absolutelayout-wrapper {
+	position: absolute;
+	overflow: hidden;
+}
+
+.saprigrat .v-absolutelayout-margin, .saprigrat .v-absolutelayout-canvas {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.saprigrat .v-absolutelayout.v-has-height > div, .saprigrat .v-absolutelayout.v-has-height > div > div {
+	height: 100%;
+}
+
+.saprigrat .v-absolutelayout.v-has-width > div, .saprigrat .v-absolutelayout.v-has-width > div > div {
+	width: 100%;
+}
+
+.saprigrat .v-accordion {
+	position: relative;
+	outline: none;
+	overflow: visible;
+	text-align: left;
+	font-size: 0;
+}
+
+.saprigrat .v-accordion-item {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+}
+
+.saprigrat .v-accordion-item-caption {
+	overflow: visible;
+	white-space: nowrap;
+	background: #eee;
+	border-bottom: 1px solid #ddd;
+}
+
+.saprigrat .v-accordion-item-caption .v-caption {
+	cursor: pointer;
+	font-size: 12px;
+}
+
+.saprigrat .v-accordion-item-open .v-accordion-item-caption .v-caption {
+	cursor: default;
+}
+
+.saprigrat .v-accordion-item-content {
+	position: absolute;
+	width: 100%;
+}
+
+.saprigrat .v-browserframe {
+	font-size: 0;
+}
+
+.saprigrat .v-browserframe > span {
+	font-size: 12px;
+}
+
+.saprigrat .v-button {
+	display: inline-block;
+	zoom: 1;
+	text-align: center !important;
+	text-decoration: none;
+	border: 2px outset #ddd;
+	background: #eee;
+	cursor: pointer;
+	white-space: nowrap;
+	margin: 0;
+	padding: 0.2em 1em;
+	color: inherit;
+	font: inherit;
+	font-size: 12px;
+	line-height: normal;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.saprigrat .v-button.v-disabled {
+	cursor: default;
+}
+
+.saprigrat .v-button-wrap, .saprigrat .v-button-caption {
+	vertical-align: baseline;
+	white-space: nowrap;
+	font: inherit;
+	color: inherit;
+	line-height: normal;
+}
+
+.saprigrat .v-button .v-icon {
+	vertical-align: middle;
+	margin-right: 3px;
+	border: none;
+}
+
+.saprigrat .v-button .v-errorindicator {
+	display: inline-block;
+	zoom: 1;
+	vertical-align: middle;
+	float: none;
+}
+
+.saprigrat .v-button-link {
+	border: none;
+	text-align: left !important;
+	background: transparent;
+	padding: 0;
+	color: inherit;
+	-khtml-user-select: text;
+	-moz-user-select: text;
+	-ie-user-select: text;
+	user-select: text;
+}
+
+.v-sa .saprigrat .v-button-link:focus {
+	outline-offset: -3px;
+}
+
+.saprigrat .v-button-link .v-button-caption {
+	text-decoration: underline;
+	color: inherit;
+	text-align: left;
+}
+
+.saprigrat .v-nativebutton .v-icon {
+	vertical-align: middle;
+	margin-right: 3px;
+	border: none;
+}
+
+.saprigrat .v-nativebutton .v-errorindicator {
+	display: inline-block;
+	zoom: 1;
+	vertical-align: middle;
+	float: none;
+}
+
+.saprigrat .v-nativebutton-link {
+	border: none;
+	text-align: left !important;
+	background: transparent;
+	padding: 0;
+	color: inherit;
+	-khtml-user-select: text;
+	-moz-user-select: text;
+	-ie-user-select: text;
+	user-select: text;
+}
+
+.saprigrat .v-nativebutton-link .v-nativebutton-caption {
+	text-decoration: underline;
+	color: inherit;
+	text-align: left;
+}
+
+.saprigrat .v-nativebutton {
+	text-align: center !important;
+	cursor: pointer;
+	white-space: nowrap;
+	margin: 0;
+	color: inherit;
+	font: inherit;
+	line-height: normal;
+}
+
+.saprigrat .v-nativebutton .v-nativebutton-caption {
+	vertical-align: middle;
+	white-space: nowrap;
+	font: inherit;
+	color: inherit;
+}
+
+.saprigrat .v-nativebutton .v-icon {
+	vertical-align: middle;
+	margin-right: 3px;
+}
+
+.saprigrat .v-nativebutton .v-errorindicator {
+	display: inline-block;
+	zoom: 1;
+	float: none;
+}
+
+.v-ie .saprigrat .v-nativebutton {
+	overflow: visible;
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+.v-ie .saprigrat .v-nativebutton-link {
+	padding: 0;
+}
+
+.saprigrat .v-checkbox {
+	display: block;
+}
+
+.saprigrat .v-checkbox, .saprigrat .v-checkbox label, .saprigrat .v-checkbox input, .saprigrat .v-checkbox .v-icon {
+	vertical-align: middle;
+	white-space: nowrap;
+}
+
+.saprigrat .v-checkbox .v-icon {
+	margin: 0 2px;
+}
+
+.saprigrat .v-checkbox .v-errorindicator {
+	float: none;
+	display: inline;
+	display: inline-block;
+	zoom: 1;
+}
+
+.saprigrat .v-captionwrapper {
+	text-align: left;
+}
+
+.saprigrat .v-caption {
+	overflow: hidden;
+	white-space: nowrap;
+	font-size: 12px;
+}
+
+.saprigrat .v-errorindicator {
+	display: inline-block;
+}
+
+.saprigrat .v-caption .v-icon {
+	display: inline-block;
+	padding-right: 2px;
+	vertical-align: middle;
+}
+
+.saprigrat .v-caption .v-captiontext {
+	display: inline-block;
+	overflow: hidden;
+	vertical-align: middle;
+}
+
+.saprigrat .v-caption .v-required-field-indicator {
+	display: inline-block;
+}
+
+.saprigrat .v-colorpicker {
+	text-align: center;
+}
+
+.saprigrat .v-colorpicker-button-color {
+	border: 1px solid silver;
+	float: left;
+	width: 10px;
+	height: 10px;
+	margin-top: 2px;
+	margin-right: 5px;
+}
+
+.saprigrat .v-colorpicker-area {
+	border: 1px solid silver;
+	margin: 1px auto;
+}
+
+.saprigrat .v-colorpicker-history {
+	margin: 5px;
+}
+
+.saprigrat .v-colorpicker-history td {
+	border: 1px solid silver !important;
+}
+
+.saprigrat .v-colorpicker-history td {
+	line-height: 15px;
+}
+
+.saprigrat .v-colorpicker-popup {
+	width: 244px;
+}
+
+.saprigrat .v-colorpicker-popup .v-scrollable {
+	background-color: #dddddd;
+}
+
+.saprigrat .v-colorpicker-popup .v-tabsheet-content .v-scrollable {
+	background-color: #eaeaea;
+}
+
+.saprigrat .v-colorpicker-popup .v-tabsheet-content .v-tabsheet-tabsheetpanel {
+	background: transparent;
+}
+
+.saprigrat .v-colorpicker-popup .resize-button {
+	border: 0px solid silver;
+	background: url(../base/colorpicker/images/resizebg.png);
+	margin-top: 5px;
+}
+
+.saprigrat .v-colorpicker-popup .resize-button-caption {
+	display: none;
+}
+
+.saprigrat .v-colorpicker-popup .resize-button:hover {
+	background: url(../base/colorpicker/images/resizebg-selected.png);
+}
+
+.saprigrat .v-colorpicker-popup .resize-button:focus {
+	outline: none;
+}
+
+.saprigrat .v-colorpicker-gradient {
+	width: 220px;
+	height: 220px;
+	padding-left: 10px;
+	margin-top: 0px;
+}
+
+.saprigrat .v-colorpicker-gradient .v-colorpicker-gradient-clicklayer {
+	background-color: white;
+	filter: alpha(opacity = 0);
+	opacity: 0;
+}
+
+.saprigrat .v-colorpicker-popup .rgb-gradient .v-colorpicker-gradient-background {
+	width: 220px;
+	height: 220px;
+	background: url(../base/colorpicker/images/gradient2.png);
+}
+
+.saprigrat .v-colorpicker-popup .hsv-gradient .v-colorpicker-gradient-foreground {
+	background: url(../base/colorpicker/images/gradient.png);
+}
+
+.saprigrat .v-colorpicker-popup .v-colorpicker-gradient-lowerbox {
+	border-right: 1px solid white;
+	border-top: 1px solid white;
+}
+
+.saprigrat .v-colorpicker-popup .v-colorpicker-gradient-higherbox {
+	border-left: 1px solid white;
+	border-bottom: 1px solid white;
+}
+
+.saprigrat .v-colorpicker-popup .rgb-sliders {
+	width: 227px;
+	padding-left: 10px;
+	color: #444444;
+	text-shadow: 0 1px 0 #FFFFFF;
+}
+
+.saprigrat .v-colorpicker-popup .rgb-sliders .red .v-slider-base {
+	background-color: red;
+}
+
+.saprigrat .v-colorpicker-popup .rgb-sliders .green .v-slider-base {
+	background-color: green;
+}
+
+.saprigrat .v-colorpicker-popup .rgb-sliders .blue .v-slider-base {
+	background-color: blue;
+}
+
+.saprigrat .v-colorpicker-popup .hsv-sliders {
+	padding-left: 10px;
+	color: #444444;
+	text-shadow: 0 1px 0 #FFFFFF;
+}
+
+.saprigrat .v-colorpicker-popup .hue-slider {
+	height: 10px;
+	border: 0px solid silver;
+	background-image: url(../base/colorpicker/images/slider_hue_bg.png);
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: 0 3px;
+	margin-top: 0px;
+}
+
+.saprigrat .v-colorpicker-popup .hue-slider .v-slider-handle {
+	margin-top: -2px;
+}
+
+.saprigrat .v-colorpicker-popup .hue-slider .v-slider-base {
+	border: 0px none;
+	height: 0px;
+	background-color: transparent;
+}
+
+.saprigrat .v-colorpicker-popup .v-colorpicker-preview {
+	margin-top: 5px;
+	padding-left: 11px;
+	padding-right: 10px;
+	margin-bottom: 0px;
+}
+
+.saprigrat .v-colorpicker-popup .v-absolutelayout-wrapper {
+	width: 100%;
+	height: 100%;
+}
+
+.saprigrat .v-colorpicker-popup .v-colorpicker-preview-textfield {
+	background: none;
+	overflow: hidden;
+	overflow-y: hidden;
+	overflow-x: hidden;
+}
+
+.saprigrat .v-colorpicker-popup .v-textfield-dark {
+	color: #FFFFFF;
+}
+
+.saprigrat .v-colorpicker-popup .v-textfield-light {
+	color: #000000;
+}
+
+.saprigrat .v-colorpicker-popup .colorselect {
+	margin-top: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.saprigrat .v-colorpicker-popup .v-tabsheet .v-colorpicker-grid {
+	height: 319px;
+}
+
+.saprigrat .v-colorpicker-popup .colorselect td {
+	line-height: 15px;
+}
+
+.saprigrat .v-colorpicker-popup .v-filterselect {
+	padding-right: 16px;
+}
+
+.saprigrat .v-calendar-nresize DIV DIV {
+	cursor: n-resize !important;
+}
+
+.saprigrat .v-calendar-sresize DIV DIV {
+	cursor: s-resize !important;
+}
+
+.saprigrat .v-calendar {
+	background-color: #fff;
+}
+
+.saprigrat .v-calendar-header-month, .saprigrat .v-calendar-header-week {
+	border-bottom: 1px solid #c1c1c1;
+}
+
+.saprigrat .v-calendar-header-day {
+	text-align: center;
+	color: #666;
+	font-size: 12px;
+	line-height: normal;
+}
+
+.saprigrat .v-calendar-header-week .v-calendar-header-day:hover {
+	cursor: pointer;
+	color: #222;
+}
+
+.saprigrat .v-calendar-header-day-today {
+	font-weight: bold;
+	color: #444;
+}
+
+.saprigrat .v-calendar-header-month td:first-child {
+	padding-left: 19px;
+}
+
+.saprigrat .v-calendar-header-week .v-calendar-back, .saprigrat .v-calendar-header-week .v-calendar-next {
+	border: none;
+	padding: 0;
+	margin: 0;
+	height: 12px;
+	width: 12px;
+	overflow: hidden;
+	background: transparent url(../base/calendar/img/arrows.png) no-repeat 50% 0;
+	opacity: 0.3;
+	filter: alpha(opacity = 30);
+	cursor: default;
+}
+
+.saprigrat .v-calendar-header-week .v-calendar-back:hover, .saprigrat .v-calendar-header-week .v-calendar-next:hover {
+	opacity: 0.6;
+	filter: alpha(opacity = 60);
+}
+
+.saprigrat .v-calendar-header-week .v-calendar-back:active, .saprigrat .v-calendar-header-week .v-calendar-next:active {
+	opacity: 1;
+	filter: alpha(opacity = 100);
+}
+
+.saprigrat .v-calendar-header-week .v-calendar-next {
+	background-position: 50% -12px;
+}
+
+.saprigrat .v-calendar-month {
+	outline: none;
+}
+
+.saprigrat .v-calendar-week-numbers {
+	width: 20px;
+	border-right: 1px solid #ccc;
+}
+
+.saprigrat .v-calendar-week-number {
+	border: none;
+	background: transparent;
+	padding: 0;
+	margin: 0;
+	cursor: pointer;
+	opacity: 0.5;
+	width: 20px;
+	text-align: center;
+	border-bottom: 1px solid #ddd;
+}
+
+.saprigrat .v-calendar-week-number:hover {
+	opacity: 1;
+}
+
+.saprigrat .v-calendar-month-day {
+	border-bottom: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	outline: none;
+}
+
+.saprigrat .v-calendar-month-day-today {
+	background-color: #e7f0f5;
+}
+
+.saprigrat .v-calendar-month-day-selected {
+	background-color: #fffee7;
+}
+
+.saprigrat .v-calendar-month-day-dragemphasis {
+	background-color: #a8a8a8;
+}
+
+.saprigrat .v-calendar-month-day-scrollable {
+	overflow-y: scroll;
+}
+
+.saprigrat .v-calendar-day-number {
+	height: 18px;
+	line-height: 18px;
+	font-size: 12px;
+	text-align: right;
+	padding-right: 3px;
+	white-space: nowrap;
+}
+
+.saprigrat .v-calendar-day-number:hover {
+	cursor: pointer;
+	opacity: 0.6;
+	filter: alpha(opacity = 60);
+}
+
+.saprigrat .v-calendar-month .v-calendar-spacer, .saprigrat .v-calendar-month .v-calendar-bottom-spacer, .saprigrat .v-calendar-month .v-calendar-bottom-spacer-empty {
+	height: 15px;
+	font-size: 11px;
+}
+
+.saprigrat .v-calendar-month .v-calendar-bottom-spacer:hover {
+	cursor: pointer;
+	opacity: 0.6;
+	filter: alpha(opacity = 60);
+}
+
+.saprigrat .v-calendar-event {
+	line-height: 14px;
+	font-size: 11px;
+	padding: 0 0 0 4px;
+	cursor: pointer;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	outline: none;
+}
+
+.saprigrat .v-calendar-event-month {
+	margin-bottom: 1px;
+	white-space: nowrap;
+}
+
+.saprigrat .v-calendar-event-month:hover {
+	text-decoration: underline;
+}
+
+.saprigrat .v-calendar-event-all-day {
+	background: #999;
+	display: block;
+	margin-left: -2px;
+}
+
+.saprigrat div.v-calendar-event-all-day {
+	color: #fff;
+	height: 14px;
+}
+
+.saprigrat .v-calendar-event-continued-from {
+	margin-left: 0;
+}
+
+.saprigrat .v-calendar-event-start {
+	-webkit-border-top-left-radius: 6px;
+	-webkit-border-bottom-left-radius: 6px;
+	-moz-border-radius-topleft: 6px;
+	-moz-border-radius-bottomleft: 6px;
+	border-top-left-radius: 6px;
+	border-bottom-left-radius: 6px;
+	margin-left: 0;
+}
+
+.saprigrat .v-calendar-event-end {
+	-webkit-border-top-right-radius: 6px;
+	-webkit-border-bottom-right-radius: 6px;
+	-moz-border-radius-topright: 6px;
+	-moz-border-radius-bottomright: 6px;
+	border-top-right-radius: 6px;
+	border-bottom-right-radius: 6px;
+}
+
+.saprigrat .v-calendar-week-wrapper {
+	position: relative;
+}
+
+.saprigrat .v-calendar-times {
+	width: 51px;
+}
+
+.saprigrat .v-calendar-time {
+	padding: 0 8px 7px 0;
+	margin-top: -7px;
+	text-align: right;
+	font-size: 11px;
+	color: #666;
+	border-right: 1px solid #ccc;
+}
+
+.saprigrat .v-calendar-weekly-longevents {
+	border-left: 1px solid #ccc;
+	border-bottom: 2px solid #bbb;
+	margin-left: 50px;
+}
+
+.saprigrat .v-calendar-weekly-longevents .v-calendar-datecell {
+	border-right: 1px solid #ccc;
+	padding: 1px 0 0;
+}
+
+.saprigrat .v-calendar-weekly-longevents .v-calendar-event {
+	height: 14px;
+	margin-bottom: 1px;
+}
+
+.saprigrat .v-calendar-weekly-longevents .v-calendar-event:hover {
+	text-decoration: underline;
+}
+
+.saprigrat .v-calendar-day-times {
+	border-right: 1px solid #ccc;
+	outline: none;
+}
+
+.saprigrat .v-calendar-day-times .v-datecellslot, .saprigrat .v-calendar-day-times .v-datecellslot-even {
+	border-bottom: 1px solid #ccc;
+}
+
+.saprigrat .v-calendar-day-times .v-datecellslot-even {
+	border-bottom-color: #eee;
+}
+
+.saprigrat .v-calendar-day-times .v-daterange {
+	background-color: #a8a8a8;
+}
+
+.saprigrat .v-calendar-day-times .v-reserved {
+	background-color: #FF3333;
+}
+
+.saprigrat .v-calendar-day-times .dragemphasis {
+	background-color: #a8a8a8;
+}
+
+.saprigrat .v-calendar-week-wrapper .v-calendar-event {
+	padding: 0;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	margin-top: -1px;
+}
+
+.saprigrat .v-calendar-event-caption {
+	position: absolute;
+	z-index: 1;
+	top: 2px;
+	left: 4px;
+	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	line-height: normal;
+}
+
+.saprigrat .v-calendar-event-content {
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	border: 1px solid #777;
+	background: #eee;
+	opacity: 0.8;
+	filter: alpha(opacity = 80);
+	height: 14px;
+}
+
+.saprigrat .v-calendar-current-time {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 1px;
+	overflow: hidden;
+	background: #5a6c86;
+	opacity: 0.6;
+	filter: alpha(opacity = 60);
+	z-index: 2;
+}
+
+.saprigrat .v-calendar-event-resizetop {
+	position: absolute;
+	cursor: n-resize;
+	height: 5%;
+	min-height: 3px;
+	top: 0;
+	width: 100%;
+	z-index: 1;
+}
+
+.saprigrat .v-calendar-event-resizebottom {
+	position: absolute;
+	cursor: s-resize;
+	height: 5%;
+	min-height: 3px;
+	bottom: 0;
+	width: 100%;
+	z-index: 1;
+}
+
+.saprigrat .v-calendar-month-sizedheight .v-calendar-month-day {
+	height: 100px;
+}
+
+.saprigrat .v-calendar-month-sizedwidth .v-calendar-month-day {
+	width: 100px;
+}
+
+.saprigrat .v-calendar-header-month-Hsized .v-calendar-header-day {
+	width: 101px;
+}
+
+.saprigrat .v-calendar-header-month-Hsized td:first-child {
+	padding-left: 21px;
+}
+
+.saprigrat .v-calendar-header-day-Hsized {
+	width: 200px;
+}
+
+.saprigrat .v-calendar-week-numbers-Vsized .v-calendar-week-number {
+	height: 100px;
+	line-height: 100px;
+}
+
+.saprigrat .v-calendar-week-wrapper-Vsized {
+	height: 400px;
+	overflow-x: hidden !important;
+}
+
+.saprigrat .v-calendar-times-Vsized .v-calendar-time {
+	height: 38px;
+}
+
+.saprigrat .v-calendar-times-Hsized .v-calendar-time {
+	width: 42px;
+}
+
+.saprigrat .v-calendar-day-times-Vsized .v-datecellslot, .saprigrat .v-calendar-day-times-Vsized .v-datecellslot-even {
+	height: 18px;
+}
+
+.saprigrat .v-calendar-day-times-Hsized, .saprigrat .v-calendar-day-times-Hsized .v-datecellslot, .saprigrat .v-calendar-day-times-Hsized .v-datecellslot-even {
+	width: 200px;
+}
+
+.saprigrat.v-app {
+	height: 100%;
+}
+
+.saprigrat.v-app, .saprigrat .v-window, .saprigrat .v-popupview-popup, .saprigrat .v-label, .saprigrat .v-caption {
+	cursor: default;
+}
+
+body .saprigrat.v-app .v-app-loading {
+	background-image: url(../base/common/img/loading-indicator.gif);
+	background-repeat: no-repeat;
+	background-position: 50%;
+	width: 100%;
+	height: 100%;
+}
+
+.saprigrat .v-ui {
+	height: 100%;
+	width: 100%;
+	outline: none;
+	position: relative;
+}
+
+.saprigrat .v-ui.v-ui-embedded {
+	margin-top: -1px;
+	border-top: 1px solid transparent;
+}
+
+.saprigrat .v-ui:active, .saprigrat .v-ui:focus {
+	outline: none;
+}
+
+.saprigrat.v-app select, .saprigrat .v-window select {
+	margin: 0;
+}
+
+.saprigrat .v-disabled {
+	opacity: 0.3;
+	filter: alpha(opacity=30);
+	cursor: default;
+}
+
+.saprigrat .v-disabled * {
+	cursor: default;
+}
+
+* html .saprigrat .v-disabled {
+	zoom: 1;
+}
+
+* + html .saprigrat .v-disabled {
+	zoom: 1;
+}
+
+.saprigrat .v-disabled .v-disabled {
+	opacity: 1;
+}
+
+.saprigrat .v-required-field-indicator {
+	padding-left: 2px;
+	color: red;
+}
+
+.saprigrat .v-form fieldset {
+	border: none;
+	padding: 0;
+	margin: 0;
+	height: 100%;
+}
+
+.saprigrat .v-form-content {
+	height: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.saprigrat .v-tooltip {
+	cursor: default;
+	background: #fff;
+}
+
+.saprigrat .v-tooltip-text {
+	overflow: auto;
+}
+
+.saprigrat .v-tooltip .v-errormessage {
+	overflow: auto;
+}
+
+.saprigrat .v-contextmenu {
+	background: #fff;
+}
+
+.saprigrat .v-contextmenu .gwt-MenuItem {
+	cursor: pointer;
+	vertical-align: middle;
+	padding: 0;
+	border: 0;
+	margin: 0;
+}
+
+.saprigrat .v-contextmenu .gwt-MenuItem div {
+	cursor: pointer;
+	vertical-align: middle;
+	white-space: nowrap;
+}
+
+.saprigrat .v-contextmenu .gwt-MenuItem-selected div {
+	background: #aaa;
+	color: #fff;
+}
+
+.saprigrat .v-contextmenu table {
+	border-collapse: collapse;
+	margin: 0;
+	padding: 0;
+}
+
+.saprigrat .v-contextmenu .gwt-MenuItem img {
+	margin-right: 1em;
+	vertical-align: middle;
+}
+
+.saprigrat .v-label pre {
+	margin: 0;
+}
+
+.saprigrat .v-label-undef-w {
+	white-space: nowrap;
+}
+
+.saprigrat .v-label h1, .saprigrat .v-label h2, .saprigrat .v-label h3, .saprigrat .v-label h4, .saprigrat .v-label h5, .saprigrat .v-label h6 {
+	line-height: normal;
+}
+
+.saprigrat .v-loading-indicator, .saprigrat .v-loading-indicator-delay, .saprigrat .v-loading-indicator-wait {
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 30000;
+	width: 31px;
+	height: 31px;
+	background: transparent url(../base/common/img/loading-indicator.gif);
+	margin-right: 5px;
+	margin-top: 5px;
+}
+
+.saprigrat .v-loading-indicator-delay {
+	background-image: url(../base/common/img/loading-indicator-delay.gif);
+}
+
+.saprigrat .v-loading-indicator-wait {
+	background-image: url(../base/common/img/loading-indicator-wait.gif);
+}
+
+.saprigrat.v-app input[type="text"], .saprigrat.v-app input[type="password"], .saprigrat.v-app input[type="reset"], .saprigrat.v-app select, .saprigrat.v-app textarea, .saprigrat .v-window input[type="text"], .saprigrat .v-window input[type="password"], .saprigrat .v-window input[type="reset"], .saprigrat .v-window select, .saprigrat .v-window textarea {
+	padding: 2px;
+}
+
+.saprigrat input::-ms-clear {
+	display: none;
+}
+
+.saprigrat .v-drag-element {
+	z-index: 60000;
+	position: absolute !important;
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+	cursor: default;
+}
+
+.saprigrat .v-clip {
+	overflow: hidden;
+}
+
+.saprigrat .v-scrollable {
+	overflow: auto;
+	font-size: 0;
+	line-height: normal;
+}
+
+.v-ff .saprigrat .v-scrollable {
+	font-size: 12px;
+}
+
+.v-ios.v-webkit .saprigrat .v-scrollable {
+	-webkit-overflow-scrolling: touch;
+}
+
+.v-ios5.v-webkit .saprigrat .v-scrollable {
+	-webkit-overflow-scrolling: none;
+}
+
+.saprigrat.v-overlay-container {
+	width: 0;
+	height: 0;
+}
+
+.saprigrat .v-vertical.v-margin-top, .saprigrat .v-horizontal.v-margin-top {
+	padding-top: 12px;
+}
+
+.saprigrat .v-vertical.v-margin-right, .saprigrat .v-horizontal.v-margin-right {
+	padding-right: 12px;
+}
+
+.saprigrat .v-vertical.v-margin-bottom, .saprigrat .v-horizontal.v-margin-bottom {
+	padding-bottom: 12px;
+}
+
+.saprigrat .v-vertical.v-margin-left, .saprigrat .v-horizontal.v-margin-left {
+	padding-left: 12px;
+}
+
+.saprigrat .v-gridlayout.v-layout-margin-top {
+	padding-top: 24px;
+}
+
+.saprigrat .v-gridlayout, .saprigrat .v-verticallayout, .saprigrat .v-horizontallayout {
+	font-size: 0;
+	line-height: normal;
+}
+
+.saprigrat .v-gridlayout.v-layout-margin-bottom {
+	padding-bottom: 24px;
+}
+
+.saprigrat .v-gridlayout.v-layout-margin-left {
+	padding-left: 24px;
+}
+
+.saprigrat .v-gridlayout.v-layout-margin-right {
+	padding-right: 24px;
+}
+
+.saprigrat .v-gridlayout .v-layout-spacing-on {
+	padding-left: 12px;
+	padding-top: 12px;
+}
+
+.saprigrat .v-spacing {
+	width: 6px;
+	height: 6px;
+}
+
+.saprigrat .v-vertical, .saprigrat .v-horizontal {
+	display: inline-block;
+}
+
+.saprigrat div.v-layout.v-horizontal.v-widget {
+	white-space: nowrap;
+}
+
+.saprigrat .v-layout.v-vertical > .v-expand, .saprigrat .v-layout.v-horizontal > .v-expand {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 100%;
+	height: 100%;
+}
+
+.saprigrat .v-slot, .saprigrat .v-spacing {
+	display: inline-block;
+	white-space: normal;
+	vertical-align: top;
+}
+
+.saprigrat .v-vertical > .v-slot:after {
+	display: inline-block;
+	clear: both;
+	width: 0;
+	height: 0;
+	overflow: hidden;
+	line-height: 0;
+}
+
+.saprigrat .v-vertical > .v-slot, .saprigrat .v-vertical > .v-expand > .v-slot {
+	display: block;
+	clear: both;
+}
+
+.saprigrat .v-horizontal > .v-slot, .saprigrat .v-horizontal > .v-expand > .v-slot {
+	height: 100%;
+}
+
+.saprigrat .v-horizontal > .v-expand > .v-slot {
+	position: relative;
+}
+
+.saprigrat .v-vertical > .v-spacing, .saprigrat .v-vertical > .v-expand > .v-spacing {
+	width: 0;
+	display: block;
+	clear: both;
+}
+
+.saprigrat .v-horizontal > .v-spacing, .saprigrat .v-horizontal > .v-expand > .v-spacing {
+	height: 0;
+}
+
+.saprigrat .v-align-middle:before, .saprigrat .v-align-bottom:before, .saprigrat .v-expand > .v-align-middle:before, .saprigrat .v-expand > .v-align-bottom:before {
+	content: "";
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+	width: 0;
+}
+
+.saprigrat .v-align-middle, .saprigrat .v-align-bottom {
+	white-space: nowrap;
+}
+
+.saprigrat .v-align-middle > .v-widget, .saprigrat .v-align-bottom > .v-widget {
+	display: inline-block;
+}
+
+.saprigrat .v-align-middle, .saprigrat .v-align-middle > .v-widget {
+	vertical-align: middle;
+}
+
+.saprigrat .v-align-bottom, .saprigrat .v-align-bottom > .v-widget {
+	vertical-align: bottom;
+}
+
+.saprigrat .v-align-center {
+	text-align: center;
+}
+
+.saprigrat .v-align-center > .v-widget {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.saprigrat .v-align-right {
+	text-align: right;
+}
+
+.saprigrat .v-align-right > .v-widget {
+	margin-left: auto;
+}
+
+.saprigrat .v-has-caption, .saprigrat .v-has-caption > .v-caption {
+	display: inline-block;
+}
+
+.saprigrat .v-caption {
+	overflow: visible;
+	vertical-align: middle;
+}
+
+.saprigrat .v-caption-on-left, .saprigrat .v-caption-on-right {
+	white-space: nowrap;
+}
+
+.saprigrat .v-caption-on-top > .v-caption, .saprigrat .v-caption-on-bottom > .v-caption {
+	display: block;
+}
+
+.saprigrat .v-caption-on-left > .v-caption {
+	padding-right: 0.5em;
+}
+
+.saprigrat .v-caption-on-right > .v-caption {
+	vertical-align: top;
+}
+
+.saprigrat .v-caption-on-left > .v-widget, .saprigrat .v-caption-on-right > .v-widget {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.saprigrat .v-has-caption.v-has-width > .v-widget {
+	width: 100% !important;
+}
+
+.saprigrat .v-has-caption.v-has-height > .v-widget {
+	height: 100% !important;
+}
+
+.saprigrat .v-errorindicator {
+	vertical-align: middle;
+}
+
+.saprigrat .v-csslayout {
+	overflow: hidden;
+}
+
+.saprigrat div.v-csslayout {
+	display: block;
+}
+
+.saprigrat .v-csslayout-margin, .saprigrat .v-csslayout-container {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.saprigrat .v-has-width > .v-csslayout-margin, .saprigrat .v-has-width > .v-csslayout-margin > .v-csslayout-container {
+	width: 100%;
+}
+
+.saprigrat .v-has-height > .v-csslayout-margin, .saprigrat .v-has-height > .v-csslayout-margin > .v-csslayout-container {
+	height: 100%;
+}
+
+.saprigrat .v-csslayout-margin-top {
+	padding-top: 12px;
+}
+
+.saprigrat .v-csslayout-margin-bottom {
+	padding-bottom: 12px;
+}
+
+.saprigrat .v-csslayout-margin-left {
+	padding-left: 12px;
+}
+
+.saprigrat .v-csslayout-margin-right {
+	padding-right: 12px;
+}
+
+.saprigrat .v-customcomponent {
+	overflow: hidden;
+}
+
+.saprigrat .v-customlayout {
+	overflow: hidden;
+}
+
+.saprigrat .v-datefield {
+	white-space: nowrap;
+	display: inline-block;
+}
+
+.saprigrat .v-datefield-textfield {
+	vertical-align: top;
+}
+
+.v-ie .saprigrat .v-datefield-button:after {
+	content: "\200B";
+}
+
+.saprigrat .v-datefield-button {
+	cursor: pointer;
+	vertical-align: top;
+}
+
+.saprigrat .v-has-width > input.v-datefield-textfield {
+	width: 100%;
+}
+
+.saprigrat .v-datefield-prompt .v-datefield-textfield {
+	color: #999;
+	font-style: italic;
+}
+
+.saprigrat .v-datefield .v-datefield-button-readonly {
+	display: none;
+}
+
+.saprigrat .v-datefield-calendarpanel table {
+	width: 100%;
+}
+
+.saprigrat .v-datefield-calendarpanel td {
+	padding: 0;
+	margin: 0;
+}
+
+.saprigrat .v-datefield-calendarpanel:focus {
+	outline: none;
+}
+
+.saprigrat .v-datefield-calendarpanel-header td {
+	text-align: center;
+}
+
+.saprigrat .v-datefield-calendarpanel-month {
+	text-align: center;
+	white-space: nowrap;
+}
+
+.saprigrat .v-datefield-calendarpanel-weeknumber {
+	color: #999;
+	border-right: 1px solid #ddd;
+	font-size: 11.7px;
+}
+
+.saprigrat .v-datefield-calendarpanel-day, .saprigrat .v-datefield-calendarpanel-day-today {
+	cursor: pointer;
+}
+
+.saprigrat .v-datefield-calendarpanel-day-today {
+	border: 1px solid #ddd;
+}
+
+.saprigrat .v-disabled .v-datefield-calendarpanel-day, .saprigrat .v-disabled .v-datefield-calendarpanel-day-today {
+	cursor: default;
+}
+
+.saprigrat .v-datefield-calendarpanel-day-disabled, .saprigrat .v-datefield-calendarpanel-day-outside-range {
+	cursor: default;
+	opacity: 0.5;
+}
+
+.saprigrat .v-datefield-calendarpanel-prevyear button.outside-range, .saprigrat .v-datefield-calendarpanel-nextyear button.outside-range, .saprigrat .v-datefield-calendarpanel-prevmonth button.outside-range, .saprigrat .v-datefield-calendarpanel-nextmonth button.outside-range {
+	opacity: 0.5;
+}
+
+.saprigrat .v-datefield-calendarpanel-day-selected {
+	cursor: default;
+	background: #333;
+	color: #fff;
+}
+
+.saprigrat .v-datefield-calendarpanel-day-focused {
+	outline: 1px dotted black;
+}
+
+.saprigrat .v-datefield-calendarpanel-day-offmonth {
+	color: #666;
+}
+
+.saprigrat .v-datefield-time {
+	white-space: nowrap;
+}
+
+.saprigrat .v-datefield-time .v-label {
+	display: inline;
+}
+
+.saprigrat .v-datefield-popup {
+	background: #fff;
+}
+
+.saprigrat .v-datefield-popupcalendar input.v-datefield-textfield {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.saprigrat .v-inline-datefield {
+	white-space: nowrap;
+	display: inline-block;
+}
+
+.saprigrat .v-inline-datefield-textfield {
+	vertical-align: top;
+}
+
+.v-ie .saprigrat .v-inline-datefield-button:after {
+	content: "\200B";
+}
+
+.saprigrat .v-inline-datefield-button {
+	cursor: pointer;
+	vertical-align: top;
+}
+
+.saprigrat .v-has-width > input.v-inline-datefield-textfield {
+	width: 100%;
+}
+
+.saprigrat .v-inline-datefield-prompt .v-inline-datefield-textfield {
+	color: #999;
+	font-style: italic;
+}
+
+.saprigrat .v-inline-datefield .v-inline-datefield-button-readonly {
+	display: none;
+}
+
+.saprigrat .v-inline-datefield-calendarpanel table {
+	width: 100%;
+}
+
+.saprigrat .v-inline-datefield-calendarpanel td {
+	padding: 0;
+	margin: 0;
+}
+
+.saprigrat .v-inline-datefield-calendarpanel:focus {
+	outline: none;
+}
+
+.saprigrat .v-inline-datefield-calendarpanel-header td {
+	text-align: center;
+}
+
+.saprigrat .v-inline-datefield-calendarpanel-month {
+	text-align: center;
+	white-space: nowrap;
+}
+
+.saprigrat .v-inline-datefield-calendarpanel-weeknumber {
+	color: #999;
+	border-right: 1px solid #ddd;
+	font-size: 11.7px;
+}
+
+.saprigrat .v-inline-datefield-calendarpanel-day, .saprigrat .v-inline-datefield-calendarpanel-day-today {
+	cursor: pointer;
+}
+
+.saprigrat .v-inline-datefield-calendarpanel-day-today {
+	border: 1px solid #ddd;
+}
+
+.saprigrat .v-disabled .v-inline-datefield-calendarpanel-day, .saprigrat .v-disabled .v-inline-datefield-calendarpanel-day-today {
+	cursor: default;
+}
+
+.saprigrat .v-inline-datefield-calendarpanel-day-disabled, .saprigrat .v-inline-datefield-calendarpanel-day-outside-range {
+	cursor: default;
+	opacity: 0.5;
+}
+
+.saprigrat .v-inline-datefield-calendarpanel-prevyear button.outside-range, .saprigrat .v-inline-datefield-calendarpanel-nextyear button.outside-range, .saprigrat .v-inline-datefield-calendarpanel-prevmonth button.outside-range, .saprigrat .v-inline-datefield-calendarpanel-nextmonth button.outside-range {
+	opacity: 0.5;
+}
+
+.saprigrat .v-inline-datefield-calendarpanel-day-selected {
+	cursor: default;
+	background: #333;
+	color: #fff;
+}
+
+.saprigrat .v-inline-datefield-calendarpanel-day-focused {
+	outline: 1px dotted black;
+}
+
+.saprigrat .v-inline-datefield-calendarpanel-day-offmonth {
+	color: #666;
+}
+
+.saprigrat .v-inline-datefield-time {
+	white-space: nowrap;
+}
+
+.saprigrat .v-inline-datefield-time .v-label {
+	display: inline;
+}
+
+.saprigrat .v-inline-datefield-popup {
+	background: #fff;
+}
+
+.saprigrat .v-inline-datefield-popupcalendar input.v-inline-datefield-textfield {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.saprigrat .v-ddwrapper {
+	padding: 2px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	position: relative;
+}
+
+.saprigrat [draggable=true] {
+	-khtml-user-drag: element;
+	-webkit-user-drag: element;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+}
+
+.v-ie .saprigrat .v-ddwrapper a.drag-start {
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	background-color: cyan;
+	filter: alpha(opacity=0);
+}
+
+.saprigrat .v-ddwrapper-over {
+	border: 2px solid #1d9dff;
+	background-color: #bcdcff;
+	padding: 0;
+}
+
+.saprigrat .v-ddwrapper-over {
+	background-color: rgba(169, 209, 255, 0.6);
+}
+
+.saprigrat .no-box-drag-hints .v-ddwrapper-over {
+	border: none;
+	background-color: transparent;
+	padding: 2px;
+}
+
+.saprigrat.v-app .v-ddwrapper-over-top, .saprigrat .v-window .v-ddwrapper-over-top, .saprigrat .v-popupview-popup .v-ddwrapper-over-top {
+	border: none;
+	border-top: 2px solid #1d9dff;
+	background-color: transparent;
+	padding: 2px;
+	padding-top: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+}
+
+.saprigrat.v-app .v-ddwrapper-over-bottom, .saprigrat .v-window .v-ddwrapper-over-bottom, .saprigrat .v-popupview-popup .v-ddwrapper-over-bottom {
+	border: none;
+	border-bottom: 2px solid #1d9dff;
+	background-color: transparent;
+	padding: 2px;
+	padding-bottom: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+}
+
+.saprigrat.v-app .v-ddwrapper-over-left, .saprigrat .v-window .v-ddwrapper-over-left, .saprigrat .v-popupview-popup .v-ddwrapper-over-left {
+	border: none;
+	border-left: 2px solid #1d9dff;
+	background-color: transparent;
+	padding: 2px;
+	padding-left: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+}
+
+.saprigrat.v-app .v-ddwrapper-over-right, .saprigrat .v-window .v-ddwrapper-over-right, .saprigrat .v-popupview-popup .v-ddwrapper-over-right {
+	border: none;
+	border-right: 2px solid #1d9dff;
+	background-color: transparent;
+	padding: 2px;
+	padding-right: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+}
+
+.saprigrat .v-ddwrapper, .saprigrat .v-ddwrapper-over, .saprigrat.v-app .v-ddwrapper-over-top, .saprigrat .v-window .v-ddwrapper-over-top, .saprigrat .v-popupview-popup .v-ddwrapper-over-top, .saprigrat.v-app .v-ddwrapper-over-bottom, .saprigrat .v-window .v-ddwrapper-over-bottom, .saprigrat .v-popupview-popup .v-ddwrapper-over-bottom, .saprigrat.v-app .v-ddwrapper-over-left, .saprigrat .v-window .v-ddwrapper-over-left, .saprigrat .v-popupview-popup .v-ddwrapper-over-left, .saprigrat.v-app .v-ddwrapper-over-right, .saprigrat .v-window .v-ddwrapper-over-right, .saprigrat .v-popupview-popup .v-ddwrapper-over-right {
+	border-color: rgba(0, 109, 232, 0.6);
+}
+
+.saprigrat .v-ddwrapper-over-top:before, .saprigrat .v-ddwrapper-over-bottom:after, .saprigrat .v-ddwrapper-over-left:before, .saprigrat .v-ddwrapper-over-right:before {
+	display: block;
+	position: absolute;
+	width: 6px;
+	height: 6px;
+	margin-top: -4px;
+	margin-left: -2px;
+	background: transparent url(../base/common/img/drag-slot-dot.png) no-repeat;
+}
+
+.saprigrat .v-ddwrapper-over-bottom:after {
+	margin-top: -2px;
+}
+
+.saprigrat .v-ddwrapper-over-left:before, .saprigrat .v-ddwrapper-over-right:before {
+	background-position: 0 -6px;
+	margin-top: -2px;
+	margin-left: -4px;
+}
+
+.saprigrat .v-ddwrapper-over-right:before {
+	position: relative;
+	margin-bottom: -4px;
+	margin-right: -4px;
+	margin-left: 0;
+	width: auto;
+	background-position: 100% -6px;
+}
+
+.saprigrat .no-horizontal-drag-hints .v-ddwrapper-over-left {
+	padding-left: 2px;
+	border-left: none;
+}
+
+.saprigrat .no-horizontal-drag-hints .v-ddwrapper-over-right {
+	padding-right: 2px;
+	border-right: none;
+}
+
+.saprigrat .no-vertical-drag-hints .v-ddwrapper-over-top {
+	padding-top: 2px;
+	border-top: none;
+}
+
+.saprigrat .no-vertical-drag-hints .v-ddwrapper-over-bottom {
+	padding-bottom: 2px;
+	border-bottom: none;
+}
+
+.saprigrat .no-horizontal-drag-hints .v-ddwrapper-over-left:before, .saprigrat .no-horizontal-drag-hints .v-ddwrapper-over-right:before, .saprigrat .no-vertical-drag-hints .v-ddwrapper-over-top:before, .saprigrat .no-vertical-drag-hints .v-ddwrapper-over-bottom:after {
+	display: none;
+}
+
+.saprigrat .v-table .v-embedded-image {
+	display: inline-block;
+}
+
+.saprigrat .v-formlayout.v-has-width > table {
+	width: 100%;
+}
+
+.saprigrat .v-formlayout.v-has-height > table {
+	height: 100%;
+}
+
+.saprigrat .v-formlayout-cell .v-errorindicator {
+	display: block;
+}
+
+.saprigrat .v-formlayout-error-indicator {
+	width: 12px;
+}
+
+.saprigrat .v-formlayout-captioncell {
+	text-align: right;
+	white-space: nowrap;
+}
+
+.saprigrat .v-formlayout-errorcell, .saprigrat .v-formlayout-captioncell {
+	width: 1px;
+}
+
+.saprigrat .v-formlayout-captioncell .v-caption {
+	overflow: visible;
+}
+
+.saprigrat .v-formlayout-spacing > tbody > .v-formlayout-row > .v-formlayout-captioncell, .saprigrat .v-formlayout-spacing > tbody > .v-formlayout-row > .v-formlayout-contentcell, .saprigrat .v-formlayout-spacing > tbody > .v-formlayout-row > .v-formlayout-errorcell {
+	padding-top: 6px;
+}
+
+.saprigrat .v-formlayout-spacing > tbody > .v-formlayout-firstrow > .v-formlayout-captioncell, .saprigrat .v-formlayout-spacing > tbody > .v-formlayout-firstrow > .v-formlayout-contentcell, .saprigrat .v-formlayout-spacing > tbody > .v-formlayout-firstrow > .v-formlayout-errorcell {
+	padding-top: 0;
+}
+
+.saprigrat .v-formlayout-margin-top > tbody > .v-formlayout-firstrow > .v-formlayout-captioncell, .saprigrat .v-formlayout-margin-top > tbody > .v-formlayout-firstrow > .v-formlayout-contentcell, .saprigrat .v-formlayout-margin-top > tbody > .v-formlayout-firstrow > .v-formlayout-errorcell {
+	padding-top: 12px;
+}
+
+.saprigrat .v-formlayout-margin-bottom > tbody > .v-formlayout-lastrow > .v-formlayout-captioncell, .saprigrat .v-formlayout-margin-bottom > tbody > .v-formlayout-lastrow > .v-formlayout-contentcell, .saprigrat .v-formlayout-margin-bottom > tbody > .v-formlayout-lastrow > .v-formlayout-errorcell {
+	padding-bottom: 12px;
+}
+
+.saprigrat .v-formlayout-margin-left > tbody > .v-formlayout-row > .v-formlayout-captioncell {
+	padding-left: 12px;
+}
+
+.saprigrat .v-formlayout-margin-right > tbody > .v-formlayout-row > .v-formlayout-contentcell {
+	padding-right: 12px;
+}
+
+.saprigrat .v-formlayout-captioncell .v-caption .v-required-field-indicator {
+	float: none;
+}
+
+.saprigrat .v-gridlayout {
+	position: relative;
+}
+
+.saprigrat .v-gridlayout-slot {
+	position: absolute;
+}
+
+.saprigrat .v-gridlayout-margin-top {
+	padding-top: 12px;
+}
+
+.saprigrat .v-gridlayout-margin-bottom {
+	padding-bottom: 12px;
+}
+
+.saprigrat .v-gridlayout-margin-left {
+	padding-left: 12px;
+}
+
+.saprigrat .v-gridlayout-margin-right {
+	padding-right: 12px;
+}
+
+.saprigrat .v-gridlayout-spacing-on {
+	padding-left: 6px;
+	padding-top: 6px;
+	overflow: hidden;
+}
+
+.saprigrat .v-gridlayout-spacing, .saprigrat .v-gridlayout-spacing-off {
+	padding-left: 0;
+	padding-top: 0;
+}
+
+.saprigrat .v-gridlayout-spacing-off {
+	overflow: hidden;
+}
+
+.saprigrat .v-label {
+	overflow: hidden;
+}
+
+.saprigrat .v-label.v-has-width {
+	white-space: normal;
+}
+
+.saprigrat .v-link {
+	white-space: nowrap;
+}
+
+.saprigrat .v-link a {
+	vertical-align: middle;
+	text-decoration: none;
+}
+
+.saprigrat .v-link span {
+	text-decoration: underline;
+	vertical-align: middle;
+}
+
+.saprigrat .v-disabled a {
+	cursor: default;
+}
+
+.saprigrat .v-link img {
+	vertical-align: middle;
+	border: none;
+}
+
+.saprigrat .v-loginform {
+	height: 140px;
+	width: 200px;
+}
+
+.saprigrat .v-app-loginpage .v-button, .saprigrat .v-app-loginpage .v-button {
+	float: left;
+}
+
+.saprigrat .v-menubar {
+	display: inline-block;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.saprigrat .v-menubar .v-menubar-menuitem {
+	cursor: default;
+	vertical-align: middle;
+	white-space: nowrap;
+	display: inline;
+	display: inline-block;
+	zoom: 1;
+}
+
+.saprigrat .v-menubar .v-menubar-menuitem-caption .v-icon {
+	vertical-align: middle;
+	white-space: nowrap;
+}
+
+.saprigrat .v-menubar-submenu {
+	background: #fff;
+}
+
+.saprigrat .v-menubar-menuitem-selected {
+	background: #333;
+	color: #fff;
+}
+
+.saprigrat .v-menubar-submenu .v-menubar-menuitem {
+	cursor: default;
+	display: block;
+	position: relative;
+	padding-right: 1.5em;
+}
+
+.saprigrat .v-menubar-submenu .v-menubar-menuitem-caption {
+	display: block;
+}
+
+.saprigrat .v-menubar-submenu .v-menubar-menuitem *, .saprigrat .v-menubar-submenu .v-menubar-menuitem-caption * {
+	white-space: nowrap;
+}
+
+.saprigrat .v-menubar-submenu-indicator {
+	display: none;
+	font-family: arial, helvetica, sans-serif;
+}
+
+.saprigrat .v-menubar-submenu .v-menubar-submenu-indicator {
+	display: block;
+	position: absolute;
+	right: 0;
+	width: 1em;
+	height: 1em;
+	font-size: 11.7px;
+}
+
+.saprigrat .v-menubar-menuitem-disabled, .saprigrat .v-menubar span.v-menubar-menuitem-disabled:hover, .saprigrat .v-menubar span.v-menubar-menuitem-disabled:focus, .saprigrat .v-menubar span.v-menubar-menuitem-disabled:active {
+	color: #999;
+}
+
+.saprigrat .v-menubar-more-menuitem {
+	font-family: arial, helvetica, sans-serif;
+}
+
+.saprigrat .v-menubar-separator {
+	overflow: hidden;
+}
+
+.saprigrat .v-menubar-separator span {
+	display: block;
+	text-indent: -9999px;
+	font-size: 1px;
+	line-height: 1px;
+	border-top: 1px solid #ddd;
+	margin: 3px 0 2px;
+	overflow: hidden;
+}
+
+.saprigrat .v-menubar .v-icon, .saprigrat .v-menubar-submenu .v-icon {
+	margin-right: 3px;
+}
+
+.saprigrat .v-menubar:focus, .saprigrat .v-menubar-popup:focus, .saprigrat .v-menubar-popup .popupContent:focus, .saprigrat .v-menubar-popup .popupContent .v-menubar-submenu:focus {
+	outline: none;
+}
+
+.saprigrat .v-menubar-submenu-check-column .v-menubar-menuitem {
+	padding-left: 6px;
+}
+
+.saprigrat .v-menubar-submenu-check-column .v-menubar-menuitem-caption {
+	padding-left: 18px;
+}
+
+.saprigrat .v-menubar-submenu .v-menubar-menuitem-checked .v-menubar-menuitem-caption {
+	background: transparent url(../base/menubar/img/check.gif) no-repeat left;
+}
+
+.saprigrat .v-Notification {
+	background: #999;
+	color: #fff;
+	cursor: pointer;
+	overflow: hidden;
+	padding: 1em;
+	max-width: 85%;
+}
+
+.saprigrat .v-Notification h1, .saprigrat .v-Notification p, .saprigrat .v-Notification-error h1, .saprigrat .v-Notification-error p, .saprigrat .v-Notification-warning h1, .saprigrat .v-Notification-warning p {
+	display: inline;
+	margin: 0 0.5em 0 0;
+}
+
+.saprigrat .v-Notification-warning {
+	background: orange;
+}
+
+.saprigrat .v-Notification-error {
+	background: red;
+}
+
+.saprigrat .v-Notification-tray h1 {
+	display: block;
+}
+
+.saprigrat .v-Notification-tray p {
+	display: block;
+}
+
+.saprigrat .v-Notification-system {
+	background-color: red;
+	opacity: 0.7;
+	filter: alpha(opacity=70);
+}
+
+.saprigrat .v-Notification-system h1 {
+	display: block;
+	margin: 0;
+}
+
+.saprigrat .v-orderedlayout, .saprigrat .v-horizontallayout, .saprigrat .v-verticallayout {
+	position: relative;
+}
+
+.saprigrat .v-orderedlayout-margin-top, .saprigrat .v-horizontallayout-margin-top, .saprigrat .v-verticallayout-margin-top {
+	padding-top: 12px;
+}
+
+.saprigrat .v-orderedlayout-margin-right, .saprigrat .v-horizontallayout-margin-right, .saprigrat .v-verticallayout-margin-right {
+	padding-right: 12px;
+}
+
+.saprigrat .v-orderedlayout-margin-bottom, .saprigrat .v-horizontallayout-margin-bottom, .saprigrat .v-verticallayout-margin-bottom {
+	padding-bottom: 12px;
+}
+
+.saprigrat .v-orderedlayout-margin-left, .saprigrat .v-horizontallayout-margin-left, .saprigrat .v-verticallayout-margin-left {
+	padding-left: 12px;
+}
+
+.saprigrat .v-orderedlayout-spacing-on, .saprigrat .v-horizontallayout-spacing-on, .saprigrat .v-verticallayout-spacing-on {
+	padding-top: 6px;
+	padding-left: 6px;
+}
+
+.saprigrat .v-orderedlayout-spacing-off, .saprigrat .v-horizontallayout-spacing-off, .saprigrat .v-verticallayout-spacing-off {
+	padding-top: 0;
+	padding-left: 0;
+}
+
+.saprigrat .v-horizontallayout-slot, .saprigrat .v-verticallayout-slot {
+	position: absolute;
+}
+
+.saprigrat .v-panel, .saprigrat .v-panel-caption, .saprigrat .v-panel-content, .saprigrat .v-panel-deco, .saprigrat .v-panel-light, .saprigrat .v-panel-caption-light, .saprigrat .v-panel-content-light, .saprigrat .v-panel-deco-light {
+	outline: none;
+	text-align: left;
+}
+
+.saprigrat .v-panel-caption .v-errorindicator {
+	float: none;
+	display: inline;
+}
+
+.saprigrat .v-panel-caption .v-icon {
+	display: inline;
+	vertical-align: middle;
+}
+
+.saprigrat .v-panel-caption span {
+	vertical-align: middle;
+}
+
+.saprigrat .v-panel-caption {
+	white-space: nowrap;
+	overflow: hidden;
+	font-weight: bold;
+}
+
+.saprigrat .v-panel-nocaption {
+	overflow: hidden;
+}
+
+.saprigrat .v-panel-content {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.saprigrat .v-panel.v-has-width > .v-panel-content {
+	width: 100%;
+}
+
+.saprigrat .v-panel.v-has-height > .v-panel-content {
+	height: 100%;
+}
+
+.saprigrat .v-popupview {
+	cursor: pointer;
+	text-decoration: underline;
+	white-space: nowrap;
+}
+
+.saprigrat .v-popupview-popup {
+	overflow: auto;
+}
+
+.saprigrat .v-popupview-loading {
+	width: 30px;
+	height: 30px;
+	background: transparent url(../base/common/img/ajax-loader-medium.gif) no-repeat 50%;
+}
+
+.saprigrat .v-progressbar {
+	width: 150px;
+}
+
+.saprigrat .v-progressbar-wrapper {
+	height: 7px;
+	border: 1px solid #ddd;
+}
+
+.saprigrat .v-progressbar-indicator {
+	height: 7px;
+	background: #ddd;
+}
+
+.saprigrat div.v-progressbar-indeterminate {
+	height: 20px;
+	width: 20px;
+	background: #fff url(../base/common/img/ajax-loader-medium.gif) no-repeat 50%;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+}
+
+.saprigrat .v-progressbar-indeterminate .v-progressbar-wrapper, .saprigrat .v-progressbar-indeterminate .v-progressbar-indicator, .saprigrat .v-progressbar-indeterminate-disabled .v-progressbar-wrapper, .saprigrat .v-progressbar-indeterminate-disabled .v-progressbar-indicator {
+	display: none;
+}
+
+.saprigrat div.v-progressbar-indeterminate-disabled {
+	height: 20px;
+	width: 20px;
+	background: transparent;
+}
+
+.saprigrat .v-progressindicator {
+	width: 150px;
+}
+
+.saprigrat .v-progressindicator-wrapper {
+	height: 7px;
+	border: 1px solid #ddd;
+}
+
+.saprigrat .v-progressindicator-indicator {
+	height: 7px;
+	background: #ddd;
+}
+
+.saprigrat div.v-progressindicator-indeterminate {
+	height: 20px;
+	width: 20px;
+	background: #fff url(../base/common/img/ajax-loader-medium.gif) no-repeat 50%;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+}
+
+.saprigrat .v-progressindicator-indeterminate .v-progressindicator-wrapper, .saprigrat .v-progressindicator-indeterminate .v-progressindicator-indicator, .saprigrat .v-progressindicator-indeterminate-disabled .v-progressindicator-wrapper, .saprigrat .v-progressindicator-indeterminate-disabled .v-progressindicator-indicator {
+	display: none;
+}
+
+.saprigrat div.v-progressindicator-indeterminate-disabled {
+	height: 20px;
+	width: 20px;
+	background: transparent;
+}
+
+.saprigrat .v-select {
+	text-align: left;
+}
+
+.saprigrat .v-select-optiongroup .v-select-option {
+	display: block;
+	white-space: nowrap;
+}
+
+.saprigrat .v-select-optiongroup .v-icon {
+	vertical-align: middle;
+	white-space: nowrap;
+	margin: 0 2px;
+}
+
+.v-ie .saprigrat .v-select-optiongroup .v-select-option {
+	zoom: 1;
+}
+
+.saprigrat .v-select-select {
+	display: block;
+}
+
+.saprigrat .v-select-twincol {
+	white-space: nowrap;
+}
+
+.saprigrat .v-select-twincol-options {
+	float: left;
+}
+
+.saprigrat .v-select-twincol-caption-left {
+	float: left;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.saprigrat .v-select-twincol-selections {
+	font-weight: bold;
+}
+
+.saprigrat .v-select-twincol-caption-right {
+	float: right;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.saprigrat .v-select-twincol-buttons {
+	float: left;
+	text-align: center;
+}
+
+.saprigrat .v-select-twincol-buttons .v-select-twincol-deco {
+	clear: both;
+}
+
+.saprigrat .v-select-twincol .v-textfield {
+	display: block;
+	float: left;
+	clear: left;
+}
+
+.saprigrat .v-select-twincol .v-button {
+	float: left;
+}
+
+.saprigrat .v-select-twincol-buttons .v-button {
+	float: none;
+}
+
+.saprigrat .v-filterselect {
+	white-space: nowrap;
+	text-align: left;
+	display: inline-block;
+	padding-right: 1em;
+}
+
+.saprigrat .v-filterselect .v-icon {
+	float: left;
+}
+
+.saprigrat.v-app .v-filterselect-input, .saprigrat .v-window .v-filterselect-input, .saprigrat .v-popupview-popup .v-filterselect-input {
+	margin: 0;
+	float: left;
+	-webkit-border-radius: 0px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.saprigrat .v-filterselect-prompt .v-filterselect-input {
+	color: #999;
+	font-style: italic;
+}
+
+.saprigrat .v-filterselect-button {
+	display: inline-block;
+	cursor: pointer;
+	width: 1em;
+	margin-right: -1em;
+	height: 1em;
+	background: transparent url(../base/common/img/sprites.png) no-repeat -5px -8px;
+}
+
+.saprigrat .v-filterselect.v-readonly .v-filterselect-button {
+	display: none;
+}
+
+.saprigrat .v-filterselect.v-readonly, .saprigrat .v-filterselect.v-readonly .v-filterselect-input {
+	background: transparent;
+}
+
+.saprigrat .v-filterselect-suggestpopup {
+	background: #fff;
+	border: 1px solid #eee;
+}
+
+.saprigrat .v-filterselect-suggestmenu table {
+	border-collapse: collapse;
+	border: none;
+	vertical-align: top;
+}
+
+.saprigrat .v-filterselect-suggestmenu .gwt-MenuItem {
+	white-space: nowrap;
+}
+
+.saprigrat .v-filterselect-suggestmenu .gwt-MenuItem .v-icon {
+	margin-right: 3px;
+	vertical-align: middle;
+}
+
+.saprigrat .v-filterselect-suggestmenu .gwt-MenuItem span {
+	vertical-align: middle;
+}
+
+.saprigrat .v-filterselect-suggestmenu .gwt-MenuItem-selected {
+	background: #333;
+	color: #fff;
+}
+
+.saprigrat .v-filterselect-nextpage, .saprigrat .v-filterselect-nextpage-off, .saprigrat .v-filterselect-prevpage-off, .saprigrat .v-filterselect-prevpage {
+	width: 100%;
+	background: #aaa;
+	text-align: center;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.saprigrat .v-filterselect-nextpage-off, .saprigrat .v-filterselect-prevpage-off {
+	color: #666;
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+	cursor: default;
+}
+
+.saprigrat .v-filterselect-nextpage-off span, .saprigrat .v-filterselect-prevpage-off span {
+	cursor: default;
+}
+
+.saprigrat .v-filterselect-status {
+	white-space: nowrap;
+	text-align: center;
+}
+
+.saprigrat .v-filterselect-no-input .v-filterselect-input {
+	cursor: default;
+}
+
+.saprigrat .v-shadow {
+	position: absolute;
+}
+
+.saprigrat .v-shadow .top-left {
+	position: absolute;
+	overflow: hidden;
+	top: -3px;
+	left: -5px;
+	width: 10px;
+	height: 10px;
+	background: transparent url(../base/shadow/img/top-left.png);
+}
+
+.saprigrat .v-shadow .top {
+	position: absolute;
+	overflow: hidden;
+	top: -3px;
+	left: 5px;
+	height: 10px;
+	right: 5px;
+	background: transparent url(../base/shadow/img/top.png);
+}
+
+.saprigrat .v-shadow .top-right {
+	position: absolute;
+	overflow: hidden;
+	top: -3px;
+	right: -5px;
+	width: 10px;
+	height: 10px;
+	background: transparent url(../base/shadow/img/top-right.png);
+}
+
+.saprigrat .v-shadow .left {
+	position: absolute;
+	overflow: hidden;
+	top: 7px;
+	left: -5px;
+	width: 10px;
+	bottom: 3px;
+	background: transparent url(../base/shadow/img/left.png);
+}
+
+.saprigrat .v-shadow .center {
+	position: absolute;
+	overflow: hidden;
+	top: 7px;
+	left: 5px;
+	bottom: 3px;
+	right: 5px;
+	background: transparent url(../base/shadow/img/center.png);
+}
+
+.saprigrat .v-shadow .right {
+	position: absolute;
+	overflow: hidden;
+	top: 7px;
+	right: -5px;
+	width: 10px;
+	bottom: 3px;
+	background: transparent url(../base/shadow/img/right.png);
+}
+
+.saprigrat .v-shadow .bottom-left {
+	position: absolute;
+	overflow: hidden;
+	bottom: -7px;
+	left: -5px;
+	width: 10px;
+	height: 10px;
+	background: transparent url(../base/shadow/img/bottom-left.png);
+}
+
+.saprigrat .v-shadow .bottom {
+	position: absolute;
+	overflow: hidden;
+	bottom: -7px;
+	left: 5px;
+	right: 5px;
+	height: 10px;
+	background: transparent url(../base/shadow/img/bottom.png);
+}
+
+.saprigrat .v-shadow .bottom-right {
+	position: absolute;
+	overflow: hidden;
+	bottom: -7px;
+	right: -5px;
+	width: 10px;
+	height: 10px;
+	background: transparent url(../base/shadow/img/bottom-right.png);
+}
+
+.saprigrat .v-slider {
+	margin: 5px 0;
+}
+
+.saprigrat .v-slider-base {
+	height: 2px;
+	border-top: 1px solid #ddd;
+	background: #eee;
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #eee;
+}
+
+.saprigrat .v-slider-handle {
+	background: #aaa;
+	width: 12px;
+	height: 12px;
+	margin-top: -5px;
+	font-size: 0;
+}
+
+.saprigrat .v-slider-vertical {
+	width: 2px;
+	height: auto;
+	margin: 0 5px;
+	border: none;
+	border-left: 1px solid #cccfd0;
+	border-right: 1px solid #cccfd0;
+}
+
+.saprigrat .v-slider-vertical .v-slider-base {
+	width: 2px;
+	border-bottom: 1px solid #eee;
+	border-right: none;
+}
+
+.saprigrat .v-slider-vertical .v-slider-handle {
+	width: 12px;
+	height: 12px;
+	font-size: 0;
+	margin-left: -5px;
+}
+
+.saprigrat .v-slider-feedback {
+	padding: 2px 5px;
+	background: #444;
+	color: #fff;
+	font-size: 11px;
+	line-height: 13px;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	margin: -2px 0 0 2px;
+	text-shadow: 0 1px 0 #000;
+}
+
+.saprigrat .v-splitpanel-horizontal, .saprigrat .v-splitpanel-vertical {
+	overflow: hidden;
+}
+
+.saprigrat .v-splitpanel-hsplitter {
+	width: 6px;
+}
+
+.saprigrat .v-splitpanel-hsplitter div {
+	width: 6px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	background: #ddd;
+	cursor: e-resize;
+	cursor: col-resize;
+}
+
+.saprigrat .v-disabled .v-splitpanel-hsplitter div {
+	cursor: default;
+}
+
+.saprigrat .v-splitpanel-vsplitter {
+	height: 6px;
+}
+
+.saprigrat .v-splitpanel-vsplitter div {
+	height: 6px;
+	background: #ddd;
+	cursor: s-resize;
+	cursor: row-resize;
+}
+
+.saprigrat .v-disabled .v-splitpanel-vsplitter div {
+	cursor: default;
+}
+
+.saprigrat .v-table {
+	overflow: hidden;
+	text-align: left;
+}
+
+.saprigrat .v-table-header-wrap {
+	overflow: hidden;
+	border: 1px solid #aaa;
+	border-bottom: none;
+	background: #efefef;
+}
+
+.saprigrat .v-table-header table, .saprigrat .v-table-table {
+	border-spacing: 0;
+	border-collapse: separate;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.saprigrat .v-table-table {
+	font-size: 12px;
+}
+
+.saprigrat .v-table-header td {
+	padding: 0;
+}
+
+.saprigrat .v-table-header-cell, .saprigrat .v-table-header-cell-asc, .saprigrat .v-table-header-cell-desc {
+	cursor: pointer;
+}
+
+.saprigrat .v-table.v-disabled .v-table-header-cell, .saprigrat .v-table.v-disabled .v-table-header-cell-asc, .saprigrat .v-table.v-disabled .v-table-header-cell-desc {
+	cursor: default;
+}
+
+.saprigrat .v-table-footer-wrap {
+	overflow: hidden;
+	border: 1px solid #aaa;
+	border-top: none;
+	background: #efefef;
+}
+
+.saprigrat .v-table-footer table {
+	border-spacing: 0;
+	border-collapse: collapse;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.saprigrat .v-table-footer td {
+	padding: 0;
+	border-right: 1px solid #aaa;
+}
+
+.saprigrat .v-table-footer-cell {
+	cursor: pointer;
+}
+
+.saprigrat .v-table-footer-container {
+	float: right;
+	padding-right: 6px;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.saprigrat .v-table-resizer {
+	display: block;
+	height: 1.2em;
+	float: right;
+	background: #aaa;
+	cursor: e-resize;
+	cursor: col-resize;
+	width: 1px;
+	overflow: hidden;
+}
+
+.saprigrat .v-table.v-disabled .v-table-resizer {
+	cursor: default;
+}
+
+.saprigrat .v-table-caption-container {
+	overflow: hidden;
+	white-space: nowrap;
+	margin-left: 6px;
+}
+
+.saprigrat .v-table-caption-container-align-right {
+	float: right;
+}
+
+.saprigrat .v-table-sort-indicator {
+	width: 0px;
+	height: 1.2em;
+	float: right;
+}
+
+.saprigrat .v-table-header-cell-asc .v-table-sort-indicator, .saprigrat .v-table-header-cell-desc .v-table-sort-indicator {
+	width: 16px;
+	height: 1.2em;
+	float: right;
+}
+
+.saprigrat .v-table-header-cell-asc .v-table-sort-indicator {
+	background: transparent url(../base/common/img/sprites.png) no-repeat right 6px;
+}
+
+.saprigrat .v-table-header-cell-desc .v-table-sort-indicator {
+	background: transparent url(../base/common/img/sprites.png) no-repeat right -10px;
+}
+
+.saprigrat .v-table-caption-container-align-center {
+	text-align: center;
+}
+
+.saprigrat .v-table-caption-container-align-right {
+	text-align: right;
+}
+
+.saprigrat .v-table-caption-container .v-icon, .saprigrat .v-table-header-drag .v-icon {
+	vertical-align: middle;
+}
+
+.saprigrat .v-table-body {
+	border: 1px solid #aaa;
+}
+
+.saprigrat .v-table-row-spacer {
+	height: 10px;
+	overflow: hidden;
+}
+
+.saprigrat .v-table-row, .saprigrat .v-table-row-odd {
+	background: #fff;
+	border: 0;
+	margin: 0;
+	padding: 0;
+	cursor: pointer;
+}
+
+.saprigrat .v-table-generated-row {
+	background: #efefef;
+}
+
+.saprigrat .v-table-body-noselection .v-table-row, .saprigrat .v-table-body-noselection .v-table-row-odd {
+	cursor: default;
+}
+
+.saprigrat .v-table .v-selected {
+	background: #999;
+	color: #fff;
+}
+
+.saprigrat .v-table-cell-content {
+	white-space: nowrap;
+	overflow: hidden;
+	padding: 0 6px;
+	border-right: 1px solid #aaa;
+}
+
+.saprigrat .v-table-cell-wrapper {
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.saprigrat .v-table-cell-wrapper-align-center {
+	text-align: center;
+}
+
+.saprigrat .v-table-cell-wrapper-align-right {
+	text-align: right;
+}
+
+.saprigrat .v-table-column-selector {
+	float: right;
+	background: transparent url(../base/common/img/sprites.png) no-repeat 4px -37px;
+	margin: -1.2em 0 0 0;
+	height: 1.2em;
+	width: 14px;
+	position: relative;
+	cursor: pointer;
+}
+
+.saprigrat .v-table.v-disabled .v-table-column-selector {
+	cursor: default;
+}
+
+.saprigrat .v-table-focus-slot-left {
+	border-left: 2px solid #999;
+	float: none;
+	margin-bottom: -1.2em;
+	width: auto;
+	background: transparent;
+	border-right: 1px solid #aaa;
+}
+
+.saprigrat .v-table-focus-slot-right {
+	border-right: 2px solid #999;
+	margin-left: -2px;
+}
+
+.saprigrat .v-table-header-drag {
+	position: absolute;
+	background: #efefef;
+	border: 1px solid #eee;
+	opacity: 0.9;
+	filter: alpha(opacity=90);
+	margin-top: 20px;
+	z-index: 30000;
+}
+
+.saprigrat .v-table-header-drag .v-icon {
+	vertical-align: middle;
+}
+
+.saprigrat .v-table-scrollposition {
+	width: 160px;
+	background: #eee;
+	border: 1px solid #aaa;
+}
+
+.saprigrat .v-table-scrollposition span {
+	display: block;
+	text-align: center;
+}
+
+.saprigrat .v-table-body:focus, .saprigrat .v-table-body-wrapper:focus {
+	outline: none;
+}
+
+.saprigrat .v-table-body.focused {
+	border-color: #388ddd;
+}
+
+.saprigrat .v-table-focus .v-table-cell-content {
+	border-top: 1px dotted #0066bd;
+	border-bottom: 1px dotted #0066bd;
+}
+
+.saprigrat .v-table-focus .v-table-cell-wrapper {
+	margin-top: -1px;
+	margin-bottom: -1px;
+}
+
+.saprigrat .v-off {
+	color: #ddd;
+}
+
+.saprigrat .v-table-drag .v-table-body {
+	border-color: #1d9dff;
+}
+
+.saprigrat .v-table-row-drag-middle .v-table-cell-content {
+	background-color: #bcdcff;
+}
+
+.saprigrat .v-table-row-drag-top .v-table-cell-content {
+	border-top: 2px solid #1d9dff;
+}
+
+.saprigrat .v-table-row-drag-top .v-table-cell-wrapper {
+	margin-top: -2px;
+}
+
+.saprigrat .v-table-row-drag-bottom .v-table-cell-content {
+	border-bottom: 2px solid #1d9dff;
+}
+
+.saprigrat .v-table-row-drag-bottom .v-table-cell-wrapper {
+	margin-bottom: -2px;
+}
+
+.saprigrat .v-table-row-drag-top .v-table-cell-content:first-child:before, .saprigrat .v-table-row-drag-bottom .v-table-cell-content:first-child:after {
+	display: block;
+	position: absolute;
+	width: 6px;
+	height: 6px;
+	margin-top: -4px;
+	margin-left: -6px;
+	background: transparent url(../base/common/img/drag-slot-dot.png);
+}
+
+.v-ff .saprigrat .v-table-row-drag-bottom .v-table-cell-content:first-child:after, .v-ie .saprigrat .v-table-row-drag-bottom .v-table-cell-content:first-child:after {
+	margin-top: -2px;
+}
+
+.saprigrat .v-tabsheet, .saprigrat .v-tabsheet-content, .saprigrat .v-tabsheet-deco {
+	outline: none;
+	text-align: left;
+}
+
+.saprigrat .v-tabsheet-tabs {
+	empty-cells: hide;
+	border-collapse: collapse;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	width: 100%;
+	overflow: hidden;
+}
+
+.saprigrat .v-tabsheet-tabitemcell:focus {
+	outline: none;
+}
+
+.saprigrat .v-tabsheet-tabitemcell, .saprigrat .v-tabsheet-spacertd {
+	margin: 0;
+	padding: 0;
+	vertical-align: bottom;
+}
+
+.saprigrat .v-tabsheet-spacertd {
+	width: 100%;
+}
+
+.saprigrat .v-tabsheet-spacertd div {
+	border-left: 1px solid #aaa;
+	border-bottom: 1px solid #aaa;
+	height: 1em;
+	padding: 0.2em 0;
+}
+
+.saprigrat .v-tabsheet-hidetabs > .v-tabsheet-tabcontainer {
+	display: none;
+}
+
+.saprigrat .v-tabsheet-scroller {
+	white-space: nowrap;
+	text-align: right;
+	margin-top: -1em;
+}
+
+.saprigrat .v-disabled .v-tabsheet-scroller {
+	display: none;
+}
+
+.saprigrat .v-tabsheet-scrollerPrev, .saprigrat .v-tabsheet-scrollerNext, .saprigrat .v-tabsheet-scrollerPrev-disabled, .saprigrat .v-tabsheet-scrollerNext-disabled {
+	border: 1px solid #aaa;
+	background: #fff;
+	width: 12px;
+	height: 1em;
+	cursor: pointer;
+}
+
+.saprigrat .v-tabsheet-scrollerPrev-disabled, .saprigrat .v-tabsheet-scrollerNext-disabled {
+	opacity: 0.5;
+	cursor: default;
+}
+
+.saprigrat .v-tabsheet-tabs .v-caption, .saprigrat .v-tabsheet-tabs .v-caption span {
+	white-space: nowrap;
+}
+
+.saprigrat .v-tabsheet-caption-close {
+	display: inline;
+	display: inline-block;
+	zoom: 1;
+	width: 16px;
+	height: 16px;
+	text-align: center;
+	font-weight: bold;
+	cursor: pointer;
+	vertical-align: middle;
+	user-select: none;
+	-khtml-user-select: none;
+	-ms-user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+}
+
+.saprigrat .v-tabsheet .v-disabled .v-tabsheet-caption-close {
+	cursor: default;
+	visibility: hidden;
+}
+
+.saprigrat .v-tabsheet-tabitem:hover .v-tabsheet-caption-close {
+	visibility: visible;
+}
+
+.saprigrat .v-tabsheet-tabitem {
+	border: 1px solid #aaa;
+	border-right: none;
+	cursor: pointer;
+	padding: 0.2em 0.5em;
+}
+
+.saprigrat .v-tabsheet-tabitem .v-caption {
+	cursor: inherit;
+}
+
+.saprigrat .v-tabsheet.v-disabled .v-tabsheet-tabitem, .saprigrat .v-tabsheet-tabitemcell-disabled .v-tabsheet-tabitem {
+	cursor: default;
+}
+
+.saprigrat .v-tabsheet-tabitem-selected {
+	cursor: default;
+	border-bottom-color: #fff;
+}
+
+.saprigrat .v-tabsheet-tabitem-selected .v-caption {
+	cursor: default;
+}
+
+.saprigrat .v-tabsheet-content {
+	border: 1px solid #aaa;
+	border-top: none;
+	border-bottom: none;
+	position: relative;
+}
+
+.saprigrat .v-tabsheet-deco {
+	height: 1px;
+	background: #aaa;
+	overflow: hidden;
+}
+
+.saprigrat .v-tabsheet-hidetabs .v-tabsheet-content {
+	border: none;
+}
+
+.saprigrat .v-tabsheet-hidetabs .v-tabsheet-deco {
+	height: 0;
+}
+
+.saprigrat .v-textfield {
+	text-align: left;
+}
+
+.saprigrat .v-textarea {
+	resize: none;
+	white-space: pre-wrap;
+}
+
+.saprigrat input.v-textfield-prompt, .saprigrat textarea.v-textarea-prompt {
+	color: #999;
+	font-style: italic;
+}
+
+.saprigrat input.v-textfield-readonly, .saprigrat textarea.v-textarea-readonly {
+	background: transparent;
+	border: none;
+	resize: none;
+}
+
+.saprigrat input.v-disabled, .saprigrat textarea.v-disabled {
+	resize: none;
+}
+
+.saprigrat input.v-textfield-readonly:focus, .saprigrat textarea.v-textarea-readonly:focus {
+	outline: none;
+}
+
+.v-sa .saprigrat input:focus, .v-sa .saprigrat textarea:focus {
+	outline-width: medium;
+}
+
+.saprigrat .v-richtextarea {
+	border: 1px solid #aaa;
+	overflow: hidden;
+}
+
+.saprigrat .v-richtextarea .gwt-RichTextArea {
+	background: #fff;
+	border: none;
+}
+
+.saprigrat .v-richtextarea .gwt-HTML {
+	height: 100%;
+	font-size: 12px;
+}
+
+.saprigrat .v-richtextarea .gwt-RichTextToolbar {
+	white-space: nowrap;
+	background: #959595 url(../base/textfield/img/richtext-toolbar-bg.png) repeat-x 0 -42px;
+	border-bottom: 1px solid #7d7d7d;
+	padding: 2px;
+	overflow: hidden;
+}
+
+.saprigrat .v-richtextarea .gwt-RichTextToolbar-top {
+	padding-bottom: 1px;
+	overflow: hidden;
+	white-space: normal;
+}
+
+.saprigrat .v-richtextarea .gwt-RichTextToolbar-bottom {
+	clear: left;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.saprigrat .v-richtextarea .gwt-RichTextToolbar .gwt-ToggleButton, .saprigrat .v-richtextarea .gwt-RichTextToolbar .gwt-PushButton {
+	float: left;
+	display: inline;
+	width: 22px;
+	height: 21px;
+	overflow: hidden;
+	background: transparent url(../base/textfield/img/richtext-toolbar-bg.png) repeat-x;
+	cursor: pointer;
+	margin-right: 2px;
+	text-align: center;
+}
+
+.saprigrat .v-richtextarea .gwt-RichTextToolbar .gwt-ToggleButton-down, .saprigrat .v-richtextarea .gwt-RichTextToolbar .gwt-PushButton-down, .saprigrat .v-richtextarea .gwt-RichTextToolbar .gwt-ToggleButton-down-hovering, .saprigrat .v-richtextarea .gwt-RichTextToolbar .gwt-PushButton-down-hovering {
+	background-position: 0 -21px;
+}
+
+.saprigrat .v-richtextarea .gwt-RichTextToolbar .gwt-ListBox {
+	width: 24.5%;
+	margin-right: 2px;
+}
+
+.saprigrat .v-richtextarea-readonly {
+	border: none;
+}
+
+.saprigrat .v-tree {
+	text-align: left;
+	padding: 1px 0;
+	outline: none;
+}
+
+.saprigrat .v-tree-node {
+	background: transparent url(../base/common/img/sprites.png) no-repeat 5px -37px;
+	padding: 1px 0;
+}
+
+.saprigrat .v-tree-node-caption:focus {
+	outline: none;
+}
+
+.saprigrat div.v-tree-node-leaf {
+	background: transparent;
+}
+
+.saprigrat .v-tree-node-expanded {
+	background: transparent url(../base/common/img/sprites.png) no-repeat -5px -10px;
+}
+
+.saprigrat .v-tree-node-caption {
+	margin-left: 1em;
+}
+
+.saprigrat .v-tree-node span {
+	cursor: pointer;
+}
+
+.saprigrat .v-tree-node-caption div {
+	white-space: nowrap;
+}
+
+.saprigrat .v-tree-node-caption span, .saprigrat .v-tree-node-caption .v-icon {
+	vertical-align: middle;
+}
+
+.saprigrat .v-tree-node-selected span {
+	background: #999;
+	color: #fff;
+}
+
+.saprigrat .v-tree-node-children {
+	padding-left: 1em;
+}
+
+.saprigrat .v-tree .v-tree-node-drag-top {
+	border-top: 2px solid #1d9dff;
+	margin-top: -1px;
+	padding-top: 0;
+}
+
+.saprigrat .v-tree .v-tree-node-drag-bottom {
+	border-bottom: 2px solid #1d9dff;
+	margin-bottom: -1px;
+	padding-bottom: 0;
+}
+
+.saprigrat .v-tree .v-tree-node-drag-top:before, .saprigrat .v-tree .v-tree-node-drag-bottom:after, .saprigrat .v-tree .v-tree-node-caption-drag-center:after {
+	display: block;
+	position: absolute;
+	width: 6px;
+	height: 6px;
+	margin-top: -4px;
+	background: transparent url(../base/common/img/drag-slot-dot.png);
+}
+
+.saprigrat .v-tree .v-tree-node-drag-bottom:after {
+	margin-top: -2px;
+}
+
+.saprigrat .v-tree .v-tree-node-caption-drag-center:after {
+	margin-left: 14px;
+}
+
+.v-ff .saprigrat .v-tree .v-tree-node-caption-drag-center:after, .v-ie .saprigrat .v-tree .v-tree-node-caption-drag-center:after {
+	margin-top: -2px;
+}
+
+.saprigrat .v-tree .v-tree-node-drag-top {
+	background-position: 5px -38px;
+}
+
+.saprigrat .v-tree .v-tree-node-drag-top.v-tree-node-expanded {
+	background-position: -5px -11px;
+}
+
+.saprigrat .v-tree .v-tree-node-caption-drag-center div {
+	border: 2px solid #1d9dff;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	margin: -2px 2px -2px -2px;
+	background-color: #bcdcff;
+}
+
+.saprigrat .v-tree .v-tree-node-caption-drag-center div {
+	background-color: rgba(169, 209, 255, 0.6);
+}
+
+.saprigrat .v-tree .v-tree-node-caption-drag-center div, .saprigrat .v-tree .v-tree-node-drag-top, .saprigrat .v-tree .v-tree-node-drag-bottom {
+	border-color: rgba(0, 109, 232, 0.6);
+}
+
+.saprigrat .v-tree-connectors .v-tree-node-caption {
+	padding-top: 1px;
+}
+
+.saprigrat .v-tree-connectors .v-tree-node {
+	background: transparent url(../base/tree/img/connector-expand.png) no-repeat 2px -52px;
+}
+
+.saprigrat .v-tree-connectors .v-tree-node-expanded {
+	background: transparent url(../base/tree/img/connector-collapse.png) no-repeat 2px -52px;
+}
+
+.saprigrat .v-tree-connectors .v-tree-node-last {
+	background: transparent url(../base/tree/img/connector-expand-last.png) no-repeat 2px -52px;
+}
+
+.saprigrat .v-tree-connectors .v-tree-node-expanded.v-tree-node-last {
+	background: transparent url(../base/tree/img/connector-collapse-last.png) no-repeat 2px -52px;
+}
+
+.saprigrat .v-tree-connectors .v-tree-node-leaf {
+	background: transparent url(../base/tree/img/connector-leaf.png) repeat-y 2px 50%;
+}
+
+.saprigrat .v-tree-connectors .v-tree-node-leaf-last {
+	background: transparent url(../base/tree/img/connector-leaf-last.png) repeat-y 2px 50%;
+}
+
+.saprigrat .v-tree-connectors .v-tree-node-children {
+	background: transparent url(../base/tree/img/connector.png) repeat-y 2px 0;
+}
+
+.saprigrat .v-tree-connectors .v-tree-node-children-last {
+	background: transparent;
+}
+
+.saprigrat .v-tree-connectors .v-tree-node-drag-top, .saprigrat .v-tree-connectors .v-tree-node-expanded.v-tree-node-drag-top {
+	background-position: 2px -53px;
+}
+
+.saprigrat .v-tree-connectors .v-tree-node-drag-top.v-tree-node-leaf {
+	background-position: 2px 50%;
+}
+
+.saprigrat .v-treetable-treespacer {
+	display: inline-block;
+	background: transparent;
+	height: 10px;
+	width: 18px;
+	position: absolute;
+	left: 0;
+	top: 5px;
+}
+
+.saprigrat .v-treetable-node-closed {
+	background: url(../base/treetable/img/arrow-right.png) right top no-repeat;
+}
+
+.saprigrat .v-treetable-node-open {
+	background: url(../base/treetable/img/arrow-down.png) right top no-repeat;
+}
+
+.saprigrat .v-treetable .v-checkbox {
+	display: inline-block;
+	padding-bottom: 4px;
+}
+
+.saprigrat .v-treetable .v-table-row .v-table-cell-content, .saprigrat .v-treetable .v-table-row-odd .v-table-cell-content {
+	position: relative;
+	z-index: 10;
+}
+
+.saprigrat .v-treetable .v-table-cell-wrapper {
+	position: relative;
+}
+
+.saprigrat .v-treetable .v-table-body .v-table-table .v-table-row-animating {
+	zoom: 1;
+	z-index: 1;
+}
+
+.saprigrat .v-treetable .v-table-body .v-table-table .v-table-row-animating, .saprigrat .v-treetable .v-table-body .v-table-table .v-table-row-animating .v-table-cell-content {
+	background: transparent;
+}
+
+.saprigrat .v-treetable-animation-clone {
+	border-spacing: 0;
+	zoom: 1;
+}
+
+.saprigrat div.v-treetable-animation-clone-wrapper {
+	position: absolute;
+	z-index: 2;
+	background-color: #fff;
+}
+
+.saprigrat div.v-treetable-animation-clone-wrapper table.v-treetable-animation-clone {
+	background-color: #fff;
+}
+
+.saprigrat div table.v-treetable-animation-clone tr.v-table-row, .saprigrat div table.v-treetable-animation-clone tr.v-table-row-odd, .saprigrat div table.v-treetable-animation-clone tr.v-table-row td.v-table-cell-content, .saprigrat div table.v-treetable-animation-clone tr.v-table-row-odd td.v-table-cell-content {
+	visibility: visible;
+}
+
+.saprigrat .v-upload {
+	white-space: nowrap;
+}
+
+.saprigrat .v-upload-immediate {
+	position: relative;
+	margin: 0;
+	overflow: hidden;
+}
+
+.v-ff .saprigrat .v-upload-immediate, .v-op .saprigrat .v-upload-immediate {
+	display: inline-block;
+}
+
+.saprigrat .v-upload-immediate input {
+	opacity: 0;
+	filter: alpha(opacity=0);
+	z-index: 2;
+	position: absolute;
+	right: 0;
+	height: 21px;
+	text-align: right;
+	border: none;
+	background: transparent;
+}
+
+.saprigrat .v-upload-immediate button {
+	position: relative;
+	left: 0;
+	top: 0;
+	width: 100%;
+	text-align: left;
+}
+
+.saprigrat .v-window {
+	background: #fff;
+}
+
+.saprigrat .v-window-contents {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.saprigrat .v-window.v-has-width > div.popupContent, .saprigrat .v-window.v-has-width .v-window-wrap, .saprigrat .v-window.v-has-width .v-window-contents, .saprigrat .v-window.v-has-width .v-window-contents > div {
+	width: 100%;
+}
+
+.saprigrat .v-window.v-has-height > div.popupContent, .saprigrat .v-window.v-has-height .v-window-wrap, .saprigrat .v-window.v-has-height .v-window-contents, .saprigrat .v-window.v-has-height .v-window-contents > div {
+	height: 100%;
+}
+
+.saprigrat .v-window-outerheader {
+	padding: 0.3em 1em;
+	height: 1.6em;
+	position: relative;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.saprigrat .v-window-outerheader, .saprigrat .v-window-draggingCurtain {
+	cursor: move;
+}
+
+.saprigrat .v-window-header {
+	font-weight: bold;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ie-user-select: none;
+	user-select: none;
+}
+
+.saprigrat div.v-window-header {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	-ms-text-overflow: ellipsis;
+	overflow: hidden;
+	padding: 0;
+}
+
+.saprigrat .v-window-header .v-icon {
+	vertical-align: middle;
+}
+
+.saprigrat .v-window-contents > div {
+	outline: none;
+}
+
+.saprigrat .v-window-footer {
+	overflow: hidden;
+	zoom: 1;
+	height: 10px;
+	position: relative;
+	cursor: move;
+}
+
+.saprigrat .v-window-resizebox {
+	width: 10px;
+	height: 10px;
+	background: #ddd;
+	overflow: hidden;
+	position: absolute;
+	right: 0;
+}
+
+.saprigrat .v-window-resizebox, .saprigrat .v-window-resizingCurtain {
+	cursor: se-resize;
+}
+
+.saprigrat .v-window div.v-window-footer-noresize {
+	height: 0;
+}
+
+.saprigrat .v-window-resizebox-disabled, .saprigrat .v-window-restorebox-disabled, .saprigrat .v-window-maximizebox-disabled {
+	cursor: default;
+	display: none;
+}
+
+.saprigrat .v-window-closebox, .saprigrat .v-window-restorebox, .saprigrat .v-window-maximizebox {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 1em;
+	height: 1em;
+	cursor: pointer;
+	overflow: hidden;
+}
+
+.saprigrat .v-window-maximizebox, .saprigrat .v-window-restorebox {
+	right: 1.1em;
+}
+
+.saprigrat .v-window-closebox {
+	background: red;
+}
+
+.saprigrat .v-window-maximizebox {
+	background: blue;
+}
+
+.saprigrat .v-window-restorebox {
+	background: yellow;
+}
+
+.saprigrat .v-window-modalitycurtain {
+	top: 0;
+	left: 0;
+	background: #999;
+	opacity: 0.5;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	filter: alpha(opacity=50);
+}
+
+.saprigrat .v-shadow-window {
+	position: absolute;
+}
+
+.saprigrat .v-shadow-window .top-left {
+	position: absolute;
+	overflow: hidden;
+	top: -10px;
+	left: -15px;
+	width: 28px;
+	height: 28px;
+	background: transparent url(../base/window/img/shadow/top-left.png);
+}
+
+.saprigrat .v-shadow-window .top {
+	position: absolute;
+	overflow: hidden;
+	top: -10px;
+	left: 13px;
+	height: 28px;
+	right: 13px;
+	background: transparent url(../base/window/img/shadow/top.png);
+}
+
+.saprigrat .v-shadow-window .top-right {
+	position: absolute;
+	overflow: hidden;
+	top: -10px;
+	right: -15px;
+	width: 28px;
+	height: 28px;
+	background: transparent url(../base/window/img/shadow/top-right.png);
+}
+
+.saprigrat .v-shadow-window .left {
+	position: absolute;
+	overflow: hidden;
+	top: 18px;
+	left: -15px;
+	width: 28px;
+	bottom: 10px;
+	background: transparent url(../base/window/img/shadow/left.png);
+}
+
+.saprigrat .v-shadow-window .center {
+	position: absolute;
+	overflow: hidden;
+	top: 18px;
+	left: 13px;
+	bottom: 10px;
+	right: 13px;
+	background: transparent url(../base/window/img/shadow/center.png);
+}
+
+.saprigrat .v-shadow-window .right {
+	position: absolute;
+	overflow: hidden;
+	top: 18px;
+	right: -15px;
+	width: 28px;
+	bottom: 10px;
+	background: transparent url(../base/window/img/shadow/right.png);
+}
+
+.saprigrat .v-shadow-window .bottom-left {
+	position: absolute;
+	overflow: hidden;
+	bottom: -18px;
+	left: -15px;
+	width: 28px;
+	height: 28px;
+	background: transparent url(../base/window/img/shadow/bottom-left.png);
+}
+
+.saprigrat .v-shadow-window .bottom {
+	position: absolute;
+	overflow: hidden;
+	bottom: -18px;
+	left: 13px;
+	right: 13px;
+	height: 28px;
+	background: transparent url(../base/window/img/shadow/bottom.png);
+}
+
+.saprigrat .v-shadow-window .bottom-right {
+	position: absolute;
+	overflow: hidden;
+	bottom: -18px;
+	right: -15px;
+	width: 28px;
+	height: 28px;
+	background: transparent url(../base/window/img/shadow/bottom-right.png);
+}
+
+.saprigrat .v-accordion {
+	border: 1px solid #bebebe;
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+}
+
+.saprigrat .v-accordion-item {
+	background-color: #fff;
+}
+
+.saprigrat .v-accordion-item-caption {
+	height: 19px;
+	background: #e4e4e4 repeat-x;
+	background-image: url(../reindeer/tabsheet/img/tabbar-bg.png);/** sprite-ref: verticals; sprite-alignment: repeat */
+	font-size: 11px;
+	line-height: normal;
+	border-top: 1px solid #bebebe;
+	text-shadow: #fff 0 1px 0;
+}
+
+.saprigrat .v-accordion-item-caption .v-caption {
+	font-size: 11px;
+}
+
+.saprigrat .v-accordion-item-caption .v-captiontext {
+	vertical-align: baseline;
+}
+
+.saprigrat .v-accordion-item-first .v-accordion-item-caption {
+	border-top: none;
+}
+
+.saprigrat .v-accordion-item-caption .v-caption {
+	padding: 3px 0 0 10px;
+}
+
+.saprigrat .v-accordion-item-open .v-accordion-item-caption {
+	background-image: url(../reindeer/tabsheet/img/tabbar-bg-sel.png);/** sprite-ref: verticals; sprite-alignment: repeat */
+	border-bottom: 1px solid #bbb;
+}
+
+.saprigrat .v-accordion-item-caption .v-icon {
+	margin-top: -3px;
+}
+
+.v-ie .saprigrat .v-accordion-item-caption .v-icon, .v-ff .saprigrat .v-accordion-item-caption .v-icon {
+	margin-top: -6px;
+}
+
+.saprigrat .v-accordion-borderless {
+	border: none;
+	border-radius: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+}
+
+.saprigrat .v-button:focus {
+	background-image: url(../reindeer/button/img/left-focus.png);/** sprite-ref: buttons */
+	outline: none;
+}
+
+.saprigrat .v-button:focus .v-button-wrap {
+	background-image: url(../reindeer/button/img/right-focus.png);/** sprite-ref: buttons; sprite-alignment: right */
+	outline: none;
+}
+
+.saprigrat .v-button:active, .saprigrat .v-button.v-pressed {
+	background-image: url(../reindeer/button/img/left-pressed.png);/** sprite-ref: buttons */
+	outline: none;
+}
+
+.saprigrat .v-button:active .v-button-wrap, .saprigrat .v-button.v-pressed .v-button-wrap {
+	background-image: url(../reindeer/button/img/right-pressed.png);/** sprite-ref: buttons; sprite-alignment: right */
+	outline: none;
+}
+
+.saprigrat .v-button, .saprigrat .v-disabled.v-button {
+	height: 26px;
+	padding: 0 0 0 6px;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-image: url(../reindeer/button/img/left.png);/** sprite-ref: buttons */
+	border: none;
+	cursor: default;
+}
+
+.saprigrat .v-button-wrap, .saprigrat .v-disabled.v-button .v-button-wrap {
+	display: block;
+	height: 22px;
+	padding: 4px 15px 0 9px;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: right top;
+	background-image: url(../reindeer/button/img/right.png);/** sprite-ref: buttons; sprite-alignment: right */
+}
+
+.saprigrat .v-button-caption {
+	color: #222;
+	text-shadow: #fff 0 1px 0;
+	font-weight: bold;
+	font-size: 11px;
+	line-height: 16px;
+}
+
+.saprigrat .black .v-button:focus {
+	background-image: url(../reindeer/button/img/black/left-focus.png);/** sprite-ref: black-buttons */
+}
+
+.saprigrat .black .v-button:focus .v-button-wrap {
+	background-image: url(../reindeer/button/img/black/right-focus.png);/** sprite-ref: black-buttons; sprite-alignment: right */
+}
+
+.saprigrat .black .v-button:active, .saprigrat .black .v-button.v-pressed {
+	background-image: url(../reindeer/button/img/black/left-pressed.png);/** sprite-ref: black-buttons */
+}
+
+.saprigrat .black .v-button:active .v-button-wrap, .saprigrat .black .v-button.v-pressed .v-button-wrap {
+	background-image: url(../reindeer/button/img/black/right-pressed.png);/** sprite-ref: black-buttons; sprite-alignment: right */
+}
+
+.saprigrat .black .v-button, .saprigrat .black .v-disabled.v-button {
+	background-image: url(../reindeer/button/img/black/left.png);/** sprite-ref: black-buttons */
+}
+
+.saprigrat .black .v-button-wrap, .saprigrat .black .v-disabled.v-button .v-button-wrap {
+	background-image: url(../reindeer/button/img/black/right.png);/** sprite-ref: black-buttons; sprite-alignment: right */
+}
+
+.saprigrat .black .v-button-caption {
+	color: #c9ccce;
+	text-shadow: #121314 0 -1px 0;
+}
+
+.saprigrat .v-button-primary:focus {
+	background-image: url(../reindeer/button/img/primary-left-focus.png);/** sprite-ref: buttons */
+}
+
+.saprigrat .v-button-primary:focus .v-button-wrap {
+	background-image: url(../reindeer/button/img/primary-right-focus.png);/** sprite-ref: buttons; sprite-alignment: right */
+}
+
+.saprigrat .v-button-primary:active, .saprigrat .v-button-primary.v-pressed {
+	background-image: url(../reindeer/button/img/primary-left-pressed.png);/** sprite-ref: buttons */
+}
+
+.saprigrat .v-button-primary:active .v-button-wrap, .saprigrat .v-button-primary.v-pressed .v-button-wrap {
+	background-image: url(../reindeer/button/img/primary-right-pressed.png);/** sprite-ref: buttons; sprite-alignment: right */
+}
+
+.saprigrat .v-button-primary, .saprigrat .v-disabled.v-button-primary {
+	background-image: url(../reindeer/button/img/primary-left.png);/** sprite-ref: buttons */
+}
+
+.saprigrat .v-button-primary .v-button-wrap, .saprigrat .v-disabled.v-button-primary .v-button-wrap {
+	background-image: url(../reindeer/button/img/primary-right.png);/** sprite-ref: buttons; sprite-alignment: right */
+}
+
+.saprigrat .black .v-button-primary:focus {
+	background-image: url(../reindeer/button/img/black/primary-left-focus.png);/** sprite-ref: black-buttons */
+}
+
+.saprigrat .black .v-button-primary:focus .v-button-wrap {
+	background-image: url(../reindeer/button/img/black/primary-right-focus.png);/** sprite-ref: black-buttons; sprite-alignment: right */
+	color: #eaf4fb;
+}
+
+.saprigrat .black .v-button-primary:active, .saprigrat .black .v-button-primary.v-pressed {
+	background-image: url(../reindeer/button/img/black/primary-left-pressed.png);/** sprite-ref: black-buttons */
+}
+
+.saprigrat .black .v-button-primary:active .v-button-wrap, .saprigrat .black .v-button-primary.v-pressed .v-button-wrap {
+	background-image: url(../reindeer/button/img/black/primary-right-pressed.png);/** sprite-ref: black-buttons; sprite-alignment: right */
+}
+
+.saprigrat .black .v-button-primary, .saprigrat .black .v-disabled.v-button-primary {
+	background-image: url(../reindeer/button/img/black/primary-left.png);/** sprite-ref: black-buttons */
+}
+
+.saprigrat .black .v-button-primary .v-button-wrap, .saprigrat .black .v-disabled.v-button-primary .v-button-wrap {
+	background-image: url(../reindeer/button/img/black/primary-right.png);/** sprite-ref: black-buttons; sprite-alignment: right */
+}
+
+.saprigrat .v-button-small:focus {
+	background-image: url(../reindeer/button/img/small-left-focus.png);/** sprite-ref: buttons */
+}
+
+.saprigrat .v-button-small:focus .v-button-wrap {
+	background-image: url(../reindeer/button/img/small-right-focus.png);/** sprite-ref: buttons; sprite-alignment: right */
+}
+
+.saprigrat .v-button-small:active, .saprigrat .v-button-small.v-pressed {
+	background-image: url(../reindeer/button/img/small-left-pressed.png);/** sprite-ref: buttons */
+}
+
+.saprigrat .v-button-small:active .v-button-wrap, .saprigrat .v-button-small.v-pressed .v-button-wrap {
+	background-image: url(../reindeer/button/img/small-right-pressed.png);/** sprite-ref: buttons; sprite-alignment: right */
+}
+
+.saprigrat .v-button-small, .saprigrat .v-disabled.v-button-small {
+	background-image: url(../reindeer/button/img/small-left.png);/** sprite-ref: buttons */
+	height: 20px;
+}
+
+.saprigrat .v-button-small .v-button-wrap, .saprigrat .v-disabled.v-button-small .v-button-wrap {
+	background-image: url(../reindeer/button/img/small-right.png);/** sprite-ref: buttons; sprite-alignment: right */
+	height: 19px;
+	padding: 1px 14px 0 8px;
+}
+
+.saprigrat .v-button-small .v-button-caption {
+	font-weight: normal;
+}
+
+.saprigrat .black .v-button-small:focus {
+	background-image: url(../reindeer/button/img/black/small-left-focus.png);/** sprite-ref: black-buttons */
+}
+
+.saprigrat .black .v-button-small:focus .v-button-wrap {
+	background-image: url(../reindeer/button/img/black/small-right-focus.png);/** sprite-ref: black-buttons; sprite-alignment: right */
+}
+
+.saprigrat .black .v-button-small:active, .saprigrat .black .v-button-small.v-pressed {
+	background-image: url(../reindeer/button/img/black/small-left-pressed.png);/** sprite-ref: black-buttons */
+}
+
+.saprigrat .black .v-button-small:active .v-button-wrap, .saprigrat .black .v-button-small.v-pressed .v-button-wrap {
+	background-image: url(../reindeer/button/img/black/small-right-pressed.png);/** sprite-ref: black-buttons; sprite-alignment: right */
+}
+
+.saprigrat .black .v-button-small, .saprigrat .black .v-disabled.v-button-small {
+	background-image: url(../reindeer/button/img/black/small-left.png);/** sprite-ref: black-buttons */
+}
+
+.saprigrat .black .v-button-small .v-button-wrap, .saprigrat .black .v-disabled.v-button-small .v-button-wrap {
+	background-image: url(../reindeer/button/img/black/small-right.png);/** sprite-ref: black-buttons; sprite-alignment: right */
+}
+
+.saprigrat .v-button.v-button-link, .saprigrat .v-button.v-button-link:focus, .saprigrat .v-button.v-button-link:active, .saprigrat .v-button-link.v-pressed, .saprigrat .v-disabled.v-button.v-button-link, .saprigrat .v-button.v-button-link .v-button-wrap, .saprigrat .v-button.v-button-link:focus .v-button-wrap, .saprigrat .v-button.v-button-link:active .v-button-wrap, .saprigrat .v-button-link.v-pressed .v-button-wrap, .saprigrat .v-disabled.v-button.v-button-link .v-button-wrap {
+	background: transparent;
+	height: auto;
+	padding: 0;
+	cursor: pointer;
+	line-height: inherit;
+}
+
+.saprigrat .v-button.v-button-link.v-disabled, .saprigrat .v-button.v-button-link.v-disabled .v-button-wrap {
+	cursor: default;
+}
+
+.saprigrat .v-button-link .v-button-caption {
+	line-height: inherit;
+	font-weight: normal;
+	color: #1b699f;
+	font-size: 12px;
+	text-shadow: none;
+}
+
+.saprigrat .v-button-link:focus .v-button-caption {
+	outline: 1px dotted #1b699f;
+}
+
+.saprigrat .v-nativebutton-link .v-nativebutton-caption {
+	line-height: inherit;
+	font-weight: normal;
+	color: #1b699f;
+	font-size: 12px;
+	text-shadow: none;
+}
+
+.saprigrat .v-nativebutton-link:focus .v-nativebutton-caption {
+	outline: 1px dotted #1b699f;
+}
+
+.v-ie8 .saprigrat .v-nativebutton-link {
+	padding: 0;
+	text-align: left;
+}
+
+.saprigrat .v-colorpicker-popup {
+	width: 246px;
+}
+
+.saprigrat .v-colorpicker-popup .v-tabsheet .v-colorpicker-grid {
+	height: 284px;
+}
+
+.saprigrat .v-colorpicker-popup .v-filterselect {
+	padding-right: 25px;
+}
+
+.saprigrat.v-app {
+	background: #f5f5f5;
+}
+
+.saprigrat.v-app, .saprigrat .v-window, .saprigrat .v-popupview-popup, .saprigrat .v-tooltip, .saprigrat.v-app input, .saprigrat.v-app select, .saprigrat.v-app button, .saprigrat.v-app textarea, .saprigrat .v-window input, .saprigrat .v-window select, .saprigrat .v-window button, .saprigrat .v-window textarea, .saprigrat .v-popupview-popup input, .saprigrat .v-popupview-popup select, .saprigrat .v-popupview-popup button, .saprigrat .v-popupview-popup textarea, .saprigrat .v-filterselect-suggestpopup, .saprigrat .v-datefield-popup, .saprigrat .v-contextmenu, .saprigrat .v-Notification, .saprigrat .v-menubar-submenu, .saprigrat .v-drag-element, .saprigrat .v-table-header-drag {
+	font-family: Arial, Helvetica, Tahoma, Verdana, sans-serif;
+	font-size: 12px;
+	line-height: normal;
+	color: #222;
+}
+
+.saprigrat.v-app .black, .saprigrat .v-window-black, .saprigrat .v-window .black, .saprigrat .v-popupview-popup .black {
+	color: #c9ccce;
+	text-shadow: #000 0 0 1px;
+}
+
+.saprigrat .v-errorindicator {
+	width: 13px;
+	height: 15px;
+	background: transparent url(../reindeer/common/icons/error.png) no-repeat 50%;
+}
+
+.saprigrat .v-tooltip {
+	background-color: #fffcdd;
+	border: 1px solid #b8b295;
+	font-size: 11px;
+	color: #222;
+}
+
+.saprigrat .v-tooltip-text {
+	padding: 2px 4px;
+}
+
+.saprigrat .v-tooltip .v-errormessage {
+	padding: 3px 4px;
+	background: #ffecc6;
+	color: #b74100;
+	border: none;
+	border-top: 1px solid #fff3dc;
+}
+
+.saprigrat .v-tooltip .v-errormessage h2 {
+	font-size: 16px;
+	font-weight: normal;
+	color: #ab3101;
+	margin: 2px 0 8px 0;
+}
+
+.saprigrat .v-tooltip .v-errormessage h3 {
+	font-size: 13px;
+	font-weight: bold;
+	margin: 1px 0 4px 0;
+}
+
+.saprigrat .v-contextmenu {
+	background: #f8f8f9;
+	border: none;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-o-border-radius: 3px;
+	overflow: hidden;
+	padding: 4px 0;
+}
+
+.saprigrat .v-contextmenu .gwt-MenuItem {
+	padding: 1px 12px 1px 8px;
+	height: 16px;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	cursor: default;
+}
+
+.saprigrat .v-contextmenu .gwt-MenuItem .v-icon {
+	margin-right: 3px;
+}
+
+.saprigrat .v-contextmenu .gwt-MenuItem-selected {
+	background: transparent repeat-x;
+	background-image: url(../reindeer/common/img/sel-bg.png);/** sprite-ref: verticals; sprite-alignment: repeat */
+	color: #fff;
+	text-shadow: #3b5a7a 0 1px 0;
+}
+
+.v-ie .saprigrat .v-contextmenu .gwt-MenuItem-selected {
+	background-image: url(../reindeer/common/img/sel-bg.png);
+	background-position: left top;
+}
+
+.saprigrat .v-contextmenu .gwt-MenuItem-selected div {
+	background: transparent;
+	cursor: default;
+}
+
+.portlet .saprigrat.v-app {
+	background: transparent;
+}
+
+.portlet .saprigrat.v-app .v-radiobutton input, .saprigrat .portlet .v-window .v-radiobutton input, .saprigrat .portlet .v-popupview-popup .v-radiobutton input, .portlet .saprigrat.v-app .v-checkbox input, .saprigrat .portlet .v-window .v-checkbox input, .saprigrat .portlet .v-popupview-popup .v-checkbox input {
+	margin-right: 3px;
+	background: transparent;
+}
+
+.saprigrat .v-datefield {
+	overflow: hidden;
+}
+
+.saprigrat input.v-textfield-readonly:focus {
+	background-color: transparent;
+}
+
+.saprigrat .v-datefield-calendarpanel {
+	border-collapse: collapse;
+	margin: 0;
+	padding: 0;
+	height: auto !important;
+}
+
+.saprigrat .v-datefield-year .v-datefield-calendarpanel-prevmonth, .saprigrat .v-datefield-year .v-datefield-calendarpanel-nextmonth {
+	display: none;
+}
+
+.saprigrat .v-datefield-calendarpanel td {
+	vertical-align: top;
+}
+
+.saprigrat td.v-datefield-calendarpanel-month {
+	height: 23px;
+	background-repeat: repeat-x;
+	background-image: url(../reindeer/datefield/img/header-bg.png);/** sprite-ref: verticals; sprite-alignment: repeat */
+}
+
+.saprigrat span.v-datefield-calendarpanel-month {
+	display: block;
+	text-align: center;
+	height: 16px;
+	padding: 3px 10px 0 10px;
+	border-left: 1px solid #efefef;
+	border-right: 1px solid #d8d8d8;
+	text-shadow: #fff 0 1px 0;
+	overflow: hidden;
+	margin-top: 1px;
+}
+
+.saprigrat .v-datefield-year .v-datefield-calendarpanel-month {
+	width: 35px;
+}
+
+.saprigrat .v-datefield-month .v-datefield-calendarpanel-month, .saprigrat .v-datefield-day .v-datefield-calendarpanel-month, .saprigrat .v-datefield-full .v-datefield-calendarpanel-month {
+	width: 124px;
+}
+
+.saprigrat .v-datefield-month, .saprigrat .v-datefield-day, .saprigrat .v-datefield-full {
+	min-width: 240px;
+}
+
+.saprigrat .v-datefield-popupcalendar {
+	min-width: 0;
+	padding-right: 24px;
+}
+
+.saprigrat .v-datefield-year .v-datefield-calendarpanel {
+	width: 100px;
+}
+
+.saprigrat td.v-datefield-calendarpanel-prevyear {
+	text-align: right;
+}
+
+.saprigrat td.v-datefield-calendarpanel-nextyear {
+	text-align: left;
+}
+
+.saprigrat .v-datefield-calendarpanel-prevyear button, .saprigrat .v-datefield-calendarpanel-nextyear button, .saprigrat .v-datefield-calendarpanel-prevmonth button, .saprigrat .v-datefield-calendarpanel-nextmonth button {
+	width: 24px;
+	height: 23px;
+	border: none;
+	background: transparent;
+	background-repeat: no-repeat;
+	background-image: url(../reindeer/datefield/img/year-prev.png);/** sprite-ref: verticals */
+	overflow: hidden;
+	padding: 0;
+	text-indent: -9999px;
+	outline: none;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+}
+
+.v-ie .saprigrat .v-datefield-calendarpanel-prevyear button, .v-ie .saprigrat .v-datefield-calendarpanel-nextyear button, .v-ie .saprigrat .v-datefield-calendarpanel-prevmonth button, .v-ie .saprigrat .v-datefield-calendarpanel-nextmonth button {
+	text-indent: 0;
+	font-size: 1px;
+}
+
+.saprigrat .v-datefield-calendarpanel-nextyear button {
+	background-position: left top;
+	background-image: url(../reindeer/datefield/img/year-next.png);/** sprite-ref: verticals */
+}
+
+.saprigrat .v-datefield-calendarpanel-prevyear button:active, .v-ie .saprigrat .v-datefield-calendarpanel-prevyear button.v-pressed {
+	background-image: url(../reindeer/datefield/img/year-prev-pressed.png);/** sprite-ref: verticals */
+}
+
+.saprigrat .v-datefield-calendarpanel-nextyear button:active, .v-ie .saprigrat .v-datefield-calendarpanel-nextyear button.v-pressed {
+	background-image: url(../reindeer/datefield/img/year-next-pressed.png);/** sprite-ref: verticals */
+}
+
+.saprigrat .v-datefield-calendarpanel-prevmonth, .saprigrat .v-datefield-calendarpanel-nextmonth {
+	width: 24px;
+	background-repeat: repeat-x;
+	background-image: url(../reindeer/datefield/img/header-bg.png);/** sprite-ref: verticals; sprite-alignment: repeat */
+}
+
+.saprigrat .v-datefield-calendarpanel-prevmonth button, .saprigrat .v-datefield-calendarpanel-nextmonth button {
+	width: 100%;
+	height: 21px;
+	border-left: 1px solid #efefef;
+	border-right: 1px solid #d8d8d8;
+	background: transparent;
+	background-position: center top;
+	background-image: url(../reindeer/datefield/img/month-prev.png);/** sprite-ref: verticals; sprite-alignment: center */
+	min-width: 24px;
+	margin-top: 1px;
+}
+
+.v-ie .saprigrat .v-datefield-calendarpanel-prevmonth button, .v-ie .saprigrat .v-datefield-calendarpanel-nextmonth button {
+	border: none;
+}
+
+.saprigrat .v-datefield-calendarpanel-nextmonth button {
+	background-image: url(../reindeer/datefield/img/month-next.png);/** sprite-ref: verticals; sprite-alignment: center */
+}
+
+.saprigrat .v-datefield-calendarpanel-prevmonth button:active, .v-ie .saprigrat .v-datefield-calendarpanel-prevmonth button.v-pressed {
+	background-position: center top;
+	background-image: url(../reindeer/datefield/img/month-prev-pressed.png);/** sprite-ref: verticals; sprite-alignment: center */
+}
+
+.saprigrat .v-datefield-calendarpanel-nextmonth button:active, .v-ie .saprigrat .v-datefield-calendarpanel-nextmonth button.v-pressed {
+	background-position: center top;
+	background-image: url(../reindeer/datefield/img/month-next-pressed.png);/** sprite-ref: verticals; sprite-alignment: center */
+}
+
+.saprigrat .v-datefield-calendarpanel-body, .saprigrat .v-datefield-calendarpanel-time {
+	text-align: center;
+	vertical-align: top;
+}
+
+.saprigrat .v-datefield-calendarpanel-body table {
+	border-collapse: collapse;
+	margin: 0;
+	padding: 0;
+	width: 220px;
+	margin: 0 auto;
+}
+
+.saprigrat .v-datefield-calendarpanel-weekdays td {
+	width: 14.2%;
+	overflow: hidden;
+	background-repeat: repeat-x;
+	background-image: url(../reindeer/datefield/img/weekday-bg.png);/** sprite-ref: verticals; sprite-alignment: repeat; sprite-margin-bottom: 3px */
+	font-size: 10px;
+	line-height: normal;
+	text-transform: uppercase;
+	color: #eaeff1;
+	text-shadow: #3b4651 0 -1px 0;
+	vertical-align: top;
+	padding: 0;
+}
+
+.saprigrat .v-datefield-calendarpanel-weeknumbers td {
+	width: 12.4%;
+}
+
+.saprigrat .v-datefield-calendarpanel-weekdays strong {
+	display: block;
+	text-align: right;
+	padding: 1px 5px 0 0;
+	height: 14px;
+	border-top: 1px solid #596775;
+}
+
+.saprigrat .v-datefield-calendarpanel-weekdays .v-first {
+	background-repeat: no-repeat;
+	background-image: url(../reindeer/datefield/img/weekday-first.png);/** sprite-ref: verticals; sprite-margin-bottom: 3px */
+}
+
+.saprigrat .v-datefield-calendarpanel-weekdays .v-last {
+	background-repeat: no-repeat;
+	background-position: right top;
+	background-image: url(../reindeer/datefield/img/weekday-last.png);/** sprite-ref: verticals; sprite-alignment: right; sprite-margin-bottom: 3px */
+}
+
+.v-ie .saprigrat .v-datefield-calendarpanel-weekdays td {
+	background: url(../reindeer/datefield/img/weekday-bg.png) repeat-x;
+	background-position: left top;
+}
+
+.v-ie .saprigrat .v-datefield-calendarpanel .v-first {
+	background: url(../reindeer/datefield/img/weekday-first.png) no-repeat;
+}
+
+.v-ie .saprigrat .v-datefield-calendarpanel .v-last {
+	background: url(../reindeer/datefield/img/weekday-last.png) no-repeat right top;
+}
+
+.saprigrat .v-datefield-calendarpanel-body td {
+	text-align: right;
+	height: 19px;
+}
+
+.saprigrat .v-datefield-calendarpanel-day, .saprigrat .v-datefield-calendarpanel-weeknumber, .saprigrat .v-datefield-calendarpanel-day-today {
+	padding: 2px 5px 2px 0;
+	display: block;
+	margin: 1px 0 0 5px;
+}
+
+.saprigrat .v-datefield-calendarpanel-weeknumber {
+	margin: 0;
+	padding-top: 4px;
+	padding-bottom: 3px;
+	font-size: 10.8px;
+}
+
+.saprigrat .v-datefield-calendarpanel-day-today {
+	color: #4095d1;
+	border: none;
+}
+
+.saprigrat .v-datefield-calendarpanel-day-selected {
+	background: #507ba3;
+	color: #fff;
+	text-shadow: #3b5b79 0 1px 0;
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+}
+
+.saprigrat .v-datefield-calendarpanel-time select {
+	padding: 0;
+	font-size: 11px;
+	margin: 2px;
+}
+
+.saprigrat .v-datefield-popup {
+	background: #f8f8f9;
+	padding: 8px 4px;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+}
+
+.v-sa .saprigrat .v-datefield-popup, .v-op .saprigrat .v-datefield-popup {
+	background: rgba(255, 255, 255, 0.95);
+}
+
+.saprigrat .v-datefield-year > .v-datefield-textfield {
+	width: 4.5em;
+}
+
+.saprigrat .v-datefield-month > .v-datefield-textfield {
+	width: 5.5em;
+}
+
+.saprigrat .v-datefield-day > .v-datefield-textfield {
+	width: 6em;
+}
+
+.saprigrat .v-datefield-full > .v-datefield-textfield {
+	width: 12.5em;
+}
+
+.saprigrat .v-datefield-popupcalendar input.v-datefield-textfield {
+	border-right-width: 0;
+	-moz-border-radius-topright: 0;
+	-moz-border-radius-bottomright: 0;
+	-webkit-border-top-right-radius: 0;
+	-webkit-border-bottom-right-radius: 0;
+	height: 23px;
+}
+
+.saprigrat .v-datefield.v-readonly input.v-datefield-textfield {
+	border-right-width: 1px;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+.saprigrat .v-datefield-prompt .v-datefield-textfield {
+	color: #999;
+	font-style: normal;
+}
+
+.saprigrat .v-datefield-popupcalendar .v-datefield-button {
+	width: 24px;
+	margin-right: -24px;
+	height: 23px;
+	background: transparent;
+	border: none;
+	padding: 0;
+	background-image: url(../reindeer/datefield/img/popup-btn.png);/** sprite-ref: verticals */
+	cursor: pointer;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+}
+
+.saprigrat .v-datefield-popupcalendar .v-datefield-button:active {
+	background-image: url(../reindeer/datefield/img/popup-btn-pressed.png);/** sprite-ref: verticals */
+}
+
+.saprigrat .black .v-datefield-popupcalendar .v-datefield-button {
+	background-image: url(../reindeer/datefield/img/popup-btn-black.png);/** sprite-ref: black-verticals */
+}
+
+.saprigrat .black .v-datefield-popupcalendar .v-datefield-button:active {
+	background-image: url(../reindeer/datefield/img/popup-btn-black-pressed.png);/** sprite-ref: black-verticals */
+}
+
+.saprigrat .black td.v-datefield-calendarpanel-month {
+	background-image: url(../reindeer/datefield/img/header-bg-black.png);/** sprite-ref: black-verticals; sprite-alignment: repeat */
+	height: 21px;
+}
+
+.saprigrat .black span.v-datefield-calendarpanel-month {
+	border-left: 1px solid #333638;
+	border-right: 1px solid #232527;
+	color: #c9ccce;
+	text-shadow: #000 0 -1px 0;
+	padding: 4px 10px 1px 10px;
+	margin-top: 0;
+}
+
+.saprigrat .black .v-datefield-calendarpanel-prevyear button, .saprigrat .black .v-datefield-calendarpanel-nextyear button, .saprigrat .black .v-datefield-calendarpanel-prevmonth button, .saprigrat .black .v-datefield-calendarpanel-nextmonth button {
+	background-image: url(../reindeer/datefield/img/year-prev-black.png);/** sprite-ref: black-verticals */
+	height: 21px;
+}
+
+.saprigrat .black .v-datefield-calendarpanel-nextyear button {
+	background-image: url(../reindeer/datefield/img/year-next-black.png);/** sprite-ref: black-verticals */
+}
+
+.saprigrat .black .v-datefield-calendarpanel-prevyear button:active, .v-ie .saprigrat .black .v-datefield-calendarpanel-prevyear button.v-pressed {
+	background-image: url(../reindeer/datefield/img/year-prev-black-pressed.png);/** sprite-ref: black-verticals */
+}
+
+.saprigrat .black .v-datefield-calendarpanel-nextyear button:active, .v-ie .saprigrat .black .v-datefield-calendarpanel-nextyear button.v-pressed {
+	background-image: url(../reindeer/datefield/img/year-next-black-pressed.png);/** sprite-ref: black-verticals */
+}
+
+.saprigrat .black .v-datefield-calendarpanel-prevmonth, .saprigrat .black .v-datefield-calendarpanel-nextmonth {
+	background-image: url(../reindeer/datefield/img/header-bg-black.png);/** sprite-ref: black-verticals; sprite-alignment: repeat */
+}
+
+.saprigrat .black .v-datefield-calendarpanel-prevmonth button, .saprigrat .black .v-datefield-calendarpanel-nextmonth button {
+	border-left: 1px solid #333638;
+	border-right: 1px solid #232527;
+	background-image: url(../reindeer/datefield/img/month-prev-black.png);/** sprite-ref: black-verticals; sprite-alignment: center */
+	margin-top: 0;
+}
+
+.saprigrat .black .v-datefield-calendarpanel-nextmonth button {
+	background-image: url(../reindeer/datefield/img/month-next-black.png);/** sprite-ref: black-verticals; sprite-alignment: center */
+}
+
+.saprigrat .black .v-datefield-calendarpanel-prevmonth button:active, .v-ie .saprigrat .black .v-datefield-calendarpanel-prevmonth button.v-pressed {
+	background-image: url(../reindeer/datefield/img/month-prev-black-pressed.png);/** sprite-ref: black-verticals; sprite-alignment: center */
+}
+
+.saprigrat .black .v-datefield-calendarpanel-nextmonth button:active, .v-ie .saprigrat .black .v-datefield-calendarpanel-nextmonth button.v-pressed {
+	background-image: url(../reindeer/datefield/img/month-next-black-pressed.png);/** sprite-ref: black-verticals; sprite-alignment: center */
+}
+
+.v-ie .saprigrat .black .v-datefield-calendarpanel-prevmonth button, .v-ie .saprigrat .black .v-datefield-calendarpanel-nextmonth button {
+	border: none;
+}
+
+.saprigrat .black .v-datefield-calendarpanel-weekdays td {
+	background-image: url(../reindeer/datefield/img/weekday-bg-black.png);/** sprite-ref: black-verticals; sprite-alignment: repeat; sprite-margin-bottom: 3px */
+	color: #0a0b0b;
+	text-shadow: #5a5c5e 0 1px 0;
+}
+
+.saprigrat .black .v-datefield-calendarpanel-weekdays strong {
+	border-top-color: #1b1c1d;
+}
+
+.saprigrat .black .v-datefield-calendarpanel .v-first {
+	background-image: url(../reindeer/datefield/img/weekday-first-black.png);/** sprite-ref: black-verticals; sprite-margin-bottom: 3px */
+}
+
+.saprigrat .black .v-datefield-calendarpanel .v-last {
+	background-image: url(../reindeer/datefield/img/weekday-last-black.png);/** sprite-ref: black-verticals; sprite-alignment: right */
+}
+
+.saprigrat .black .v-datefield-prompt .v-datefield-textfield {
+	color: #5f6366;
+}
+
+.saprigrat .v-inline-datefield {
+	overflow: hidden;
+}
+
+.saprigrat input.v-textfield-readonly:focus {
+	background-color: transparent;
+}
+
+.saprigrat .v-inline-datefield-calendarpanel {
+	border-collapse: collapse;
+	margin: 0;
+	padding: 0;
+	height: auto !important;
+}
+
+.saprigrat .v-inline-datefield-year .v-inline-datefield-calendarpanel-prevmonth, .saprigrat .v-inline-datefield-year .v-inline-datefield-calendarpanel-nextmonth {
+	display: none;
+}
+
+.saprigrat .v-inline-datefield-calendarpanel td {
+	vertical-align: top;
+}
+
+.saprigrat td.v-inline-datefield-calendarpanel-month {
+	height: 23px;
+	background-repeat: repeat-x;
+	background-image: url(../reindeer/datefield/img/header-bg.png);/** sprite-ref: verticals; sprite-alignment: repeat */
+}
+
+.saprigrat span.v-inline-datefield-calendarpanel-month {
+	display: block;
+	text-align: center;
+	height: 16px;
+	padding: 3px 10px 0 10px;
+	border-left: 1px solid #efefef;
+	border-right: 1px solid #d8d8d8;
+	text-shadow: #fff 0 1px 0;
+	overflow: hidden;
+	margin-top: 1px;
+}
+
+.saprigrat .v-inline-datefield-year .v-inline-datefield-calendarpanel-month {
+	width: 35px;
+}
+
+.saprigrat .v-inline-datefield-month .v-inline-datefield-calendarpanel-month, .saprigrat .v-inline-datefield-day .v-inline-datefield-calendarpanel-month, .saprigrat .v-inline-datefield-full .v-inline-datefield-calendarpanel-month {
+	width: 124px;
+}
+
+.saprigrat .v-inline-datefield-month, .saprigrat .v-inline-datefield-day, .saprigrat .v-inline-datefield-full {
+	min-width: 240px;
+}
+
+.saprigrat .v-inline-datefield-popupcalendar {
+	min-width: 0;
+	padding-right: 24px;
+}
+
+.saprigrat .v-inline-datefield-year .v-inline-datefield-calendarpanel {
+	width: 100px;
+}
+
+.saprigrat td.v-inline-datefield-calendarpanel-prevyear {
+	text-align: right;
+}
+
+.saprigrat td.v-inline-datefield-calendarpanel-nextyear {
+	text-align: left;
+}
+
+.saprigrat .v-inline-datefield-calendarpanel-prevyear button, .saprigrat .v-inline-datefield-calendarpanel-nextyear button, .saprigrat .v-inline-datefield-calendarpanel-prevmonth button, .saprigrat .v-inline-datefield-calendarpanel-nextmonth button {
+	width: 24px;
+	height: 23px;
+	border: none;
+	background: transparent;
+	background-repeat: no-repeat;
+	background-image: url(../reindeer/datefield/img/year-prev.png);/** sprite-ref: verticals */
+	overflow: hidden;
+	padding: 0;
+	text-indent: -9999px;
+	outline: none;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+}
+
+.v-ie .saprigrat .v-inline-datefield-calendarpanel-prevyear button, .v-ie .saprigrat .v-inline-datefield-calendarpanel-nextyear button, .v-ie .saprigrat .v-inline-datefield-calendarpanel-prevmonth button, .v-ie .saprigrat .v-inline-datefield-calendarpanel-nextmonth button {
+	text-indent: 0;
+	font-size: 1px;
+}
+
+.saprigrat .v-inline-datefield-calendarpanel-nextyear button {
+	background-position: left top;
+	background-image: url(../reindeer/datefield/img/year-next.png);/** sprite-ref: verticals */
+}
+
+.saprigrat .v-inline-datefield-calendarpanel-prevyear button:active, .v-ie .saprigrat .v-inline-datefield-calendarpanel-prevyear button.v-pressed {
+	background-image: url(../reindeer/datefield/img/year-prev-pressed.png);/** sprite-ref: verticals */
+}
+
+.saprigrat .v-inline-datefield-calendarpanel-nextyear button:active, .v-ie .saprigrat .v-inline-datefield-calendarpanel-nextyear button.v-pressed {
+	background-image: url(../reindeer/datefield/img/year-next-pressed.png);/** sprite-ref: verticals */
+}
+
+.saprigrat .v-inline-datefield-calendarpanel-prevmonth, .saprigrat .v-inline-datefield-calendarpanel-nextmonth {
+	width: 24px;
+	background-repeat: repeat-x;
+	background-image: url(../reindeer/datefield/img/header-bg.png);/** sprite-ref: verticals; sprite-alignment: repeat */
+}
+
+.saprigrat .v-inline-datefield-calendarpanel-prevmonth button, .saprigrat .v-inline-datefield-calendarpanel-nextmonth button {
+	width: 100%;
+	height: 21px;
+	border-left: 1px solid #efefef;
+	border-right: 1px solid #d8d8d8;
+	background: transparent;
+	background-position: center top;
+	background-image: url(../reindeer/datefield/img/month-prev.png);/** sprite-ref: verticals; sprite-alignment: center */
+	min-width: 24px;
+	margin-top: 1px;
+}
+
+.v-ie .saprigrat .v-inline-datefield-calendarpanel-prevmonth button, .v-ie .saprigrat .v-inline-datefield-calendarpanel-nextmonth button {
+	border: none;
+}
+
+.saprigrat .v-inline-datefield-calendarpanel-nextmonth button {
+	background-image: url(../reindeer/datefield/img/month-next.png);/** sprite-ref: verticals; sprite-alignment: center */
+}
+
+.saprigrat .v-inline-datefield-calendarpanel-prevmonth button:active, .v-ie .saprigrat .v-inline-datefield-calendarpanel-prevmonth button.v-pressed {
+	background-position: center top;
+	background-image: url(../reindeer/datefield/img/month-prev-pressed.png);/** sprite-ref: verticals; sprite-alignment: center */
+}
+
+.saprigrat .v-inline-datefield-calendarpanel-nextmonth button:active, .v-ie .saprigrat .v-inline-datefield-calendarpanel-nextmonth button.v-pressed {
+	background-position: center top;
+	background-image: url(../reindeer/datefield/img/month-next-pressed.png);/** sprite-ref: verticals; sprite-alignment: center */
+}
+
+.saprigrat .v-inline-datefield-calendarpanel-body, .saprigrat .v-inline-datefield-calendarpanel-time {
+	text-align: center;
+	vertical-align: top;
+}
+
+.saprigrat .v-inline-datefield-calendarpanel-body table {
+	border-collapse: collapse;
+	margin: 0;
+	padding: 0;
+	width: 220px;
+	margin: 0 auto;
+}
+
+.saprigrat .v-inline-datefield-calendarpanel-weekdays td {
+	width: 14.2%;
+	overflow: hidden;
+	background-repeat: repeat-x;
+	background-image: url(../reindeer/datefield/img/weekday-bg.png);/** sprite-ref: verticals; sprite-alignment: repeat; sprite-margin-bottom: 3px */
+	font-size: 10px;
+	line-height: normal;
+	text-transform: uppercase;
+	color: #eaeff1;
+	text-shadow: #3b4651 0 -1px 0;
+	vertical-align: top;
+	padding: 0;
+}
+
+.saprigrat .v-inline-datefield-calendarpanel-weeknumbers td {
+	width: 12.4%;
+}
+
+.saprigrat .v-inline-datefield-calendarpanel-weekdays strong {
+	display: block;
+	text-align: right;
+	padding: 1px 5px 0 0;
+	height: 14px;
+	border-top: 1px solid #596775;
+}
+
+.saprigrat .v-inline-datefield-calendarpanel-weekdays .v-first {
+	background-repeat: no-repeat;
+	background-image: url(../reindeer/datefield/img/weekday-first.png);/** sprite-ref: verticals; sprite-margin-bottom: 3px */
+}
+
+.saprigrat .v-inline-datefield-calendarpanel-weekdays .v-last {
+	background-repeat: no-repeat;
+	background-position: right top;
+	background-image: url(../reindeer/datefield/img/weekday-last.png);/** sprite-ref: verticals; sprite-alignment: right; sprite-margin-bottom: 3px */
+}
+
+.v-ie .saprigrat .v-inline-datefield-calendarpanel-weekdays td {
+	background: url(../reindeer/datefield/img/weekday-bg.png) repeat-x;
+	background-position: left top;
+}
+
+.v-ie .saprigrat .v-inline-datefield-calendarpanel .v-first {
+	background: url(../reindeer/datefield/img/weekday-first.png) no-repeat;
+}
+
+.v-ie .saprigrat .v-inline-datefield-calendarpanel .v-last {
+	background: url(../reindeer/datefield/img/weekday-last.png) no-repeat right top;
+}
+
+.saprigrat .v-inline-datefield-calendarpanel-body td {
+	text-align: right;
+	height: 19px;
+}
+
+.saprigrat .v-inline-datefield-calendarpanel-day, .saprigrat .v-inline-datefield-calendarpanel-weeknumber, .saprigrat .v-inline-datefield-calendarpanel-day-today {
+	padding: 2px 5px 2px 0;
+	display: block;
+	margin: 1px 0 0 5px;
+}
+
+.saprigrat .v-inline-datefield-calendarpanel-weeknumber {
+	margin: 0;
+	padding-top: 4px;
+	padding-bottom: 3px;
+	font-size: 10.8px;
+}
+
+.saprigrat .v-inline-datefield-calendarpanel-day-today {
+	color: #4095d1;
+	border: none;
+}
+
+.saprigrat .v-inline-datefield-calendarpanel-day-selected {
+	background: #507ba3;
+	color: #fff;
+	text-shadow: #3b5b79 0 1px 0;
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+}
+
+.saprigrat .v-inline-datefield-calendarpanel-time select {
+	padding: 0;
+	font-size: 11px;
+	margin: 2px;
+}
+
+.saprigrat .v-inline-datefield-popup {
+	background: #f8f8f9;
+	padding: 8px 4px;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+}
+
+.v-sa .saprigrat .v-inline-datefield-popup, .v-op .saprigrat .v-inline-datefield-popup {
+	background: rgba(255, 255, 255, 0.95);
+}
+
+.saprigrat .v-inline-datefield-year > .v-inline-datefield-textfield {
+	width: 4.5em;
+}
+
+.saprigrat .v-inline-datefield-month > .v-inline-datefield-textfield {
+	width: 5.5em;
+}
+
+.saprigrat .v-inline-datefield-day > .v-inline-datefield-textfield {
+	width: 6em;
+}
+
+.saprigrat .v-inline-datefield-full > .v-inline-datefield-textfield {
+	width: 12.5em;
+}
+
+.saprigrat .v-inline-datefield-popupcalendar input.v-inline-datefield-textfield {
+	border-right-width: 0;
+	-moz-border-radius-topright: 0;
+	-moz-border-radius-bottomright: 0;
+	-webkit-border-top-right-radius: 0;
+	-webkit-border-bottom-right-radius: 0;
+	height: 23px;
+}
+
+.saprigrat .v-inline-datefield.v-readonly input.v-inline-datefield-textfield {
+	border-right-width: 1px;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+.saprigrat .v-inline-datefield-prompt .v-inline-datefield-textfield {
+	color: #999;
+	font-style: normal;
+}
+
+.saprigrat .v-inline-datefield-popupcalendar .v-inline-datefield-button {
+	width: 24px;
+	margin-right: -24px;
+	height: 23px;
+	background: transparent;
+	border: none;
+	padding: 0;
+	background-image: url(../reindeer/datefield/img/popup-btn.png);/** sprite-ref: verticals */
+	cursor: pointer;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+}
+
+.saprigrat .v-inline-datefield-popupcalendar .v-inline-datefield-button:active {
+	background-image: url(../reindeer/datefield/img/popup-btn-pressed.png);/** sprite-ref: verticals */
+}
+
+.saprigrat .black .v-inline-datefield-popupcalendar .v-inline-datefield-button {
+	background-image: url(../reindeer/datefield/img/popup-btn-black.png);/** sprite-ref: black-verticals */
+}
+
+.saprigrat .black .v-inline-datefield-popupcalendar .v-inline-datefield-button:active {
+	background-image: url(../reindeer/datefield/img/popup-btn-black-pressed.png);/** sprite-ref: black-verticals */
+}
+
+.saprigrat .black td.v-inline-datefield-calendarpanel-month {
+	background-image: url(../reindeer/datefield/img/header-bg-black.png);/** sprite-ref: black-verticals; sprite-alignment: repeat */
+	height: 21px;
+}
+
+.saprigrat .black span.v-inline-datefield-calendarpanel-month {
+	border-left: 1px solid #333638;
+	border-right: 1px solid #232527;
+	color: #c9ccce;
+	text-shadow: #000 0 -1px 0;
+	padding: 4px 10px 1px 10px;
+	margin-top: 0;
+}
+
+.saprigrat .black .v-inline-datefield-calendarpanel-prevyear button, .saprigrat .black .v-inline-datefield-calendarpanel-nextyear button, .saprigrat .black .v-inline-datefield-calendarpanel-prevmonth button, .saprigrat .black .v-inline-datefield-calendarpanel-nextmonth button {
+	background-image: url(../reindeer/datefield/img/year-prev-black.png);/** sprite-ref: black-verticals */
+	height: 21px;
+}
+
+.saprigrat .black .v-inline-datefield-calendarpanel-nextyear button {
+	background-image: url(../reindeer/datefield/img/year-next-black.png);/** sprite-ref: black-verticals */
+}
+
+.saprigrat .black .v-inline-datefield-calendarpanel-prevyear button:active, .v-ie .saprigrat .black .v-inline-datefield-calendarpanel-prevyear button.v-pressed {
+	background-image: url(../reindeer/datefield/img/year-prev-black-pressed.png);/** sprite-ref: black-verticals */
+}
+
+.saprigrat .black .v-inline-datefield-calendarpanel-nextyear button:active, .v-ie .saprigrat .black .v-inline-datefield-calendarpanel-nextyear button.v-pressed {
+	background-image: url(../reindeer/datefield/img/year-next-black-pressed.png);/** sprite-ref: black-verticals */
+}
+
+.saprigrat .black .v-inline-datefield-calendarpanel-prevmonth, .saprigrat .black .v-inline-datefield-calendarpanel-nextmonth {
+	background-image: url(../reindeer/datefield/img/header-bg-black.png);/** sprite-ref: black-verticals; sprite-alignment: repeat */
+}
+
+.saprigrat .black .v-inline-datefield-calendarpanel-prevmonth button, .saprigrat .black .v-inline-datefield-calendarpanel-nextmonth button {
+	border-left: 1px solid #333638;
+	border-right: 1px solid #232527;
+	background-image: url(../reindeer/datefield/img/month-prev-black.png);/** sprite-ref: black-verticals; sprite-alignment: center */
+	margin-top: 0;
+}
+
+.saprigrat .black .v-inline-datefield-calendarpanel-nextmonth button {
+	background-image: url(../reindeer/datefield/img/month-next-black.png);/** sprite-ref: black-verticals; sprite-alignment: center */
+}
+
+.saprigrat .black .v-inline-datefield-calendarpanel-prevmonth button:active, .v-ie .saprigrat .black .v-inline-datefield-calendarpanel-prevmonth button.v-pressed {
+	background-image: url(../reindeer/datefield/img/month-prev-black-pressed.png);/** sprite-ref: black-verticals; sprite-alignment: center */
+}
+
+.saprigrat .black .v-inline-datefield-calendarpanel-nextmonth button:active, .v-ie .saprigrat .black .v-inline-datefield-calendarpanel-nextmonth button.v-pressed {
+	background-image: url(../reindeer/datefield/img/month-next-black-pressed.png);/** sprite-ref: black-verticals; sprite-alignment: center */
+}
+
+.v-ie .saprigrat .black .v-inline-datefield-calendarpanel-prevmonth button, .v-ie .saprigrat .black .v-inline-datefield-calendarpanel-nextmonth button {
+	border: none;
+}
+
+.saprigrat .black .v-inline-datefield-calendarpanel-weekdays td {
+	background-image: url(../reindeer/datefield/img/weekday-bg-black.png);/** sprite-ref: black-verticals; sprite-alignment: repeat; sprite-margin-bottom: 3px */
+	color: #0a0b0b;
+	text-shadow: #5a5c5e 0 1px 0;
+}
+
+.saprigrat .black .v-inline-datefield-calendarpanel-weekdays strong {
+	border-top-color: #1b1c1d;
+}
+
+.saprigrat .black .v-inline-datefield-calendarpanel .v-first {
+	background-image: url(../reindeer/datefield/img/weekday-first-black.png);/** sprite-ref: black-verticals; sprite-margin-bottom: 3px */
+}
+
+.saprigrat .black .v-inline-datefield-calendarpanel .v-last {
+	background-image: url(../reindeer/datefield/img/weekday-last-black.png);/** sprite-ref: black-verticals; sprite-alignment: right */
+}
+
+.saprigrat .black .v-inline-datefield-prompt .v-inline-datefield-textfield {
+	color: #5f6366;
+}
+
+.saprigrat .v-inline-datefield {
+	line-height: 14px;
+}
+
+.saprigrat .v-formlayout-errorcell {
+	width: 13px;
+}
+
+.saprigrat .v-formlayout-cell .v-errorindicator {
+	width: 13px;
+	height: 16px;
+	background: transparent url(../reindeer/common/icons/error.png) no-repeat 50%;
+}
+
+.saprigrat .v-formlayout-captioncell {
+	text-align: right;
+	white-space: nowrap;
+}
+
+.saprigrat .v-formlayout-spacing > tbody > .v-formlayout-row > .v-formlayout-captioncell, .saprigrat .v-formlayout-spacing > tbody > .v-formlayout-row > .v-formlayout-contentcell, .saprigrat .v-formlayout-spacing > tbody > .v-formlayout-row > .v-formlayout-errorcell {
+	padding-top: 8px;
+}
+
+.saprigrat .v-formlayout-margin-top > tbody > .v-formlayout-firstrow > .v-formlayout-captioncell, .saprigrat .v-formlayout-margin-top > tbody > .v-formlayout-firstrow > .v-formlayout-contentcell, .saprigrat .v-formlayout-margin-top > tbody > .v-formlayout-firstrow > .v-formlayout-errorcell {
+	padding-top: 15px;
+}
+
+.saprigrat .v-formlayout-margin-bottom > tbody > .v-formlayout-lastrow > .v-formlayout-captioncell, .saprigrat .v-formlayout-margin-bottom > tbody > .v-formlayout-lastrow > .v-formlayout-contentcell, .saprigrat .v-formlayout-margin-bottom > tbody > .v-formlayout-lastrow > .v-formlayout-errorcell {
+	padding-bottom: 15px;
+}
+
+.saprigrat .v-formlayout-margin-left > tbody > .v-formlayout-row > .v-formlayout-captioncell {
+	padding-left: 18px;
+}
+
+.saprigrat .v-formlayout-margin-right > tbody > .v-formlayout-row > .v-formlayout-contentcell {
+	padding-right: 18px;
+}
+
+.saprigrat .v-form-errormessage {
+	background: transparent url(../reindeer/common/icons/error.png) no-repeat 3px 2px;
+	padding-left: 20px;
+	margin-bottom: 5px;
+	margin-top: 5px;
+	min-height: 20px;
+}
+
+.saprigrat .v-form fieldset {
+	border: none;
+	border-top: 1px solid #babfc0;
+}
+
+.saprigrat .v-form-nocaption fieldset {
+	border: none;
+}
+
+.saprigrat .v-form-nocaption legend {
+	display: none;
+}
+
+.saprigrat .v-form legend {
+	margin: 0 0 0 20px;
+	padding: 0 5px;
+	font-weight: bold;
+	color: #222;
+}
+
+.saprigrat .black .v-form legend {
+	color: #e3e6e8;
+}
+
+.saprigrat .v-label {
+	line-height: 18px;
+}
+
+.saprigrat .white .black, .saprigrat .blue .black {
+	color: #C9CCCE;
+	text-shadow: 0 0 1px #000;
+}
+
+.saprigrat .black .v-label-h1, .saprigrat .black .v-label-h2, .saprigrat .black .v-caption-h1, .saprigrat .black .v-caption-h2, .saprigrat .white .black .v-label-h1, .saprigrat .white .black .v-label-h2, .saprigrat .white .black .v-caption-h1, .saprigrat .white .black .v-caption-h2, .saprigrat .blue .black .v-label-h1, .saprigrat .blue .black .v-label-h2, .saprigrat .blue .black .v-caption-h1, .saprigrat .blue .black .v-caption-h2 {
+	color: #fff;
+	text-shadow: rgba(0, 0, 0, 0.8) 0 2px 2px;
+}
+
+.saprigrat .black .v-label-light, .saprigrat .white .black .v-label-light {
+	color: #72787c;
+}
+
+.saprigrat .black .v-label hr, .saprigrat .white .black .v-label hr {
+	background: #0c0d0e;
+	color: #0c0d0e;
+	border-bottom-color: #292b2e;
+}
+
+.saprigrat.v-app .white, .saprigrat .v-window .white, .saprigrat.v-app .blue, .saprigrat .v-window .blue {
+	color: #222;
+	text-shadow: none;
+}
+
+.saprigrat .blue .v-label-h1, .saprigrat .blue .v-label-h2, .saprigrat .blue .v-caption-h1, .saprigrat .blue .v-caption-h2, .saprigrat .white .blue .v-label-h1, .saprigrat .white .blue .v-label-h2, .saprigrat .white .blue .v-caption-h1, .saprigrat .white .blue .v-caption-h2 {
+	color: #fff;
+	text-shadow: rgba(0, 0, 0, 0.3) 0 1px 1px;
+}
+
+.saprigrat .blue .v-label-light, .saprigrat .white .blue .v-label-light {
+	color: #6e7c83;
+}
+
+.saprigrat .blue .v-label hr, .saprigrat .white .blue .v-label hr {
+	background: #a3bcc9;
+	color: #a3bcc9;
+	border-bottom-color: #cfe2eb;
+}
+
+.saprigrat .v-label-h1, .saprigrat .v-label-h2, .saprigrat .v-caption-h1, .saprigrat .v-caption-h2, .saprigrat .white .v-label-h1, .saprigrat .white .v-label-h2, .saprigrat .white .v-caption-h1, .saprigrat .white .v-caption-h2 {
+	font-family: Helvetica, Arial, "Lucida Grande", Geneva, Tahoma, Verdana, sans-serif;
+	font-size: 24px;
+	line-height: 30px;
+	font-weight: bold;
+	color: #44698b;
+	letter-spacing: -0.02em;
+	text-shadow: #fff 0 -1px 1px;
+}
+
+.saprigrat .v-label-h2, .saprigrat .v-caption-h2, .saprigrat .white .v-label-h2, .saprigrat .white .v-caption-h2 {
+	font-size: 16px;
+	line-height: 22px;
+}
+
+.saprigrat .v-label-light, .saprigrat .white .v-label-light {
+	font-size: 11px;
+	line-height: 13px;
+	color: #707070;
+}
+
+.saprigrat .v-label hr, .saprigrat .white .v-label hr {
+	height: 2px;
+	overflow: hidden;
+	background: #dcdcdc;
+	color: #dcdcdc;
+	border: none;
+	border-bottom: 1px solid #fff;
+}
+
+.v-sa .saprigrat .v-label hr, .v-ie8 .saprigrat .v-label hr {
+	height: 1px;
+}
+
+.saprigrat .v-table .v-label {
+	line-height: normal;
+}
+
+.saprigrat .v-orderedlayout-margin-top, .saprigrat .v-horizontallayout-margin-top, .saprigrat .v-verticallayout-margin-top, .saprigrat .v-layout.v-margin-top {
+	padding-top: 18px;
+}
+
+.saprigrat .v-orderedlayout-margin-right, .saprigrat .v-horizontallayout-margin-right, .saprigrat .v-verticallayout-margin-right, .saprigrat .v-layout.v-margin-right {
+	padding-right: 18px;
+}
+
+.saprigrat .v-orderedlayout-margin-bottom, .saprigrat .v-horizontallayout-margin-bottom, .saprigrat .v-verticallayout-margin-bottom, .saprigrat .v-layout.v-margin-bottom {
+	padding-bottom: 18px;
+}
+
+.saprigrat .v-orderedlayout-margin-left, .saprigrat .v-horizontallayout-margin-left, .saprigrat .v-verticallayout-margin-left, .saprigrat .v-layout.v-margin-left {
+	padding-left: 18px;
+}
+
+.saprigrat .v-orderedlayout-spacing-on, .saprigrat .v-horizontallayout-spacing-on, .saprigrat .v-verticallayout-spacing-on {
+	padding-top: 7px;
+	padding-left: 6px;
+}
+
+.saprigrat .v-spacing {
+	height: 7px;
+	width: 6px;
+}
+
+.saprigrat .v-verticallayout-blue, .saprigrat .v-horizontallayout-blue, .saprigrat .v-orderedlayout-blue, .saprigrat .v-gridlayout-blue, .saprigrat .v-csslayout-blue, .saprigrat .v-formlayout-blue, .saprigrat .v-splitpanel-vertical-blue, .saprigrat .v-splitpanel-horizontal-blue {
+	background-color: #bcd3de;
+}
+
+.saprigrat .v-panel-content > div.blue {
+	background-color: #bcd3de;
+}
+
+.saprigrat .v-verticallayout-white, .saprigrat .v-horizontallayout-white, .saprigrat .v-orderedlayout-white, .saprigrat .v-gridlayout-white, .saprigrat .v-csslayout-white, .saprigrat .v-formlayout-white, .saprigrat .v-splitpanel-vertical-white, .saprigrat .v-splitpanel-horizontal-white {
+	background-color: #fff;
+	color: #222;
+}
+
+.saprigrat .v-panel-content > div.white {
+	background-color: #fff;
+	color: #222;
+}
+
+.saprigrat .v-verticallayout-black, .saprigrat .v-horizontallayout-black, .saprigrat .v-orderedlayout-black, .saprigrat .v-gridlayout-black, .saprigrat .v-csslayout-black, .saprigrat .v-formlayout-black, .saprigrat .v-splitpanel-vertical-black, .saprigrat .v-splitpanel-horizontal-black {
+	background: #1e2022 url(../reindeer/layouts/img/black-bg.png) repeat-x;
+}
+
+.saprigrat .v-panel-content > div.black {
+	background: #1e2022 url(../reindeer/layouts/img/black-bg.png) repeat-x;
+}
+
+.saprigrat .v-link a:link span {
+	color: #1b699f;
+}
+
+.saprigrat .v-link a:visited span {
+	color: #5c7485;
+}
+
+.saprigrat .v-link a:hover span {
+	color: #2483c4;
+}
+
+.saprigrat .v-menubar {
+	height: 23px;
+	background: #323336 repeat-x;
+	background-image: url(../reindeer/menubar/img/bg.png);/** sprite-ref: verticals; sprite-alignment: repeat */
+	color: #d1d3d6;
+	text-shadow: rgba(0, 0, 0, 0.9) 0 1px 0;
+	padding: 0 8px;
+}
+
+.saprigrat .v-menubar .v-menubar-menuitem {
+	padding: 3px 8px;
+	height: 17px;
+	line-height: 16px;
+}
+
+.saprigrat .v-menubar .v-menubar-menuitem:hover {
+	color: #fff;
+}
+
+.saprigrat .v-menubar-submenu {
+	background: #f8f8f9;
+	border: none;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-o-border-radius: 3px;
+	overflow: hidden;
+	padding: 4px 0;
+}
+
+.saprigrat .v-menubar-submenu .v-menubar-menuitem {
+	padding: 1px 26px 1px 10px;
+	line-height: 16px;
+}
+
+.saprigrat .v-menubar-submenu .v-menubar-menuitem-caption .v-icon {
+	vertical-align: middle;
+}
+
+.saprigrat .v-menubar .v-menubar-menuitem-selected, .saprigrat .v-menubar-submenu .v-menubar-menuitem-selected {
+	background: #4d749f repeat-x;
+	background-image: url(../reindeer/common/img/sel-bg.png);/** sprite-ref: verticals; sprite-alignment: repeat */
+	color: #fff;
+	text-shadow: 0 1px 0 #3b5a7a;
+}
+
+.saprigrat .v-menubar .v-menubar-menuitem-selected {
+	background-image: url(../reindeer/menubar/img/menu-sel-bg.png);/** sprite-ref: verticals; sprite-alignment: repeat; sprite-margin-bottom: 1px  */
+}
+
+.saprigrat .v-menubar-submenu .v-menubar-submenu-indicator {
+	background: transparent url(../reindeer/menubar/img/submenu-icon.png) no-repeat right 70%;
+	width: 26px;
+	height: 16px;
+	text-indent: -9999px;
+	font-size: 10.8px;
+}
+
+.saprigrat .v-menubar-submenu .v-menubar-menuitem-selected .v-menubar-submenu-indicator {
+	background-image: url(../reindeer/menubar/img/submenu-icon-hover.png);
+}
+
+.saprigrat .v-menubar-submenu-check-column .v-menubar-menuitem {
+	padding-left: 6px;
+}
+
+.saprigrat .v-menubar-submenu-check-column .v-menubar-menuitem-caption {
+	padding-left: 18px;
+}
+
+.saprigrat .v-menubar-submenu .v-menubar-menuitem-checked .v-menubar-menuitem-caption {
+	background: transparent url(../reindeer/menubar/img/checked.png) no-repeat left;
+}
+
+.saprigrat .v-menubar-submenu .v-menubar-menuitem-unchecked .v-menubar-menuitem-caption {
+	background: transparent url(../reindeer/menubar/img/unchecked.png) no-repeat left;
+}
+
+.saprigrat .v-menubar-submenu .v-menubar-menuitem-selected-checked .v-menubar-menuitem-caption {
+	background: transparent url(../reindeer/menubar/img/checked-selected.png) no-repeat left;
+}
+
+.saprigrat .v-menubar-submenu .v-menubar-menuitem-selected-unchecked .v-menubar-menuitem-caption {
+	background: transparent url(../reindeer/menubar/img/unchecked-selected.png) no-repeat left;
+}
+
+.saprigrat .v-Notification {
+	color: #fff;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	font-size: 16px;
+	background: #c8ccd0;
+	font-weight: bold;
+}
+
+.v-ie9 .saprigrat .v-Notification H1, .v-ie10 .saprigrat .v-Notification H1 {
+	font-weight: bold;
+}
+
+.saprigrat .v-Notification p {
+	line-height: 1.3;
+}
+
+.saprigrat .v-Notification-warning {
+	background: #fdf3b5;
+	color: #ca9a61;
+	border: 3px solid #fee3af;
+}
+
+.saprigrat .v-Notification-error {
+	background: #b40000 url(../reindeer/notification/img/error-close.png) no-repeat right top;
+	border: 3px solid #ca3030;
+}
+
+.saprigrat .v-Notification-tray {
+	margin: 0 5px 5px 0;
+	background: #3b3c3e;
+	border: 2px solid #585b5c;
+	padding: 0.8em 0.9em;
+}
+
+.saprigrat .v-Notification-tray h1 {
+	font-size: 14px;
+	line-height: 18px;
+}
+
+.saprigrat .v-Notification-tray p {
+	font-size: 12px;
+	font-weight: normal;
+}
+
+.saprigrat .v-Notification-system {
+	background-color: #b40000;
+}
+
+.saprigrat .blue .v-panel-caption, .saprigrat .blue .v-panel-nocaption, .saprigrat .blue .v-panel-content {
+	border-color: #a8bcc5;
+}
+
+.saprigrat .v-panel-caption, .saprigrat .v-panel-nocaption, .saprigrat .white .v-panel-caption, .saprigrat .white .v-panel-nocaption {
+	border-bottom: 1px solid #e5e5e5;
+	line-height: 16px;
+}
+
+.v-webkit .saprigrat .v-panel-caption, .v-webkit .saprigrat .v-panel-nocaption, .v-gecko .saprigrat .v-panel-caption, .v-gecko .saprigrat .v-panel-nocaption, .v-ie9 .saprigrat .v-panel-caption, .v-ie9 .saprigrat .v-panel-nocaption, .v-ie10 .saprigrat .v-panel-caption, .v-ie10 .saprigrat .v-panel-nocaption {
+	border-bottom-color: rgba(0, 0, 0, 0.08);
+}
+
+.v-webkit .saprigrat .v-panel-content, .v-gecko .saprigrat .v-panel-content, .v-ie9 .saprigrat .v-panel-content, .v-ie10 .saprigrat .v-panel-content {
+	border-top-color: rgba(0, 0, 0, 0.07);
+}
+
+.v-webkit .saprigrat .v-panel-deco, .v-gecko .saprigrat .v-panel-deco, .v-ie9 .saprigrat .v-panel-deco, .v-ie10 .saprigrat .v-panel-deco {
+	border-top-color: rgba(0, 0, 0, 0.1);
+	background: rgba(0, 0, 0, 0.08);
+}
+
+.saprigrat .v-panel-caption {
+	padding-bottom: 2px;
+}
+
+.saprigrat .v-panel-content, .saprigrat .white .v-panel-content {
+	background: #fff;
+	border: 1px solid #dcdcdc;
+	border-bottom: none;
+	border-top: none;
+}
+
+.saprigrat .blue .v-panel-deco {
+	border-color: #92a3ac;
+	background: #adc2cd;
+}
+
+.saprigrat .v-panel-deco, .saprigrat .white .v-panel-deco {
+	height: 1px;
+	border-top: 1px solid #bebebe;
+	background: #e2e2e2;
+	overflow: hidden;
+}
+
+.saprigrat .v-panel-caption .v-errorindicator {
+	height: 16px;
+	width: 13px;
+	background: url(../reindeer/common/icons/error.png) no-repeat 50%;
+	display: inline;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.saprigrat .v-panel-light .v-panel-caption-light, .saprigrat .v-panel-light .v-panel-nocaption-light {
+	border: none;
+}
+
+.saprigrat .v-panel-light .v-panel-content-light {
+	border: none;
+	background: transparent;
+}
+
+.saprigrat .v-panel-light .v-panel-deco-light {
+	height: 0;
+	border: none;
+}
+
+.saprigrat .v-popupview {
+	color: #1b699f;
+}
+
+.saprigrat .v-popupview:hover {
+	color: #2483c4;
+}
+
+.saprigrat .v-popupview-popup {
+	background: #fff;
+	padding: 3px;
+}
+
+.saprigrat .v-progressbar-wrapper {
+	background: #dfe2e4 url(../reindeer/progressindicator/img/base.gif) repeat-x;
+	border: 1px solid #bfbfbf;
+}
+
+.saprigrat .v-disabled .v-progressbar-wrapper {
+	background-image: url(../reindeer/progressindicator/img/disabled.gif);
+}
+
+.saprigrat .v-progressbar-indicator {
+	background: #f7f9f9 url(../reindeer/progressindicator/img/progress.png);
+}
+
+.saprigrat .v-progressindicator-wrapper {
+	background: #dfe2e4 url(../reindeer/progressindicator/img/base.gif) repeat-x;
+	border: 1px solid #bfbfbf;
+}
+
+.saprigrat .v-disabled .v-progressindicator-wrapper {
+	background-image: url(../reindeer/progressindicator/img/disabled.gif);
+}
+
+.saprigrat .v-progressindicator-indicator {
+	background: #f7f9f9 url(../reindeer/progressindicator/img/progress.png);
+}
+
+.saprigrat .v-filterselect {
+	height: 24px;
+	background-repeat: no-repeat;
+	background-image: url(../reindeer/select/img/left.png);/** sprite-ref: verticals; sprite-margin-bottom: 1px */
+	padding-left: 2px;
+	padding-right: 25px;
+}
+
+.saprigrat.v-app .v-filterselect-input, .saprigrat .v-window .v-filterselect-input, .saprigrat .v-popupview-popup .v-filterselect-input {
+	background: transparent repeat-x;
+	background-image: url(../reindeer/select/img/center.png);/** sprite-ref: verticals; sprite-alignment: repeat; sprite-margin-bottom: 1px */
+	border: none;
+	height: 24px;
+}
+
+.saprigrat.v-app input.v-filterselect-input, .saprigrat .v-window input.v-filterselect-input, .saprigrat .v-popupview-popup input.v-filterselect-input {
+	padding: 4px 0 4px 2px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.saprigrat .v-filterselect-prompt .v-filterselect-input {
+	font-style: normal;
+}
+
+.saprigrat .v-filterselect-input:focus {
+	outline: none;
+}
+
+.saprigrat .v-filterselect-focus {
+	background-image: url(../reindeer/select/img/left-focus.png);/** sprite-ref: verticals; sprite-margin-bottom: 1px */
+}
+
+.saprigrat .v-filterselect-focus .v-filterselect-input {
+	background-image: url(../reindeer/select/img/center-focus.png);/** sprite-ref: verticals; sprite-alignment: repeat */
+}
+
+.saprigrat .v-filterselect-button {
+	overflow: hidden;
+	width: 25px;
+	height: 24px;
+	background-position: 0 0;
+	background-image: url(../reindeer/select/img/right.png);/** sprite-ref: verticals ; sprite-margin-bottom: 1px */
+	cursor: default;
+	margin-right: -25px;
+}
+
+.saprigrat .v-filterselect-button:hover {
+	background-image: url(../reindeer/select/img/right-hover.png);/** sprite-ref: verticals */
+}
+
+.saprigrat .v-filterselect-button:active {
+	background-image: url(../reindeer/select/img/right-pressed.png);/** sprite-ref: verticals */
+}
+
+.saprigrat .v-filterselect-focus .v-filterselect-button {
+	background-image: url(../reindeer/select/img/right-focus.png);/** sprite-ref: verticals */
+}
+
+.saprigrat .v-filterselect-focus .v-filterselect-button:hover {
+	background-image: url(../reindeer/select/img/right-focus-hover.png);/** sprite-ref: verticals */
+}
+
+.saprigrat .v-filterselect-focus .v-filterselect-button:active {
+	background-image: url(../reindeer/select/img/right-focus-pressed.png);/** sprite-ref: verticals */
+}
+
+.saprigrat .v-disabled .v-filterselect-button:hover, .saprigrat .v-readonly .v-filterselect-button:hover {
+	background-image: url(../reindeer/select/img/right.png);/** sprite-ref: verticals */
+}
+
+.saprigrat .v-filterselect-suggestpopup {
+	background: #f8f8f9;
+	border: none;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-o-border-radius: 3px;
+	overflow: hidden;
+}
+
+.saprigrat .v-filterselect-suggestmenu {
+	margin: 4px 0;
+}
+
+.saprigrat .v-filterselect-suggestmenu .gwt-MenuItem {
+	padding: 1px 8px;
+	height: 16px;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	cursor: default;
+}
+
+.saprigrat .v-filterselect-suggestmenu .gwt-MenuItem .v-icon {
+	margin-right: 3px;
+}
+
+.saprigrat .v-filterselect-suggestmenu .gwt-MenuItem-selected {
+	background: transparent repeat-x;
+	background-image: url(../reindeer/common/img/sel-bg.png);/** sprite-ref: verticals; sprite-alignment: repeat */
+	color: #fff;
+	text-shadow: #3b5a7a 0 1px 0;
+}
+
+.saprigrat .v-filterselect-nextpage, .saprigrat .v-filterselect-nextpage-off, .saprigrat .v-filterselect-prevpage-off, .saprigrat .v-filterselect-prevpage {
+	height: 11px;
+	width: 100%;
+	background: transparent;
+	margin-bottom: -4px;
+}
+
+.saprigrat .v-filterselect-nextpage, .saprigrat .v-filterselect-nextpage-off {
+	margin: -4px 0 0;
+}
+
+.saprigrat .v-filterselect-nextpage:hover {
+	background-repeat: repeat-x;
+	background-image: url(../reindeer/select/img/page-down-hover.png);/** sprite-ref: verticals; sprite-alignment: repeat */
+}
+
+.saprigrat .v-filterselect-prevpage:hover {
+	background-repeat: repeat-x;
+	background-image: url(../reindeer/select/img/page-up-hover.png);/** sprite-ref: verticals; sprite-alignment: repeat */
+}
+
+.saprigrat .v-filterselect-nextpage:active {
+	background-repeat: repeat-x;
+	background-image: url(../reindeer/select/img/page-down-pressed.png);/** sprite-ref: verticals; sprite-alignment: repeat */
+}
+
+.saprigrat .v-filterselect-prevpage:active {
+	background-repeat: repeat-x;
+	background-image: url(../reindeer/select/img/page-up-pressed.png);/** sprite-ref: verticals; sprite-alignment: repeat */
+}
+
+.saprigrat .v-filterselect-nextpage-off span, .saprigrat .v-filterselect-prevpage-off span {
+	display: none;
+}
+
+.saprigrat .v-filterselect-nextpage span, .saprigrat .v-filterselect-prevpage span {
+	display: block;
+	height: 11px;
+	width: 100%;
+	overflow: hidden;
+	text-indent: -99999px;
+	background: transparent no-repeat center 3px;
+	background-image: url(../reindeer/select/img/arrow-down.png);/** sprite-ref: verticals; sprite-margin-top: 3px; sprite-margin-bottom: 3px; sprite-alignment: center */
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+}
+
+.saprigrat .v-filterselect-prevpage span {
+	background-image: url(../reindeer/select/img/arrow-up.png);/** sprite-ref: verticals; sprite-margin-top: 3px; sprite-margin-bottom: 3px; sprite-alignment: center */
+}
+
+.saprigrat .v-filterselect-nextpage:hover span {
+	background-image: url(../reindeer/select/img/arrow-down-hover.png);/** sprite-ref: verticals; sprite-margin-top: 3px; sprite-margin-bottom: 3px; sprite-alignment: center */
+}
+
+.saprigrat .v-filterselect-prevpage:hover span {
+	background-image: url(../reindeer/select/img/arrow-up-hover.png);/** sprite-ref: verticals; sprite-margin-top: 3px; sprite-margin-bottom: 3px; sprite-alignment: center */
+}
+
+.saprigrat .v-filterselect-status {
+	text-shadow: #e9eaeb 0 1px 0;
+	font-size: 11px;
+	line-height: normal;
+	width: 100%;
+	padding: 3px 0;
+	height: 11px;
+	overflow: hidden;
+	background-repeat: repeat-x;
+	background-image: url(../reindeer/select/img/status-bg.png);/** sprite-ref: verticals; sprite-alignment: repeat */
+	-moz-border-radius-bottomleft: 3px;
+	-moz-border-radius-bottomright: 3px;
+	-webkit-border-bottom-left-radius: 3px;
+	-webkit-border-bottom-right-radius: 3px;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+}
+
+.v-ie .saprigrat .v-filterselect-suggestmenu .gwt-MenuItem-selected {
+	background: transparent url(../reindeer/common/img/sel-bg.png) repeat-x;
+}
+
+.v-ie .saprigrat .v-filterselect-nextpage:hover {
+	background: transparent url(../reindeer/select/img/page-down-hover.png) repeat-x;
+}
+
+.v-ie .saprigrat .v-filterselect-prevpage:hover {
+	background: transparent url(../reindeer/select/img/page-up-hover.png) repeat-x;
+}
+
+.v-ie .saprigrat .v-filterselect-prevpage span {
+	background: transparent url(../reindeer/select/img/arrow-up.png) no-repeat center 3px;
+}
+
+.v-ie .saprigrat .v-filterselect-nextpage span {
+	background: transparent url(../reindeer/select/img/arrow-down.png) no-repeat center 3px;
+}
+
+.v-ie .saprigrat .v-filterselect-prevpage:hover span {
+	background: transparent url(../reindeer/select/img/arrow-up-hover.png) no-repeat center 3px;
+}
+
+.v-ie .saprigrat .v-filterselect-nextpage:hover span {
+	background: transparent url(../reindeer/select/img/arrow-down-hover.png) no-repeat center 3px;
+}
+
+.v-ie .saprigrat .v-filterselect-status {
+	background: transparent url(../reindeer/select/img/status-bg.png) repeat-x;
+}
+
+.saprigrat .v-filterselect .v-icon {
+	width: 16px;
+	position: relative;
+}
+
+.saprigrat .v-filterselect .v-icon + .v-filterselect-input {
+	margin-left: -16px;
+	padding-left: 18px;
+}
+
+.saprigrat .black .v-filterselect {
+	background-image: url(../reindeer/select/img/black/left-black.png);/** sprite-ref: black-verticals; sprite-margin-bottom: 1px */
+}
+
+.saprigrat.v-app .black .v-filterselect-input, .saprigrat .v-window .black .v-filterselect-input, .saprigrat .v-window-black .v-filterselect-input, .saprigrat .v-popupview-popup .black .v-filterselect-input {
+	color: #c9ccce;
+	background-image: url(../reindeer/select/img/black/center-black.png);/** sprite-ref: black-verticals; sprite-alignment: repeat; sprite-margin-bottom: 1px */
+}
+
+.saprigrat .black .v-filterselect-focus {
+	background-image: url(../reindeer/select/img/black/left-black-focus.png);/** sprite-ref: black-verticals; sprite-margin-bottom: 1px */
+}
+
+.saprigrat .black .v-filterselect-focus .v-filterselect-input {
+	background-image: url(../reindeer/select/img/black/center-black-focus.png);/** sprite-ref: black-verticals; sprite-alignment: repeat; sprite-margin-bottom: 1px */
+}
+
+.saprigrat .black .v-filterselect-button {
+	background-image: url(../reindeer/select/img/black/right-black.png);/** sprite-ref: black-verticals; sprite-margin-bottom: 1px */
+}
+
+.saprigrat .black .v-filterselect-button:hover {
+	background-image: url(../reindeer/select/img/black/right-black-hover.png);/** sprite-ref: black-verticals; sprite-margin-bottom: 1px */
+}
+
+.saprigrat .black .v-filterselect-button:active {
+	background-image: url(../reindeer/select/img/black/right-black-pressed.png);/** sprite-ref: black-verticals; sprite-margin-bottom: 1px */
+}
+
+.saprigrat .black .v-filterselect-focus .v-filterselect-button {
+	background-image: url(../reindeer/select/img/black/right-black-focus.png);/** sprite-ref: black-verticals; sprite-margin-bottom: 1px */
+}
+
+.saprigrat .black .v-filterselect-focus .v-filterselect-button:hover {
+	background-image: url(../reindeer/select/img/black/right-black-focus-hover.png);/** sprite-ref: black-verticals; sprite-margin-bottom: 1px */
+}
+
+.saprigrat .black .v-filterselect-focus .v-filterselect-button:active {
+	background-image: url(../reindeer/select/img/black/right-black-focus-pressed.png);/** sprite-ref: black-verticals; sprite-margin-bottom: 1px */
+}
+
+.saprigrat .black .v-disabled .v-filterselect-button:hover, .saprigrat .black .v-readonly .v-filterselect-button:hover {
+	background-image: url(../reindeer/select/img/black/right-black.png);/** sprite-ref: black-verticals; sprite-margin-bottom: 1px */
+}
+
+.saprigrat .black .v-filterselect-prompt .v-filterselect-input {
+	color: #5f6366;
+}
+
+.saprigrat .black .v-select select, .saprigrat .black .v-select-twincol select {
+	border-color: #38393a;
+	border-top-color: #2c2d2e;
+	border-bottom-color: #3e3f3f;
+	background: #151717;
+	color: #c9ccce;
+}
+
+.saprigrat .v-slider {
+	border-top: 1px solid #9a9c9e;
+	border-bottom: 1px solid #bdbfc1;
+	margin: 4px 0;
+}
+
+.saprigrat .v-slider-base {
+	height: 1px;
+	background: #e0e2e2;
+	border-top: 1px solid #adb0b1;
+	border-left: 1px solid #a0a3a6;
+	border-right: 1px solid #a0a3a6;
+}
+
+.saprigrat .v-slider-handle {
+	background: transparent;
+	background-image: url(../reindeer/slider/img/knob.png);/** sprite-ref: verticals */
+	width: 10px;
+	height: 10px;
+	margin-top: -5px;
+}
+
+.saprigrat .v-slider-handle-active {
+	background-image: url(../reindeer/slider/img/knob-pressed.png);/** sprite-ref: verticals */
+}
+
+.saprigrat .v-slider-vertical {
+	width: 2px;
+	margin: 0 5px;
+	border: none;
+	border-left: 1px solid #9a9c9e;
+	border-right: 1px solid #bdbfc1;
+}
+
+.saprigrat .v-slider-vertical .v-slider-base {
+	width: 2px;
+	border-left: 1px solid #adb0b1;
+	border-right: none;
+	border-top: 1px solid #adb0b1;
+	border-bottom: 1px solid #adb0b1;
+}
+
+.saprigrat .v-slider-vertical .v-slider-handle {
+	width: 10px;
+	height: 10px;
+	margin-left: -5px;
+}
+
+.saprigrat .v-splitpanel-hsplitter, .saprigrat .v-splitpanel-hsplitter-locked {
+	width: 7px;
+	background-repeat: repeat-y;
+	background-image: url(../reindeer/splitpanel/img/hor-bg.png);/** sprite-ref: horizontals; sprite-alignment: repeat */
+}
+
+.saprigrat .v-splitpanel-hsplitter div {
+	width: 7px;
+	height: 100%;
+	background: transparent;
+	background-repeat: no-repeat;
+	background-position: 50%;
+	background-image: url(../reindeer/splitpanel/img/hor-handle.png);/** sprite-ref: horizontals; sprite-alignment: center */
+}
+
+.saprigrat .v-splitpanel-vsplitter, .saprigrat .v-splitpanel-vsplitter-locked {
+	height: 7px;
+	background-repeat: repeat-x;
+	background-image: url(../reindeer/splitpanel/img/ver-bg.png);/** sprite-ref: verticals; sprite-alignment: repeat */
+}
+
+.saprigrat .v-splitpanel-vsplitter div {
+	height: 7px;
+	background: transparent;
+	background-repeat: no-repeat;
+	background-position: 50%;
+	background-image: url(../reindeer/splitpanel/img/ver-handle.png);/** sprite-ref: verticals; sprite-alignment: center */
+}
+
+.saprigrat .blue .v-splitpanel-hsplitter-small, .saprigrat .blue .v-splitpanel-hsplitter-small-locked {
+	background: #7c8a91;
+}
+
+.saprigrat .black .v-splitpanel-hsplitter-small, .saprigrat .black .v-splitpanel-hsplitter-small-locked {
+	background: #4e5253;
+}
+
+.saprigrat .v-splitpanel-hsplitter-small, .saprigrat .v-splitpanel-hsplitter-small-locked, .saprigrat .white .v-splitpanel-hsplitter-small, .saprigrat .white .v-splitpanel-hsplitter-small-locked {
+	width: 1px;
+	background: #949698;
+}
+
+.saprigrat .v-splitpanel-vsplitter-small, .saprigrat .v-splitpanel-vsplitter-small-locked, .saprigrat .white .v-splitpanel-vsplitter-small, .saprigrat .white .v-splitpanel-vsplitter-small-locked {
+	height: 1px;
+	background: #949698;
+}
+
+.saprigrat .v-splitpanel-hsplitter-small div {
+	width: 5px;
+	margin-left: -2px;
+	background: transparent;
+}
+
+.saprigrat .v-splitpanel-vsplitter-small div {
+	height: 5px;
+	margin-top: -2px;
+	background: transparent;
+}
+
+.saprigrat .blue .v-table-header-wrap {
+	border-color: #92a2aa;
+}
+
+.saprigrat .blue .v-table-body {
+	border-color: #92a2aa;
+	border-top-color: #c2c3c4;
+}
+
+.saprigrat .v-table-header-wrap, .saprigrat .white .v-table-header-wrap, .saprigrat .v-table-footer-wrap, .saprigrat .white .v-table-footer-wrap, .saprigrat .v-table-header-drag {
+	border-color: #c2c3c4;
+	background: transparent repeat-x;
+	background-image: url(../reindeer/table/img/header-bg-light.png);/** sprite-ref: verticals; sprite-alignment: repeat */
+	height: 20px;
+	text-transform: uppercase;
+	font-size: 10px;
+	font-weight: bold;
+	color: #222;
+	text-shadow: #f3f5f8 0 1px 0;
+	line-height: normal;
+}
+
+.saprigrat .v-table-footer-wrap, .saprigrat .white .v-table-footer-wrap {
+	text-transform: none;
+	font-size: 12px;
+	font-weight: normal;
+}
+
+.saprigrat .v-table-footer td, .saprigrat .white .v-table-footer td {
+	border-color: #c2c3c4;
+}
+
+.saprigrat .v-table-footer-container {
+	padding-right: 7px;
+}
+
+.saprigrat .v-table-header, .saprigrat .v-table-footer, .saprigrat .v-table-footer table {
+	height: 20px;
+}
+
+.saprigrat .v-table-caption-container, .saprigrat .v-table-header-drag {
+	padding-top: 4px;
+	padding-right: 4px;
+}
+
+.saprigrat .v-table-caption-container .v-icon, .saprigrat .v-table-header-drag .v-icon {
+	height: 16px;
+	margin: -4px 3px 0 0;
+	vertical-align: middle;
+}
+
+.v-ie .saprigrat .v-table-caption-container .v-icon, .v-ie .saprigrat .v-table-header-drag .v-icon {
+	margin-top: -3px;
+}
+
+.saprigrat .v-table-resizer {
+	height: 20px;
+	width: 2px;
+	background: transparent;
+	border-right: 1px solid #c2c3c4;
+}
+
+.saprigrat .v-table-sort-indicator {
+	background: transparent;
+	width: 0px;
+	height: 20px;
+}
+
+.saprigrat .v-table-header-cell-asc .v-table-sort-indicator {
+	background: transparent no-repeat right 7px;
+	background-image: url(../reindeer/table/img/asc-light.png);/** sprite-ref: verticals; sprite-alignment: right; sprite-margin-top: 7px; sprite-margin-bottom: 6px; sprite-margin-right: 6px; */
+	width: 16px;
+}
+
+.saprigrat .v-table-header-cell-desc .v-table-sort-indicator {
+	background: transparent no-repeat right 7px;
+	background-image: url(../reindeer/table/img/desc-light.png);/** sprite-ref: verticals; sprite-alignment: right; sprite-margin-top: 7px; sprite-margin-bottom: 6px; sprite-margin-right: 6px; */
+	width: 16px;
+}
+
+.saprigrat .v-table-body, .saprigrat .white .v-table-body {
+	border-color: #c2c3c4;
+	background: #fff;
+}
+
+.saprigrat .v-table-cell-content {
+	padding-top: 0;
+	border-right-color: #d3d4d5;
+	vertical-align: top;
+}
+
+.saprigrat .v-table-cell-wrapper {
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+
+.saprigrat .v-table-row-odd {
+	background: #eff0f1;
+}
+
+.saprigrat .v-table-generated-row {
+	background: #dcdee0;
+	text-transform: uppercase;
+	font-size: 10px;
+	font-weight: bold;
+	color: #222;
+	text-shadow: #f3f5f8 0 1px 0;
+	line-height: normal;
+}
+
+.saprigrat .v-table-generated-row .v-table-cell-wrapper {
+	padding-top: 4px;
+	padding-bottom: 5px;
+}
+
+.saprigrat .v-table-cell-content:last-child {
+	border-right-color: transparent;
+}
+
+.saprigrat .v-table .v-selected, .saprigrat .black .v-table .v-selected {
+	background: #4d749f url(../reindeer/common/img/sel-bg.png) repeat-x;
+	color: #fff;
+	text-shadow: #3b5a7a 0 1px 0;
+}
+
+.saprigrat .v-table .v-selected .v-table-cell-content {
+	border-right-color: #466c90;
+}
+
+.saprigrat .v-table-column-selector {
+	width: 16px;
+	height: 20px;
+	margin-top: -20px;
+	background: transparent no-repeat;
+	background-image: url(../reindeer/table/img/col-sel-light.png);/** sprite-ref: verticals */
+}
+
+.saprigrat .v-table-column-selector:active {
+	background-image: url(../reindeer/table/img/col-sel-light-pressed.png);/** sprite-ref: verticals */
+}
+
+.saprigrat .v-table-focus-slot-left {
+	border-left: 1px solid #222;
+	margin-bottom: -20px;
+	width: auto;
+}
+
+.saprigrat .v-table-focus-slot-right {
+	border-right-color: #222;
+	margin-right: 0;
+}
+
+.saprigrat .v-table-header-drag {
+	padding-left: 6px;
+	height: 16px;
+}
+
+.saprigrat .v-table-header-drag img {
+	height: 16px;
+	margin: -3px 3px 0 0;
+}
+
+.saprigrat .v-table-scrollposition {
+	width: auto;
+	background: transparent;
+	border: none;
+}
+
+.saprigrat .v-table-scrollposition span {
+	background: transparent repeat-x;
+	background-image: url(../reindeer/table/img/scroll-indic-bg.png);/** sprite-ref: verticals; sprite-alignment: repeat */
+	border: 1px solid #939494;
+	border: none;
+	border-radius-bottomleft: 4px;
+	border-radius-bottomright: 4px;
+	-moz-border-radius-bottomleft: 4px;
+	-moz-border-radius-bottomright: 4px;
+	-webkit-border-bottom-left-radius: 4px;
+	-webkit-border-bottom-right-radius: 4px;
+	height: 13px;
+	padding: 4px 30px;
+	white-space: nowrap;
+	color: #222;
+	text-shadow: #fff 0 1px 0;
+	position: relative;
+	top: 1px;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 2px;
+	-moz-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 2px;
+}
+
+.saprigrat .v-table-borderless .v-table-scrollposition span {
+	top: 0;
+}
+
+.saprigrat .v-contextmenu .v-on, .saprigrat .v-contextmenu .v-off {
+	display: inline-block;
+	zoom: 1;
+	background: transparent no-repeat 0 4px;
+	background-image: url(../reindeer/common/icons/bullet.png);/** sprite-ref: verticals; sprite-margin-top: 4px; sprite-margin-bottom: 4px */
+	padding-left: 12px;
+	padding-right: 4px;
+}
+
+.saprigrat .v-contextmenu .v-off {
+	background-image: none;
+	color: #666;
+}
+
+.saprigrat .v-contextmenu .gwt-MenuItem-selected .v-on {
+	background-image: url(../reindeer/common/icons/bullet-white.png);/** sprite-ref: verticals; sprite-margin-top: 4px; sprite-margin-bottom: 5px */
+}
+
+.saprigrat .v-table-strong .v-table-header-wrap, .saprigrat .v-table-strong .v-table-header-drag {
+	border-color: #2b3033;
+	border-top-color: #2b3033;
+	background-image: url(../reindeer/table/img/header-bg.png);/** sprite-ref: verticals; sprite-alignment: repeat */
+	color: #e7e9ea;
+	text-shadow: #000 0 -1px 0;
+}
+
+.saprigrat .v-table-strong .v-table-body {
+	border-top-color: #2b3033;
+}
+
+.saprigrat .v-table-strong .v-table-resizer {
+	border-right-color: #1c1f21;
+}
+
+.saprigrat .v-table-strong .v-table-header-cell-asc .v-table-sort-indicator {
+	background-image: url(../reindeer/table/img/asc.png);/** sprite-ref: verticals; sprite-alignment: right; sprite-margin-top: 7px; sprite-margin-bottom: 6px; sprite-margin-right: 6px; */
+}
+
+.saprigrat .v-table-strong .v-table-header-cell-desc .v-table-sort-indicator {
+	background-image: url(../reindeer/table/img/desc.png);/** sprite-ref: verticals; sprite-alignment: right; sprite-margin-top: 7px; sprite-margin-bottom: 6px; sprite-margin-right: 6px; */
+}
+
+.saprigrat .v-table-strong .v-table-column-selector {
+	background-image: url(../reindeer/table/img/col-sel.png);/** sprite-ref: verticals */
+}
+
+.saprigrat .v-table-strong .v-table-column-selector:active {
+	background-image: url(../reindeer/table/img/col-sel-pressed.png);/** sprite-ref: verticals */
+}
+
+.saprigrat .v-table-strong .v-table-focus-slot-left, .saprigrat .v-table-strong .v-table-focus-slot-right {
+	border-color: #9ca1a5;
+}
+
+.saprigrat .black .v-table-header-wrap, .saprigrat .black .v-table-header-drag {
+	border-color: #252729;
+	background-image: url(../reindeer/table/img/header-bg-black.png);/** sprite-ref: black-verticals; sprite-alignment: repeat */
+	color: #e7eaee;
+	text-shadow: #000 0 -1px 0;
+}
+
+.saprigrat .black .v-table-resizer {
+	border-right-color: #252729;
+}
+
+.saprigrat .black .v-table-header-cell-asc .v-table-sort-indicator {
+	background-image: url(../reindeer/table/img/asc.png);/** sprite-ref: black-verticals; sprite-alignment: right; sprite-margin-top: 7px; sprite-margin-bottom: 6px; sprite-margin-right: 6px; */
+}
+
+.saprigrat .black .v-table-header-cell-desc .v-table-sort-indicator {
+	background-image: url(../reindeer/table/img/desc.png);/** sprite-ref: black-verticals; sprite-alignment: right; sprite-margin-top: 7px; sprite-margin-bottom: 6px; sprite-margin-right: 6px; */
+}
+
+.saprigrat .black .v-table-column-selector {
+	background-image: url(../reindeer/table/img/col-sel-black.png);/** sprite-ref: black-verticals */
+}
+
+.saprigrat .black .v-table-column-selector:active {
+	background-image: url(../reindeer/table/img/col-sel-black-pressed.png);/** sprite-ref: black-verticals */
+}
+
+.saprigrat .black .v-table-focus-slot-left, .saprigrat .black .v-table-focus-slot-right {
+	border-color: #9ca1a5;
+}
+
+.saprigrat .black .v-table-body {
+	border-color: #252729;
+	background: transparent;
+}
+
+.saprigrat .black .v-table-cell-content {
+	border-right-color: #252729;
+	border-bottom: 1px solid #252729;
+}
+
+.saprigrat .black .v-table-cell-wrapper {
+	padding-bottom: 2px;
+}
+
+.saprigrat .black .v-table-row-odd {
+	background: transparent;
+}
+
+.saprigrat .black .v-table .v-selected .v-table-cell-content {
+	border-bottom: 1px solid #4d749f;
+}
+
+.saprigrat .v-table-borderless .v-table-header-wrap, .saprigrat .v-table-borderless .v-table-body {
+	border: none;
+}
+
+.saprigrat .v-tabsheet-tabitemcell, .saprigrat .v-tabsheet-spacertd {
+	height: 32px;
+}
+
+.saprigrat .v-tabsheet-tabitemcell {
+	background: no-repeat;
+	background-image: url(../reindeer/tabsheet/img/framed/tab-left.png);/** sprite-ref: verticals */
+	padding-left: 3px;
+}
+
+.saprigrat .v-tabsheet-tabitemcell-first {
+	padding-left: 10px;
+	background-image: url(../reindeer/tabsheet/img/framed/tab-first-left.png);/** sprite-ref: verticals */
+}
+
+.saprigrat .v-tabsheet-tabitem, .saprigrat .v-tabsheet-spacertd div {
+	border: none;
+	height: 32px;
+	background: transparent repeat-x;
+	background-image: url(../reindeer/tabsheet/img/framed/tab-bg.png);/** sprite-ref: verticals; sprite-alignment: repeat */
+	padding: 0;
+	color: #222;
+	text-shadow: #fff 0 1px 0;
+}
+
+.saprigrat .v-tabsheet-tabitem .v-caption {
+	border: none;
+	height: 23px;
+	background: no-repeat right top;
+	background-image: url(../reindeer/tabsheet/img/framed/tab-right.png);/** sprite-ref: verticals; sprite-alignment: right */
+	padding: 9px 8px 0 6px;
+}
+
+.saprigrat .v-tabsheet-tabitem .v-caption-closable {
+	padding-right: 0;
+	padding-left: 17px;
+}
+
+.saprigrat .v-tabsheet-tabitem .v-captiontext {
+	height: 16px;
+	line-height: 16px;
+	vertical-align: baseline;
+}
+
+.saprigrat .v-tabsheet-caption-close {
+	float: right;
+	width: 19px;
+	height: 18px;
+	margin: -1px -1px 0;
+	padding-left: 2px;
+	background: transparent;
+	background-image: url(../reindeer/tabsheet/img/close-btn.png);/** sprite-ref: verticals */
+	cursor: default;
+	text-indent: -999px;
+	overflow: hidden;
+	font-size: 14px;
+	font-weight: normal;
+}
+
+.v-ff .saprigrat .v-tabsheet-caption-close {
+	margin-top: -17px;
+}
+
+.v-ff .saprigrat .v-tabsheet-caption-close:only-child {
+	margin-top: -1px;
+}
+
+.saprigrat .v-tabsheet-caption-close:hover {
+	background-image: url(../reindeer/tabsheet/img/close-btn-hover.png);/** sprite-ref: verticals */
+}
+
+.saprigrat .v-tabsheet-caption-close:active {
+	background-image: url(../reindeer/tabsheet/img/close-btn-pressed.png);/** sprite-ref: verticals */
+}
+
+.saprigrat .v-tabsheet-tabitem-selected .v-tabsheet-caption-close {
+	background-image: url(../reindeer/tabsheet/img/close-btn-sel.png);/** sprite-ref: verticals */
+}
+
+.saprigrat .v-tabsheet-tabitem-selected .v-tabsheet-caption-close:hover {
+	background-image: url(../reindeer/tabsheet/img/close-btn-sel-hover.png);/** sprite-ref: verticals */
+}
+
+.saprigrat .v-tabsheet-tabitem-selected .v-tabsheet-caption-close:active {
+	background-image: url(../reindeer/tabsheet/img/close-btn-sel-pressed.png);/** sprite-ref: verticals */
+}
+
+.saprigrat .v-tabsheet-tabitemcell-selected {
+	background-image: url(../reindeer/tabsheet/img/framed/tab-left-sel.png);/** sprite-ref: verticals */
+}
+
+.saprigrat .v-tabsheet-tabitemcell-selected-first {
+	background-image: url(../reindeer/tabsheet/img/framed/tab-first-left-sel.png);/** sprite-ref: verticals */
+}
+
+.saprigrat .v-tabsheet-tabitem-selected {
+	background-image: url(../reindeer/tabsheet/img/framed/tab-bg-sel.png);/** sprite-ref: verticals; sprite-alignment: repeat */
+	color: #232930;
+}
+
+.saprigrat .v-tabsheet-tabitem-selected .v-caption {
+	background-image: url(../reindeer/tabsheet/img/framed/tab-right-sel.png);/** sprite-ref: verticals; sprite-alignment: right */
+}
+
+.saprigrat .v-tabsheet-spacertd div {
+	margin-right: 4px;
+}
+
+.saprigrat .v-tabsheet-spacertd {
+	background: transparent no-repeat right top;
+	background-image: url(../reindeer/tabsheet/img/framed/tab-spacer-right.png);/** sprite-ref: verticals; sprite-alignment: right */
+}
+
+.saprigrat .blue .v-tabsheet-content {
+	border-color: #a8bcc5;
+}
+
+.saprigrat .v-tabsheet-content, .saprigrat .white .v-tabsheet-content {
+	border: 1px solid #dcdcdc;
+	border-bottom: none;
+	border-top: none;
+	color: #222;
+	text-shadow: none;
+}
+
+.saprigrat .v-tabsheet-tabsheetpanel {
+	background: #fff;
+}
+
+.v-sa .saprigrat .v-tabsheet-content {
+	border-color: rgba(0, 0, 0, 0.1);
+}
+
+.saprigrat .blue .v-tabsheet-deco {
+	border-color: #92a3ac;
+	background: #adc2cd;
+}
+
+.saprigrat .v-tabsheet-deco, .saprigrat .white .v-tabsheet-deco {
+	height: 1px;
+	border-top: 1px solid #bebebe;
+	background: #e2e2e2;
+	overflow: hidden;
+}
+
+.v-sa .saprigrat .v-tabsheet-deco {
+	border-top-color: rgba(0, 0, 0, 0.1);
+	background: rgba(0, 0, 0, 0.08);
+}
+
+.saprigrat .v-tabsheet-tabs .v-icon, .saprigrat .v-tabsheet-tabs .v-captiontext, .saprigrat .v-tabsheet-tabs .v-errorindicator {
+	display: inline;
+	float: none;
+}
+
+.v-sa .saprigrat .v-tabsheet-tabs .v-captiontext {
+	display: inline-block;
+}
+
+.v-sa .saprigrat .v-tabsheet-tabs .v-icon {
+	vertical-align: top;
+}
+
+.saprigrat .v-tabsheet-tabs .v-icon {
+	width: 16px !important;
+	height: 16px !important;
+}
+
+.saprigrat .v-tabsheet-tabs .v-errorindicator {
+	display: inline-block;
+	width: 13px;
+	height: 16px;
+	background: transparent url(../reindeer/common/icons/error.png) no-repeat 50%;
+}
+
+.v-ie .saprigrat .v-tabsheet-tabs .v-errorindicator {
+	zoom: 1;
+	display: inline-block;
+}
+
+.saprigrat .v-tabsheet-scroller {
+	height: 31px;
+	margin-top: -31px;
+	padding: 0 3px 0 4px;
+	border-right: 1px solid #c2c2c2;
+	border-left: 1px solid #cfcfcf;
+	position: relative;
+	float: right;
+	background: transparent url(../reindeer/tabsheet/img/framed/tab-bg.png) repeat-x left -1px;
+	width: 36px;
+}
+
+.saprigrat .v-tabsheet-scroller button {
+	margin-top: 7px;
+}
+
+.saprigrat .v-tabsheet-scrollerPrev, .saprigrat .v-tabsheet-scrollerNext, .saprigrat .v-tabsheet-scrollerPrev-disabled, .saprigrat .v-tabsheet-scrollerNext-disabled {
+	border: none;
+	background: transparent;
+	background-image: url(../reindeer/tabsheet/img/tab-prev.png);/** sprite-ref: verticals */
+	width: 18px;
+	height: 17px;
+	overflow: hidden;
+}
+
+.saprigrat .v-tabsheet-scroller button::-moz-focus-inner {
+	border: none;
+}
+
+.saprigrat .v-tabsheet-scrollerNext {
+	background-image: url(../reindeer/tabsheet/img/tab-next.png);/** sprite-ref: verticals */
+}
+
+.saprigrat .v-tabsheet-scrollerPrev:active {
+	background-image: url(../reindeer/tabsheet/img/tab-prev-pressed.png);/** sprite-ref: verticals */
+}
+
+.saprigrat .v-tabsheet-scrollerNext:active {
+	background-image: url(../reindeer/tabsheet/img/tab-next-pressed.png);/** sprite-ref: verticals */
+}
+
+.saprigrat .v-tabsheet-scrollerPrev-disabled, .saprigrat .v-tabsheet-scrollerPrev-disabled:active {
+	background-image: url(../reindeer/tabsheet/img/tab-prev-disabled.png);/** sprite-ref: verticals */
+	opacity: 1;
+	filter: none;
+}
+
+.saprigrat .v-tabsheet-scrollerNext-disabled, .saprigrat .v-tabsheet-scrollerNext-disabled:active {
+	background-image: url(../reindeer/tabsheet/img/tab-next-disabled.png);/** sprite-ref: verticals; sprite-margin-bottom: 1px */
+	opacity: 1;
+	filter: none;
+}
+
+.saprigrat .v-tabsheet-borderless .v-tabsheet-tabitemcell-first {
+	padding-left: 7px;
+	background: url(../reindeer/tabsheet/img/framed/tab-first-left.png) no-repeat -3px 0;
+}
+
+.saprigrat .v-tabsheet-borderless .v-tabsheet-tabitemcell-selected-first {
+	background: url(../reindeer/tabsheet/img/framed/tab-first-left-sel.png) no-repeat -3px 0;
+}
+
+.saprigrat .v-tabsheet-borderless .v-tabsheet-spacertd div {
+	margin-right: 0;
+}
+
+.saprigrat .v-tabsheet-borderless .v-tabsheet-spacertd {
+	background: transparent;
+}
+
+.saprigrat .v-tabsheet-borderless .v-tabsheet-content {
+	border: none;
+}
+
+.saprigrat .v-tabsheet-borderless .v-tabsheet-deco {
+	height: 0;
+	border-top: none;
+}
+
+.saprigrat .blue .v-tabsheet-tabs-minimal .v-tabsheet-spacertd div, .saprigrat .blue .v-tabsheet-tabs-minimal .v-tabsheet-tabitem, .saprigrat .blue .v-tabsheet-tabs-minimal .v-tabsheet-tabitem-selected {
+	border-color: #7c8a91;
+}
+
+.saprigrat .blue .v-tabsheet-tabs-minimal .v-tabsheet-caption-close {
+	color: #7c8a91;
+}
+
+.saprigrat .blue .v-tabsheet-tabs-minimal .v-tabsheet-caption-close:hover {
+	color: #BCD3DE;
+	background: #778d98;
+}
+
+.saprigrat .blue .v-tabsheet-tabs-minimal .v-tabsheet-caption-close:active {
+	background: #4f6874;
+}
+
+.saprigrat .v-tabsheet-tabs-minimal .v-tabsheet-spacertd div, .saprigrat .white .v-tabsheet-tabs-minimal .v-tabsheet-spacertd div {
+	border-bottom: 1px solid #bfbfbf;
+	height: auto;
+	background: transparent;
+}
+
+.saprigrat .v-tabsheet-tabs-minimal .v-tabsheet-tabitemcell, .saprigrat .v-tabsheet-tabs-minimal .v-tabsheet-spacertd {
+	height: auto;
+	background: transparent;
+	padding-left: 0;
+}
+
+.saprigrat .v-tabsheet-tabs-minimal .v-tabsheet-tabitem, .saprigrat .white .v-tabsheet-tabs-minimal .v-tabsheet-tabitem {
+	border: none;
+	border-bottom: 1px solid #bfbfbf;
+	color: #4d748f;
+	padding: 0;
+	height: auto;
+	background: transparent;
+	text-shadow: none;
+}
+
+.saprigrat .v-tabsheet-tabs-minimal .v-tabsheet-tabitem .v-caption {
+	padding: 5px 16px;
+	height: auto;
+	background: transparent;
+}
+
+.saprigrat .v-tabsheet-tabs-minimal .v-tabsheet-tabitemcell-selected {
+	background: transparent;
+}
+
+.saprigrat .v-tabsheet-tabs-minimal .v-tabsheet-tabitem-selected, .saprigrat .white .v-tabsheet-tabs-minimal .v-tabsheet-tabitem-selected {
+	background: transparent;
+	border: 1px solid #bfbfbf;
+	border-bottom: none;
+	color: #222;
+}
+
+.saprigrat .v-tabsheet-tabs-minimal .v-tabsheet-tabitem-selected .v-caption {
+	background: transparent;
+	padding: 4px 15px 6px 15px;
+}
+
+.saprigrat .v-tabsheet-tabs-minimal .v-tabsheet-tabitem .v-caption-closable, .saprigrat .v-tabsheet-tabs-minimal .v-tabsheet-tabitem-selected .v-caption-closable {
+	padding-right: 6px;
+}
+
+.saprigrat .v-tabsheet-content-minimal, .saprigrat .white .v-tabsheet-content-minimal {
+	border: none;
+}
+
+.saprigrat .v-tabsheet-content-minimal .v-tabsheet-tabsheetpanel {
+	background: transparent;
+}
+
+.saprigrat .v-tabsheet-deco-minimal, .saprigrat .white .v-tabsheet-deco-minimal {
+	height: 0;
+	border: none;
+}
+
+.saprigrat .v-tabsheet-tabcontainer-minimal .v-tabsheet-scroller {
+	margin-top: -20px;
+	height: 17px;
+	padding: 0;
+	border: none;
+	background: transparent;
+}
+
+.saprigrat .v-tabsheet-tabcontainer-minimal .v-tabsheet-scroller button {
+	margin-top: 0;
+}
+
+.saprigrat .v-tabsheet-tabs-minimal .v-tabsheet-caption-close, .saprigrat .v-tabsheet-tabs-minimal .v-tabsheet-caption-close:hover, .saprigrat .v-tabsheet-tabs-minimal .v-tabsheet-caption-close:active {
+	text-indent: 0;
+	background: transparent;
+	margin-left: 3px;
+	margin-right: -3px;
+	padding: 0;
+	color: #999;
+	width: 14px;
+	height: 14px;
+	line-height: 14px;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+}
+
+.v-ie9 .saprigrat .v-tabsheet-tabs-minimal .v-tabsheet-tabitem .v-tabsheet-caption-close, .v-ie9 .saprigrat .v-tabsheet-tabs-minimal .v-tabsheet-tabitem .v-tabsheet-caption-close:hover, .v-ie9 .saprigrat .v-tabsheet-tabs-minimal .v-tabsheet-tabitem .v-tabsheet-caption-close:active, .v-ie10 .saprigrat .v-tabsheet-tabs-minimal .v-tabsheet-tabitem .v-tabsheet-caption-close, .v-ie10 .saprigrat .v-tabsheet-tabs-minimal .v-tabsheet-tabitem .v-tabsheet-caption-close:hover, .v-ie10 .saprigrat .v-tabsheet-tabs-minimal .v-tabsheet-tabitem .v-tabsheet-caption-close:active {
+	margin-left: 2.5px;
+	margin-top: 1px;
+}
+
+.saprigrat .v-tabsheet-tabs-minimal .v-tabsheet-caption-close:hover, .saprigrat .white .v-tabsheet-tabs-minimal .v-tabsheet-caption-close:hover {
+	color: #fff;
+	background: #aaa;
+}
+
+.saprigrat .v-tabsheet-tabs-minimal .v-tabsheet-caption-close:active, .saprigrat .white .v-tabsheet-tabs-minimal .v-tabsheet-caption-close:active {
+	background: #777;
+}
+
+.saprigrat .black .v-tabsheet-tabs-minimal .v-tabsheet-spacertd div, .saprigrat .black .v-tabsheet-tabs-minimal .v-tabsheet-tabitem, .saprigrat .black .v-tabsheet-tabs-minimal .v-tabsheet-tabitem-selected {
+	border-color: #3e4044;
+	color: #6a7f89;
+}
+
+.saprigrat .black .v-tabsheet-tabs-minimal .v-tabsheet-tabitem-selected {
+	color: #c9ccce;
+}
+
+.saprigrat .black .v-tabsheet-content-minimal, .saprigrat .black .v-tabsheet-content-bar {
+	color: #c9ccce;
+	text-shadow: #000 0 0 1px;
+}
+
+.saprigrat .black .v-tabsheet-tabs-minimal .v-tabsheet-caption-close {
+	color: #72787c;
+}
+
+.saprigrat .black .v-tabsheet-tabs-minimal .v-tabsheet-caption-close:hover {
+	color: #1d2021;
+	background: #4d5154;
+}
+
+.saprigrat .black .v-tabsheet-tabs-minimal .v-tabsheet-caption-close:active {
+	background: #626669;
+}
+
+.saprigrat .v-tabsheet-tabs-bar .v-tabsheet-tabitemcell, .saprigrat .v-tabsheet-tabs-bar .v-tabsheet-spacertd {
+	height: 20px;
+}
+
+.saprigrat .v-tabsheet-tabs-bar .v-tabsheet-spacertd {
+	background: transparent;
+}
+
+.saprigrat .v-tabsheet-tabs-bar .v-tabsheet-tabitemcell {
+	background-image: url(../reindeer/tabsheet/img/bar/tab-left.png);/** sprite-ref: verticals */
+}
+
+.saprigrat .v-tabsheet-tabs-bar .v-tabsheet-tabitemcell-first {
+	padding-left: 6px;
+	background-image: url(../reindeer/tabsheet/img/bar/tab-first-left.png);/** sprite-ref: verticals */
+}
+
+.saprigrat .v-tabsheet-tabs-bar .v-tabsheet-tabitem, .saprigrat .v-tabsheet-tabs-bar .v-tabsheet-spacertd div {
+	height: 20px;
+	background-image: url(../reindeer/tabsheet/img/bar/tab-bg.png);/** sprite-ref: verticals; sprite-alignment: repeat */
+	margin: 0;
+}
+
+.saprigrat .v-tabsheet-tabs-bar .v-tabsheet-tabitem .v-caption {
+	font-size: 11px;
+	height: 18px;
+	background-image: url(../reindeer/tabsheet/img/bar/tab-right.png);/** sprite-ref: verticals; sprite-alignment: right */
+	padding: 2px 12px 0 10px;
+}
+
+.saprigrat .v-tabsheet-tabs-bar .v-tabsheet-tabitem .v-caption-closable, .saprigrat .v-tabsheet-tabs-bar .v-tabsheet-tabitem-selected .v-caption-closable {
+	padding-right: 8px;
+	padding-left: 14px;
+}
+
+.saprigrat .v-tabsheet-tabs-bar .v-tabsheet-caption-close, .saprigrat .v-tabsheet-tabs-bar .v-tabsheet-caption-close:hover, .saprigrat .v-tabsheet-tabs-bar .v-tabsheet-caption-close:active {
+	text-indent: 0;
+	background: transparent;
+	margin-left: 3px;
+	margin-right: -3px;
+	padding: 1px 0 0 1px;
+	color: #3c3c3c;
+	width: 13px;
+	height: 13px;
+	line-height: 12px;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+}
+
+.saprigrat .v-tabsheet-tabs-bar .v-tabsheet-caption-close {
+	margin-top: 1px;
+}
+
+.v-ff .saprigrat .v-tabsheet-tabs-bar .v-tabsheet-caption-close {
+	margin-top: -14px;
+}
+
+.v-ie9 .saprigrat .v-tabsheet-tabs-bar .v-tabsheet-caption-close:only-child, .v-ie9 .saprigrat .v-tabsheet-tabs-bar .v-captiontext:first-child + .v-tabsheet-caption-close, .v-ie10 .saprigrat .v-tabsheet-tabs-bar .v-tabsheet-caption-close:only-child, .v-ie10 .saprigrat .v-tabsheet-tabs-bar .v-captiontext:first-child + .v-tabsheet-caption-close {
+	margin-top: -14px;
+}
+
+.saprigrat .v-tabsheet-tabs-bar .v-tabsheet-caption-close:hover {
+	background: #bfbfbf;
+	-webkit-box-shadow: 0 1px 0 #fff;
+}
+
+.saprigrat .v-tabsheet-tabs-bar .v-tabsheet-caption-close:active {
+	background: #a9a9a9;
+}
+
+.saprigrat .v-tabsheet-tabs-bar .v-tabsheet-tabitem-selected .v-tabsheet-caption-close {
+	color: #404142;
+}
+
+.saprigrat .v-tabsheet-tabs-bar .v-tabsheet-tabitem-selected .v-tabsheet-caption-close:hover {
+	background: #5e666e;
+	color: #fff;
+	text-shadow: 0 -1px 0 #222;
+}
+
+.saprigrat .v-tabsheet-tabs-bar .v-tabsheet-tabitem-selected .v-tabsheet-caption-close:active {
+	background: #404142;
+}
+
+.saprigrat .v-tabsheet-tabs-bar .v-tabsheet-tabitemcell-selected {
+	background-image: url(../reindeer/tabsheet/img/bar/tab-left-sel.png);/** sprite-ref: verticals */
+}
+
+.saprigrat .v-tabsheet-tabs-bar .v-tabsheet-tabitemcell-selected-first {
+	background-image: url(../reindeer/tabsheet/img/bar/tab-first-left-sel.png);/** sprite-ref: verticals */
+}
+
+.saprigrat .v-tabsheet-tabs-bar .v-tabsheet-tabitem-selected {
+	background-image: url(../reindeer/tabsheet/img/bar/tab-bg-sel.png);/** sprite-ref: verticals; sprite-alignment: repeat */
+	color: #232930;
+}
+
+.saprigrat .v-tabsheet-tabs-bar .v-tabsheet-tabitem-selected .v-caption {
+	background-image: url(../reindeer/tabsheet/img/bar/tab-right-sel.png);/** sprite-ref: verticals; sprite-alignment: right */
+}
+
+.saprigrat .v-tabsheet-tabcontainer-bar .v-tabsheet-scroller {
+	margin-top: -20px;
+	height: 19px;
+	border-right: none;
+	background-image: url(../reindeer/tabsheet/img/bar/tab-bg.png);/** sprite-ref: verticals; sprite-alignment: repeat */
+}
+
+.saprigrat .v-tabsheet-tabcontainer-bar .v-tabsheet-scroller button {
+	margin-top: 1px;
+}
+
+.saprigrat .v-tabsheet-content-bar, .saprigrat .white .v-tabsheet-content-bar {
+	border: none;
+}
+
+.saprigrat .v-tabsheet-content-bar .v-tabsheet-tabsheetpanel {
+	background: transparent;
+}
+
+.saprigrat .v-tabsheet-deco-bar, .saprigrat .white .v-tabsheet-deco-bar {
+	height: 0;
+	border: none;
+}
+
+.saprigrat .v-tabsheet-tabs-selected-closable .v-tabsheet-tabitem .v-tabsheet-caption-close, .saprigrat .v-tabsheet-tabs-selected-closable .v-tabsheet-tabitem:hover .v-tabsheet-caption-close {
+	visibility: hidden;
+}
+
+.saprigrat .v-tabsheet-tabs-selected-closable .v-tabsheet-tabitem-selected .v-tabsheet-caption-close, .saprigrat .v-tabsheet-tabs-selected-closable .v-tabsheet-tabitem-selected:hover .v-tabsheet-caption-close {
+	visibility: visible;
+}
+
+.saprigrat .v-tabsheet-tabs-hover-closable .v-tabsheet-caption-close {
+	visibility: hidden;
+}
+
+.saprigrat .v-tabsheet-tabs-hover-closable .v-tabsheet-tabitem:hover .v-tabsheet-caption-close {
+	visibility: visible;
+}
+
+.saprigrat .blue .v-textfield, .saprigrat .blue .v-textarea {
+	border-color: #92a2aa;
+	border-top-color: #7c8a90;
+	border-bottom-color: #a1b3bc;
+}
+
+.saprigrat .v-textfield, .saprigrat .v-textarea, .saprigrat .white .v-textfield, .saprigrat .white .v-textarea {
+	border: 1px solid #bcbdbe;
+	border-top-color: #a2a3a4;
+	border-bottom-color: #d2d3d4;
+	background: #fff;
+	background-repeat: repeat-x;
+	background-image: url(../reindeer/textfield/img/bg.png);/** sprite-ref: verticals; sprite-alignment: repeat; sprite-margin-bottom: 22px */
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	margin: 0;
+	height: 23px;
+	line-height: normal;
+}
+
+.saprigrat .v-textarea, .saprigrat .white .v-textarea {
+	background-image: none;
+	height: auto;
+}
+
+.saprigrat.v-app input.v-textfield, .saprigrat .v-window input.v-textfield, .saprigrat.v-app textarea.v-textarea, .saprigrat .v-window textarea.v-textarea {
+	padding: 3px 3px 4px;
+}
+
+.saprigrat.v-app input.v-textfield.v-widget, .saprigrat .v-window input.v-textfield.v-widget {
+	height: 24px;
+}
+
+.saprigrat.v-app .v-textfield-focus, .saprigrat .v-window .v-textfield-focus, .saprigrat .v-popupview-popup .v-textfield-focus, .saprigrat.v-app .v-textarea-focus, .saprigrat .v-window .v-textarea-focus, .saprigrat .v-popupview-popup .v-textarea-focus {
+	border-color: #5b97d0;
+	border-top-color: #4f83b4;
+	border-bottom-color: #5ca0df;
+	outline: none;
+	background-color: #fff;
+}
+
+.saprigrat input.v-textfield-prompt, .saprigrat textarea.v-textarea-prompt {
+	font-style: normal;
+	color: #999;
+}
+
+.saprigrat.v-app input.v-textfield-small {
+	font-size: 11px;
+	line-height: normal;
+	height: auto;
+	padding: 2px;
+}
+
+.saprigrat.v-app textarea.v-textarea-small {
+	font-size: 11px;
+}
+
+.saprigrat.v-app .v-table input.v-textfield.v-widget, .saprigrat .v-window .v-table input.v-textfield.v-widget {
+	padding: 1px 2px;
+	height: auto;
+	line-height: normal;
+}
+
+.saprigrat .v-table-cell-wrapper > input.v-textfield {
+	margin-top: -2px;
+	margin-bottom: -2px;
+}
+
+.saprigrat .black .v-textfield, .saprigrat .black .v-textarea {
+	border-color: #38393a;
+	border-top-color: #2c2d2e;
+	border-bottom-color: #3e3f3f;
+	background: #151717;
+	background-image: url(../reindeer/textfield/img/bg-black.png);/** sprite-ref: black-verticals; sprite-alignment: repeat; sprite-margin-bottom: 22px */
+	color: #c9ccce;
+	text-shadow: #000 0 0 1px;
+}
+
+.saprigrat .black .v-textarea {
+	background-image: none;
+}
+
+.saprigrat.v-app .black .v-textfield-focus, .saprigrat .v-window-black .v-textfield-focus, .saprigrat .v-window .black .v-textfield-focus, .saprigrat .v-popupview-popup .black .v-textfield-focus, .saprigrat.v-app .black .v-textarea-focus, .saprigrat .v-window-black .v-textarea-focus, .saprigrat .v-window .black .v-textarea-focus, .saprigrat .v-popupview-popup .black .v-textarea-focus {
+	border-color: #4b7192;
+	border-top-color: #3b5a75;
+	border-bottom-color: #507596;
+	background-color: #151717;
+}
+
+.saprigrat .black input.v-textfield-prompt {
+	color: #5f6366;
+}
+
+.saprigrat input.v-textfield-readonly, .saprigrat .black input.v-textfield-readonly, .saprigrat textarea.v-textarea-readonly, .saprigrat .black textarea.v-textarea-readonly {
+	border: none;
+	background: transparent;
+}
+
+.saprigrat .v-tree-node {
+	background: transparent url(../reindeer/tree/img/arrows.png) no-repeat 6px -10px;
+}
+
+.saprigrat .v-tree-node-expanded {
+	background-position: -7px 5px;
+}
+
+.saprigrat .v-tree-node-caption {
+	margin-left: 16px;
+	padding-bottom: 1px;
+}
+
+.saprigrat .v-tree-node span {
+	padding: 1px 2px;
+	display: inline-block;
+}
+
+.saprigrat .v-tree-node-selected span {
+	background: #4d749f repeat-x;
+	background-image: url(../reindeer/common/img/sel-bg.png);
+	color: #fff;
+	padding: 1px 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	text-shadow: #2b425a 0 1px 0;
+	display: inline-block;
+}
+
+.saprigrat .v-tree-node-children {
+	padding-left: 16px;
+}
+
+.saprigrat .v-tree-node-caption.v-tree-node-focused span {
+	padding-left: 1px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.saprigrat .v-tree-node-focused span {
+	border: 1px dotted black;
+}
+
+.saprigrat .v-tree .v-tree-node-drag-top {
+	background-position: 6px -11px;
+}
+
+.saprigrat .v-tree .v-tree-node-drag-top.v-tree-node-expanded {
+	background-position: -7px 4px;
+}
+
+.saprigrat .v-tree-connectors .v-tree-node-drag-top, .saprigrat .v-tree-connectors .v-tree-node-expanded.v-tree-node-drag-top {
+	background-position: 2px -53px;
+}
+
+.saprigrat .v-tree-connectors .v-tree-node-drag-top.v-tree-node-leaf {
+	background-position: 2px 50%;
+}
+
+.saprigrat .v-window {
+	background: transparent;
+}
+
+.saprigrat .v-window-wrap {
+	border: 1px solid #808386;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.v-sa .saprigrat .v-window-wrap, .v-op .saprigrat .v-window-wrap {
+	border-color: rgba(0, 0, 0, 0.2);
+}
+
+.saprigrat .v-window-outerheader {
+	padding: 12px 52px 0 14px;
+	height: 37px;
+	background: black repeat-x;
+	background-image: url(../reindeer/window/img/header-bg.png);/** sprite-ref: verticals; sprite-alignment: repeat */
+}
+
+.saprigrat .v-window-header {
+	font-weight: bold;
+	font-size: 12px;
+	line-height: normal;
+	color: #fff;
+	text-shadow: #000 0 -1px 0;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-ms-text-overflow: ellipsis;
+}
+
+.saprigrat .v-window-error .v-window-header {
+	padding-left: 13px;
+	background: transparent url(../reindeer/common/icons/error.png) no-repeat 0 50%;
+}
+
+.saprigrat .v-window-resizebox {
+	width: 15px;
+	height: 15px;
+	cursor: se-resize;
+	background: transparent;
+	background-image: url(../reindeer/window/img/resize.png);/** sprite-ref: verticals */
+}
+
+.saprigrat .v-window-footer {
+	background-color: white;
+	background-repeat: repeat-x;
+	background-image: url(../reindeer/window/img/footer-bg.png);/** sprite-ref: verticals; sprite-alignment: repeat */
+	height: 15px;
+}
+
+.saprigrat .v-window-closebox {
+	top: 12px;
+	right: 10px;
+	width: 15px;
+	height: 16px;
+	background: transparent;
+	background-image: url(../reindeer/window/img/close.png);/** sprite-ref: verticals */
+}
+
+.saprigrat .v-window-closebox:hover {
+	background-image: url(../reindeer/window/img/close-hover.png);/** sprite-ref: verticals */
+}
+
+.saprigrat .v-window-closebox:active {
+	background-image: url(../reindeer/window/img/close-pressed.png);/** sprite-ref: verticals */
+}
+
+.saprigrat .v-window-maximizebox, .saprigrat .v-window-restorebox {
+	top: 12px;
+	right: 28px;
+	width: 15px;
+	height: 16px;
+	background: transparent;
+}
+
+.saprigrat .v-window-maximizebox, .saprigrat .v-window-maximizebox:hover, .saprigrat .v-window-maximizebox:active {
+	background-image: url(../reindeer/window/img/maximize.png);/** sprite-ref: verticals */
+}
+
+.saprigrat .v-window-restorebox, .saprigrat .v-window-restorebox:hover, .saprigrat .v-window-restorebox:active {
+	background-image: url(../reindeer/window/img/restore.png);/** sprite-ref: verticals */
+}
+
+.saprigrat .v-window-contents {
+	background: #fff;
+}
+
+.saprigrat .v-window-modalitycurtain {
+	background: #56595b;
+}
+
+.saprigrat .v-window-light .v-window-outerheader {
+	background: transparent;
+	padding: 15px 52px 0 18px;
+}
+
+.saprigrat .v-window-light .v-window-header {
+	font-size: 16px;
+	color: #292e34;
+	text-shadow: none;
+}
+
+.saprigrat .v-window-light .v-window-resizebox {
+	width: 12px;
+	height: 12px;
+	background-image: url(../reindeer/window/img/light/resize.png);/** sprite-ref: verticals */
+}
+
+.saprigrat .v-window-light .v-window-footer {
+	background: transparent;
+	height: 12px;
+}
+
+.saprigrat .v-window-light .v-window-closebox {
+	right: 1px;
+	top: 17px;
+	width: 19px;
+	height: 15px;
+	background-image: url(../reindeer/window/img/light/close.png);/** sprite-ref: verticals */
+}
+
+.saprigrat .v-window-light .v-window-closebox:hover {
+	background-image: url(../reindeer/window/img/light/close-hover.png);/** sprite-ref: verticals */
+}
+
+.saprigrat .v-window-light .v-window-closebox:active {
+	background-image: url(../reindeer/window/img/light/close-pressed.png);/** sprite-ref: verticals */
+}
+
+.saprigrat .v-window-light .v-window-maximizebox {
+	top: 17px;
+	background-image: url(../reindeer/window/img/light/maximize.png);/** sprite-ref: verticals */
+}
+
+.saprigrat .v-window-light .v-window-maximizebox:hover {
+	background-image: url(../reindeer/window/img/light/maximize-hover.png);/** sprite-ref: verticals */
+}
+
+.saprigrat .v-window-light .v-window-maximizebox:active {
+	background-image: url(../reindeer/window/img/light/maximize-active.png);/** sprite-ref: verticals */
+}
+
+.saprigrat .v-window-light .v-window-restorebox {
+	top: 17px;
+	background-image: url(../reindeer/window/img/light/restore.png);/** sprite-ref: verticals */
+}
+
+.saprigrat .v-window-light .v-window-restorebox:hover {
+	background-image: url(../reindeer/window/img/light/restore-hover.png);/** sprite-ref: verticals */
+}
+
+.saprigrat .v-window-light .v-window-restorebox:active {
+	background-image: url(../reindeer/window/img/light/restore-active.png);/** sprite-ref: verticals */
+}
+
+.saprigrat .v-window-light .v-window-contents {
+	background: transparent;
+}
+
+.saprigrat .v-window-light .v-window-wrap {
+	background: #f7f7f8 repeat-x;
+	background-image: url(../reindeer/window/img/light/content-bg.png);/** sprite-ref: verticals; sprite-alignment: repeat */
+}
+
+.saprigrat .v-window-black .v-window-wrap {
+	border-color: #2e3030;
+	border-radius: 8px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	overflow: hidden;
+}
+
+.v-sa .saprigrat .v-window-black .v-window-wrap, .v-op .saprigrat .v-window-black .v-window-wrap {
+	border-color: rgba(0, 0, 0, 0.8);
+}
+
+.saprigrat .v-window-black .v-window-wrap {
+	background-color: #1d2021;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+}
+
+.v-sa .saprigrat .v-window-black .v-window-wrap, .v-op .saprigrat .v-window-black .v-window-wrap {
+	background-color: rgba(29, 32, 33, 0.9);
+}
+
+.saprigrat .v-window-black .v-window-outerheader {
+	height: 29px;
+	padding: 7px 14px;
+	background: transparent repeat-x;
+	background-image: url(../reindeer/window/img/black/header-bg.png);/** sprite-ref: black-verticals; sprite-alignment: repeat */
+	text-align: center;
+	-moz-border-radius-topright: 7px;
+	-moz-border-radius-topleft: 7px;
+	-webkit-border-top-right-radius: 7px;
+	-webkit-border-top-left-radius: 7px;
+	overflow: hidden;
+	border: none;
+}
+
+.saprigrat .v-window-black .v-window-header {
+	font-size: 12px;
+	font-weight: normal;
+	color: #dddfe1;
+}
+
+.saprigrat .v-window-black .v-window-closebox {
+	top: 8px;
+	background-image: url(../reindeer/window/img/black/close.png);/** sprite-ref: black-verticals */
+}
+
+.saprigrat .v-window-black .v-window-closebox:hover {
+	background-image: url(../reindeer/window/img/black/close-hover.png);/** sprite-ref: black-verticals */
+}
+
+.saprigrat .v-window-black .v-window-closebox:active {
+	background-image: url(../reindeer/window/img/black/close-pressed.png);/** sprite-ref: black-verticals */
+}
+
+.saprigrat .v-window-black .v-window-footer {
+	background: transparent;
+	border: none;
+	height: 14px;
+}
+
+.saprigrat .v-window-black .v-window-resizebox {
+	background: transparent no-repeat;
+	background-image: url(../reindeer/window/img/black/resize.png);/** sprite-ref: black-verticals; sprite-margin-bottom: 4px */
+	width: 14px;
+	height: 14px;
+}
+
+.saprigrat .v-window-black .v-window-maximizebox {
+	top: 8px;
+	background-image: url(../reindeer/window/img/black/maximize.png);/** sprite-ref: black-verticals */
+}
+
+.saprigrat .v-window-black .v-window-maximizebox:hover {
+	background-image: url(../reindeer/window/img/black/maximize-hover.png);/** sprite-ref: black-verticals */
+}
+
+.saprigrat .v-window-black .v-window-maximizebox:active {
+	background-image: url(../reindeer/window/img/black/maximize-active.png);/** sprite-ref: black-verticals */
+}
+
+.saprigrat .v-window-black .v-window-restorebox {
+	top: 8px;
+	background-image: url(../reindeer/window/img/black/restore.png);/** sprite-ref: black-verticals */
+}
+
+.saprigrat .v-window-black .v-window-restorebox:hover {
+	background-image: url(../reindeer/window/img/black/restore-hover.png);/** sprite-ref: black-verticals */
+}
+
+.saprigrat .v-window-black .v-window-restorebox:active {
+	background-image: url(../reindeer/window/img/black/restore-active.png);/** sprite-ref: black-verticals */
+}
+
+.saprigrat .v-window-black .v-window-contents {
+	border: none;
+	background: transparent repeat-x;
+	background-image: url(../reindeer/window/img/black/content-bg.png);/** sprite-ref: black-verticals; sprite-alignment: repeat */
+}

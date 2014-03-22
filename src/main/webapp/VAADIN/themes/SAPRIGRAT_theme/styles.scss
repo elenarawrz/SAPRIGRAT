@@ -1,0 +1,11 @@
+@import "addons.scss";
+@import "SAPRIGRAT_theme.scss";
+
+/* This file prefixes all rules with the theme name to avoid causing conflicts with other themes. */
+/* The actual styles should be defined in SAPRIGRAT_theme.scss */
+.SAPRIGRAT_theme {
+  @include addons;
+
+  // Include SAPRIGRAT_theme theme styles in your theme
+  @include SAPRIGRAT_theme;
+}
