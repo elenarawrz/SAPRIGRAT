@@ -51,8 +51,6 @@ public class LoginView extends CustomComponent
 		usuario = new Usuario();
 		datos = new Datos();
 		
-		txtUser.setValue("admin");
-		txtPass.setValue("pass");
 		btnGo.setClickShortcut(KeyCode.ENTER);
 		btnGo.addClickListener( new ClickListener()
 								{
