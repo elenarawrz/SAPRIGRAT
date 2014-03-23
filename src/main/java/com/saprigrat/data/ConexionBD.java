@@ -34,7 +34,7 @@ public class ConexionBD
 			        user = prop.getProperty("user").toString().trim(),
 			        pass = prop.getProperty("pass").toString().trim(),
 			        driver = prop.getProperty("driver").toString().trim();
-	        
+	        System.out.println("host: " + host + "\nuser: " + user + "\npass: " + pass + "\ndriver: " + driver);
 			Class.forName(driver);
 	        System.out.println( "--------------------------------------------------\n" +
 	        					"DRIVER: " + driver);
