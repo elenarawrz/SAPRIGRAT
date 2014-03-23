@@ -23,21 +23,24 @@ public class InterfazConsulta
 		try
 		{
 			ResultSet rs = getResultset(tabla, valores);
-			int cols = rs.getMetaData().getColumnCount();
-			String[] encabezados = new String[cols];
-			
-			for(int i = 1; i<=cols; i++)
-				encabezados[i-1] = rs.getMetaData().getColumnName(i);
-			listado.add(encabezados);
-			
-			while (rs.next())
+			if(rs != null)
 			{
-				Object[] res = new Object[cols];
-				for(int i=0; i<cols; i++)
-					res[i] = rs.getObject(i + 1);
-				listado.add(res);
-	        }
-	        rs.close();
+				int cols = rs.getMetaData().getColumnCount();
+				String[] encabezados = new String[cols];
+				
+				for(int i = 1; i<=cols; i++)
+					encabezados[i-1] = rs.getMetaData().getColumnName(i);
+				listado.add(encabezados);
+				
+				while (rs.next())
+				{
+					Object[] res = new Object[cols];
+					for(int i=0; i<cols; i++)
+						res[i] = rs.getObject(i + 1);
+					listado.add(res);
+		        }
+		        rs.close();
+			}
 		}
 		catch (SQLException e)
 		{
@@ -77,9 +80,12 @@ public class InterfazConsulta
 		try
 		{
 			ResultSet rs = getResultset(tabla, valores);
-			while (rs.next())
-				listado.add(rs.getString(1));
-	        rs.close();
+			if(rs != null)
+			{
+				while (rs.next())
+					listado.add(rs.getString(1));
+		        rs.close();
+			}
 		}
 		catch (SQLException e)
 		{
@@ -93,47 +99,49 @@ public class InterfazConsulta
 	
 	private ResultSet getResultset(String tabla, Object[] valores) throws SQLException
 	{
+		ResultSet rs = null;
 		Connection con = conexion.openConexion();
-		CallableStatement cs = null;
-		con.setAutoCommit(false);
-		
-		String vars = "";
-		for(int i = 0; i<valores.length; i++)
-			vars +="?,";
-		if(!vars.isEmpty())
-			vars = vars.substring(0, vars.length() - 1);
-		
-		cs = con.prepareCall("{? = call " + tabla + "Select (" + vars + ")}");
-		
-		cs.registerOutParameter(1, Types.OTHER);
-		for(int i = 0; i<valores.length; i++)
+		if(con != null)
 		{
-			if(valores[i]!=null)
-				if(valores[i] instanceof String)
-					cs.setString(i + 2, (String) valores[i]);
-				else
-					if(valores[i] instanceof Integer)
-						cs.setInt(i + 2, (Integer) valores[i]);
+			con.setAutoCommit(false);
+			
+			String vars = "";
+			for(int i = 0; i<valores.length; i++)
+				vars +="?,";
+			if(!vars.isEmpty())
+				vars = vars.substring(0, vars.length() - 1);
+			
+			CallableStatement cs = con.prepareCall("{? = call " + tabla + "Select (" + vars + ")}");
+			cs.registerOutParameter(1, Types.OTHER);
+			for(int i = 0; i<valores.length; i++)
+			{
+				if(valores[i]!=null)
+					if(valores[i] instanceof String)
+						cs.setString(i + 2, (String) valores[i]);
 					else
-						if(valores[i] instanceof Boolean)
-							cs.setBoolean(i + 2, (Boolean) valores[i]);
+						if(valores[i] instanceof Integer)
+							cs.setInt(i + 2, (Integer) valores[i]);
 						else
-							if(valores[i] instanceof Date)
-								cs.setDate(i + 2, (Date) valores[i]);
+							if(valores[i] instanceof Boolean)
+								cs.setBoolean(i + 2, (Boolean) valores[i]);
 							else
-								if(valores[i] instanceof Double)
-									cs.setBigDecimal(i + 2, new BigDecimal((Double)valores[i]));
+								if(valores[i] instanceof Date)
+									cs.setDate(i + 2, (Date) valores[i]);
 								else
-									System.out.println(valores[i].getClass().toString());
-			else
-				cs.setString(i + 2, null);
+									if(valores[i] instanceof Double)
+										cs.setBigDecimal(i + 2, new BigDecimal((Double)valores[i]));
+									else
+										System.out.println(valores[i].getClass().toString());
+				else
+					cs.setString(i + 2, null);
+			}
+			cs.execute();
+			
+			rs = (ResultSet) cs.getObject(1);
+			
+			cs.close();
+			conexion.closeConexion(con);
 		}
-		cs.execute();
-		
-		ResultSet rs = (ResultSet) cs.getObject(1);
-		
-		cs.close();
-		conexion.closeConexion(con);
 		
 		return rs;
 	}
