@@ -13,24 +13,17 @@ import com.vaadin.ui.Notification;
 public class ConexionBD
 {
 	//region credenciales jelastic
-//	private String  driver = "org.postgresql.Driver",
-//					url = "jdbc:postgresql://postgres-saprigratEnv.jelastic.servint.net/saprigrat",
-//					user = "webadmin",
-//					pass = "adminsaprigrat";
+	private String  driver = "org.postgresql.Driver",
+					url = "jdbc:postgresql://postgres-SAPRIGRAT.whelastic.net/saprigrat",
+					user = "webadmin",
+					pass = "adminsaprigrat";
 	//endRegion
 	
 	//region credenciales localhost
-	private String  driver = "org.postgresql.Driver",
-			url = "jdbc:postgresql://localhost:5432/saprigrat",
-			user = "postgres",
-			pass = "admin";
-	//endRegion
-	
-	//region credenciales openshift
 //	private String  driver = "org.postgresql.Driver",
-//			url = "jdbc:postgresql://$OPENSHIFT_POSTGRESQL_DB_HOST:$OPENSHIFT_POSTGRESQL_DB_PORT/saprigrat",
-//			user = "adminpupzwb7",
-//			pass = "nzdcv13WHMju";
+//			url = "jdbc:postgresql://localhost:5432/saprigrat",
+//			user = "postgres",
+//			pass = "admin";
 	//endRegion
 	
 	public Connection openConexion()
@@ -45,9 +38,9 @@ public class ConexionBD
 		catch (Exception e)
 		{
 			if(e.getClass().equals(ClassNotFoundException.class))
-				System.out.println("No se encontró el driver.");
+				System.out.println("No se encontrÃ³ el driver.");
 			if(e.getClass().equals(SQLException.class))
-				System.out.println("No se pudo crear la conexión.");
+				System.out.println("No se pudo crear la conexiÃ³n.");
 			e.printStackTrace();
 		}
 		
@@ -62,7 +55,7 @@ public class ConexionBD
 		}
 		catch (SQLException e)
 		{
-			System.out.println("Error al cerrar la conexión.");
+			System.out.println("Error al cerrar la conexiÃ³n.");
 			e.printStackTrace();
 		}
 	}

@@ -19,7 +19,7 @@ public class Datos
 		return cons.getRegistro("login", new Object[]{user, pass});
 	}
 	
-	//region Técnicos
+	//region TÃ©cnicos
 	public String registrarTecnico(LinkedList<Object> valores)
 	{
 		return ins.insertarRegistro("tecnico", valores);
@@ -219,7 +219,7 @@ public class Datos
 	//endregion
 	
 	
-	//region Conversión de tipos
+	//region ConversiÃ³n de tipos
 	private LinkedList<Object> bigDecimalToDouble(LinkedList<Object> lista)
 	{
 		for(int i=0; i<lista.size(); i++)
