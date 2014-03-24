@@ -19,28 +19,22 @@ public class ConexionBD
 	public Connection openConexion()
 	{
 		Connection con = null;
-		
 		try
 		{
-//			String  host = "jdbc:postgresql://localhost:5432/saprigrat",
-//					user = "postgres",
-//					pass = "admin",
-//					driver = "org.postgresql.Driver";
-			
 			Properties prop = new Properties();
 	        prop.load(new FileInputStream(System.getProperty("user.home") + "/dbcreds.cfg"));
-	        System.out.println("user.home: "+System.getProperty("user.home"));
+	        //System.out.println("user.home: "+System.getProperty("user.home"));
 	        String  host = prop.getProperty("host").toString().trim(),
 			        user = prop.getProperty("user").toString().trim(),
 			        pass = prop.getProperty("pass").toString().trim(),
 			        driver = prop.getProperty("driver").toString().trim();
-	        System.out.println("host: " + host + "\nuser: " + user + "\npass: " + pass + "\ndriver: " + driver);
+	        //System.out.println("host: " + host + "\nuser: " + user + "\npass: " + pass + "\ndriver: " + driver);
 			Class.forName(driver);
-	        System.out.println( "--------------------------------------------------\n" +
-	        					"DRIVER: " + driver);
+	        //System.out.println( "--------------------------------------------------\n" +
+	        //					"DRIVER: " + driver);
 			con = DriverManager.getConnection(host, user, pass);
-	        System.out.println( "CONNECTION: " + con +
-	        					"\n--------------------------------------------------");
+	        //System.out.println( "CONNECTION: " + con +
+	        //					"\n--------------------------------------------------");
 		}
 		catch (Exception e)
 		{

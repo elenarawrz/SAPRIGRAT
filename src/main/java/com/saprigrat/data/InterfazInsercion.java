@@ -1,6 +1,7 @@
 package com.saprigrat.data;
 
 import java.math.BigDecimal;
+import java.sql.Array;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.Date;
@@ -83,7 +84,16 @@ public class InterfazInsercion
 								if(valor instanceof Double)
 									cs.setBigDecimal(i + 2, new BigDecimal((Double)valor));
 								else
-									System.out.println(valor.getClass().toString());
+									if(valor instanceof Long[])
+										cs.setArray(i + 2, con.createArrayOf("decimal", (Long[]) valor));
+									else
+										if(valor instanceof Integer[])
+											cs.setArray(i + 2, con.createArrayOf("int", (Integer[]) valor));
+										else
+											if(valor instanceof String[])
+												cs.setArray(i + 2, con.createArrayOf("text", (String[]) valor));
+											else
+												System.out.println(valor.getClass().toString());
 			else
 				cs.setString(i + 2, null);
 		}

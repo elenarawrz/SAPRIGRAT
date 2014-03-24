@@ -87,14 +87,14 @@ public class Datos
 	public LinkedList<Object> getAprovechamiento(int idAprovechamiento)//String padron)
 	{
 		LinkedList<Object> aprovechamiento = cons.getRegistro("aprovechamiento", new Object[]{idAprovechamiento/*padron*/});
-		aprovechamiento = bigDecimalToDouble(aprovechamiento);//.set(4, Double.parseDouble((BigDecimal)aprovechamiento.get(4) + "") + "");
+		aprovechamiento = bigDecimalToDoubleList(aprovechamiento);//.set(4, Double.parseDouble((BigDecimal)aprovechamiento.get(4) + "") + "");
 		return aprovechamiento;
 	}
 	
 	public LinkedList<Object[]> getAprovechamientos(String currResp)
 	{
 		LinkedList<Object[]> aprovechamientos = cons.getTabla("aprovechamientos", new Object[]{currResp});
-		aprovechamientos = bigDecimalToDoubleTbl(aprovechamientos);
+		aprovechamientos = bigDecimalToDoubleArr(aprovechamientos);
 //		for(int i = 1; i<aprovechamientos.size(); i++)
 //		{
 //			Object[] aprovechamiento = aprovechamientos.get(i);
@@ -123,14 +123,14 @@ public class Datos
 	public LinkedList<Object> getParcela(int idParcela)
 	{
 		LinkedList<Object> parcela = cons.getRegistro("parcela", new Object[]{idParcela});
-		parcela = bigDecimalToDouble(parcela);
+		parcela = bigDecimalToDoubleList(parcela);
 		return parcela;
 	}
 	
 	public LinkedList<Object[]> getParcelas(String CURRtec)
 	{
 		LinkedList<Object[]> parcelas = cons.getTabla("parcelas", new Object[]{CURRtec});
-		parcelas = bigDecimalToDoubleTbl(parcelas);
+		parcelas = bigDecimalToDoubleArr(parcelas);
 		return parcelas;
 	}
 	
@@ -154,7 +154,7 @@ public class Datos
 	public LinkedList<Object> getRegador(int idRegador)
 	{
 		LinkedList<Object> parcela = cons.getRegistro("regador", new Object[]{idRegador});
-		parcela = bigDecimalToDouble(parcela);
+		parcela = bigDecimalToDoubleList(parcela);
 		return parcela;
 	}
 	
@@ -180,11 +180,19 @@ public class Datos
 		return ins.modificarRegistro("riego", valores);
 	}
 
-	public LinkedList<Object> getRiego(int idRegador)
+	public LinkedList<Object> getRiego(int idRiego)
 	{
-		LinkedList<Object> parcela = cons.getRegistro("riego", new Object[]{idRegador});
-		parcela = bigDecimalToDouble(parcela);
-		return parcela;
+		LinkedList<Object> riego = cons.getRegistro("riego", new Object[]{idRiego});
+		riego = bigDecimalToDoubleList(riego);
+		return riego;
+	}
+
+	public LinkedList<Object[]> getListaRiego(int idRiego)
+	{
+		LinkedList<Object[]> listaRiego = cons.getTabla("riegoLista", new Object[]{idRiego});
+		listaRiego.remove();
+		listaRiego = bigDecimalToLongArr(listaRiego);
+		return listaRiego;
 	}
 	
 	public LinkedList<Object[]> getRiegos(String CURRresp)
@@ -208,7 +216,7 @@ public class Datos
 	{
 		String[]secciones = {"", "LecturaInicial", "Caracteristicas", "Aforo"};
 		LinkedList<Object> parcela = cons.getRegistro("pruebaRiego" + secciones[seccion], new Object[]{idPrueba});
-		parcela = bigDecimalToDouble(parcela);
+		parcela = bigDecimalToDoubleList(parcela);
 		return parcela;
 	}
 	
@@ -220,7 +228,18 @@ public class Datos
 	
 	
 	//region Conversión de tipos
-	private LinkedList<Object> bigDecimalToDouble(LinkedList<Object> lista)
+	private LinkedList<Object[]> bigDecimalToLongArr(LinkedList<Object[]> lista)
+	{
+		for(int i = 1; i<lista.size(); i++)
+		{
+			Object[] parcela = lista.get(i);
+			for(int j=0; j<parcela.length; j++)
+				if(parcela[j] instanceof BigDecimal)
+					parcela[j] = Long.parseLong((BigDecimal)parcela[j] + "");
+		}
+		return lista;
+	}
+	private LinkedList<Object> bigDecimalToDoubleList(LinkedList<Object> lista)
 	{
 		for(int i=0; i<lista.size(); i++)
 			if(lista.get(i) instanceof BigDecimal)
@@ -228,7 +247,7 @@ public class Datos
 		return lista;
 	}
 	
-	private LinkedList<Object[]> bigDecimalToDoubleTbl(LinkedList<Object[]> lista)
+	private LinkedList<Object[]> bigDecimalToDoubleArr(LinkedList<Object[]> lista)
 	{
 		for(int i = 1; i<lista.size(); i++)
 		{
