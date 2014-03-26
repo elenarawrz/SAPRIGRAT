@@ -381,8 +381,6 @@ public class Tecnico extends CustomComponent implements Formulario
 		cmbEdo.addValueChangeListener(llenarMpiosListener);
 		cmbEdo.setNullSelectionAllowed(false);
 		cmbMpio.setNullSelectionAllowed(false);
-		cmbEdo.select("Sonora");
-		cmbMpio.select("Cajeme");
 		//Poblar la lista de 'Formación'
 		llenarLista(datos.getFormacion(), cmbFormacion);
 		cmbFormacion.setNullSelectionAllowed(false);
@@ -608,7 +606,6 @@ public class Tecnico extends CustomComponent implements Formulario
 	{
 		cal.setWeekendDisabled(false);
 		cal.setDateTimeFormatter(DateTimeFormat.longDate());
-		cal.setDateTextReadOnly(true);
 	}
 
 	private Date getFecha(TuningDateField calendario)
@@ -664,7 +661,7 @@ public class Tecnico extends CustomComponent implements Formulario
 		// common part: create layout
 		horLCURR = new HorizontalLayout();
 		horLCURR.setImmediate(false);
-		horLCURR.setWidth("100.0%");
+		horLCURR.setWidth("601px");
 		horLCURR.setHeight("-1px");
 		horLCURR.setMargin(false);
 		
@@ -686,7 +683,7 @@ public class Tecnico extends CustomComponent implements Formulario
 		panResponsable = new Panel();
 		panResponsable.setCaption("Responsable Directo");
 		panResponsable.setImmediate(false);
-		panResponsable.setWidth("331px");
+		panResponsable.setWidth("341px");
 		panResponsable.setHeight("-1px");
 		
 		// absLResponsable
@@ -707,7 +704,7 @@ public class Tecnico extends CustomComponent implements Formulario
 		// cmbResponsable
 		cmbResponsable = new ComboBox();
 		cmbResponsable.setImmediate(true);
-		cmbResponsable.setWidth("310px");
+		cmbResponsable.setWidth("320px");
 		cmbResponsable.setHeight("25px");
 		absLResponsable.addComponent(cmbResponsable, "top:10.0px;left:10.0px;");
 		
@@ -718,9 +715,9 @@ public class Tecnico extends CustomComponent implements Formulario
 	private Panel buildPanCURR() {
 		// common part: create layout
 		panCURR = new Panel();
-		panCURR.setCaption("CURR (Clave Unica de Registro de RIGRAT)");
+		panCURR.setCaption("CURR (Clave Unica de Registro RIGRAT)");
 		panCURR.setImmediate(false);
-		panCURR.setWidth("261px");
+		panCURR.setWidth("241px");
 		panCURR.setHeight("-1px");
 		
 		// absLCURR
@@ -741,7 +738,7 @@ public class Tecnico extends CustomComponent implements Formulario
 		// txtCURR
 		txtCURR = new TextField();
 		txtCURR.setImmediate(false);
-		txtCURR.setWidth("240px");
+		txtCURR.setWidth("220px");
 		txtCURR.setHeight("25px");
 		absLCURR.addComponent(txtCURR, "top:10.0px;left:10.0px;");
 		
@@ -782,7 +779,7 @@ public class Tecnico extends CustomComponent implements Formulario
 		// common part: create layout
 		horLGeneralesFoto = new HorizontalLayout();
 		horLGeneralesFoto.setImmediate(false);
-		horLGeneralesFoto.setWidth("100.0%");
+		horLGeneralesFoto.setWidth("601px");
 		horLGeneralesFoto.setHeight("-1px");
 		horLGeneralesFoto.setMargin(false);
 		
@@ -855,7 +852,6 @@ public class Tecnico extends CustomComponent implements Formulario
 		txtNombre.setImmediate(false);
 		txtNombre.setWidth("260px");
 		txtNombre.setHeight("25px");
-		txtNombre.setInvalidAllowed(false);
 		absLGenerales1.addComponent(txtNombre, "top:28.0px;left:10.0px;");
 		
 		// txtApP

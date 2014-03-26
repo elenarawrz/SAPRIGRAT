@@ -183,15 +183,15 @@ public class Datos
 	public LinkedList<Object> getRiego(int idRiego)
 	{
 		LinkedList<Object> riego = cons.getRegistro("riego", new Object[]{idRiego});
-		riego = bigDecimalToDoubleList(riego);
+		riego = bigDecimalToLongList(riego);
 		return riego;
 	}
 
 	public LinkedList<Object[]> getListaRiego(int idRiego)
 	{
 		LinkedList<Object[]> listaRiego = cons.getTabla("riegoLista", new Object[]{idRiego});
-		listaRiego.remove();
 		listaRiego = bigDecimalToLongArr(listaRiego);
+		listaRiego.remove();
 		return listaRiego;
 	}
 	
@@ -226,6 +226,31 @@ public class Datos
 	}
 	//endregion
 	
+	//region Reportes de Visita
+	public String registrarReporte(LinkedList<Object> valores)
+	{
+		return ins.insertarRegistro("reporteVisita", valores);
+	}
+
+	public String modificarReporte(LinkedList<Object> valores)
+	{
+		return ins.modificarRegistro("reporteVisita", valores);
+	}
+
+	public LinkedList<Object> getReporte(int idReporte)
+	{
+		LinkedList<Object> reporte = cons.getRegistro("reporteVisita", new Object[]{idReporte});
+		reporte = bigDecimalToDoubleList(reporte);
+		return reporte;
+	}
+	
+	public LinkedList<Object[]> getReportes(String CURRtec)
+	{
+		LinkedList<Object[]> reporte = cons.getTabla("reportesVisita", new Object[]{CURRtec});
+		reporte = bigDecimalToDoubleArr(reporte);
+		return reporte;
+	}
+	//endregion
 	
 	//region Conversión de tipos
 	private LinkedList<Object[]> bigDecimalToLongArr(LinkedList<Object[]> lista)
@@ -239,11 +264,19 @@ public class Datos
 		}
 		return lista;
 	}
+	private LinkedList<Object> bigDecimalToLongList(LinkedList<Object> lista)
+	{
+		for(int i=0; i<lista.size(); i++)
+			if(lista.get(i) instanceof BigDecimal)
+				lista.set(i, Long.parseLong((BigDecimal)lista.get(i) + ""));
+		return lista;
+	}
+	
 	private LinkedList<Object> bigDecimalToDoubleList(LinkedList<Object> lista)
 	{
 		for(int i=0; i<lista.size(); i++)
 			if(lista.get(i) instanceof BigDecimal)
-				lista.set(i, Double.parseDouble((BigDecimal)lista.get(i) + "") + "");
+				lista.set(i, Double.parseDouble((BigDecimal)lista.get(i) + ""));
 		return lista;
 	}
 	

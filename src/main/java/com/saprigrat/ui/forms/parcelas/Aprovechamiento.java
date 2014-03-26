@@ -232,7 +232,7 @@ public class Aprovechamiento extends CustomComponent implements Formulario
 																	txtNoCtaPadron.setValue((String)valores.remove());
 																	txtNoSubctaPadron.setValue((String)valores.remove());
 																	txtNoLote.setValue((String)valores.remove());
-																	txtSuperficie.setValue((String)valores.remove());
+																	txtSuperficie.setValue(valores.remove() + "");
 																	cmbFAbast.select(valores.remove());
 																	cmbTenencia.select(valores.remove());
 																	cmbOrgCuenca.select(valores.remove());

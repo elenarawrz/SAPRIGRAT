@@ -317,14 +317,11 @@ public class Productor extends CustomComponent implements Formulario
 		//Configurar el formato de fecha mostrado
 		datIngreso.setWeekendDisabled(false);
 		datIngreso.setDateTimeFormatter(DateTimeFormat.longDate());
-		datIngreso.setDateTextReadOnly(true);
 		//Poblar la lista de 'Estado'
 		estados = datos.getEstados();
 		llenarLista(estados, cmbEdo);
 		//Agregar un listener a la lista para poblar la lista 'Municipio' dependiendo del estado seleccionado
 		cmbEdo.addValueChangeListener(llenarMpiosListener);
-		cmbEdo.select("Sonora");
-		cmbMpio.select("Cajeme");
 		
 		btnNuevo.addClickListener(nuevoListener);
 		btnVolver.addClickListener(listadoListener);
@@ -560,7 +557,7 @@ public class Productor extends CustomComponent implements Formulario
 		// common part: create layout
 		horLCURR = new HorizontalLayout();
 		horLCURR.setImmediate(false);
-		horLCURR.setWidth("100.0%");
+		horLCURR.setWidth("601px");
 		horLCURR.setHeight("-1px");
 		horLCURR.setMargin(false);
 		
@@ -582,7 +579,7 @@ public class Productor extends CustomComponent implements Formulario
 		panResponsable = new Panel();
 		panResponsable.setCaption("Responsable Técnico");
 		panResponsable.setImmediate(false);
-		panResponsable.setWidth("331px");
+		panResponsable.setWidth("341px");
 		panResponsable.setHeight("-1px");
 		
 		// absLResponsable
@@ -603,7 +600,7 @@ public class Productor extends CustomComponent implements Formulario
 		// cmbResponsable
 		cmbResponsable = new ComboBox();
 		cmbResponsable.setImmediate(true);
-		cmbResponsable.setWidth("310px");
+		cmbResponsable.setWidth("320px");
 		cmbResponsable.setHeight("25px");
 		absLResponsable.addComponent(cmbResponsable, "top:10.0px;left:10.0px;");
 		
@@ -614,9 +611,9 @@ public class Productor extends CustomComponent implements Formulario
 	private Panel buildPanCURR() {
 		// common part: create layout
 		panCURR = new Panel();
-		panCURR.setCaption("CURR (Clave Unica de Registro de RIGRAT)");
+		panCURR.setCaption("CURR (Clave Unica de Registro RIGRAT)");
 		panCURR.setImmediate(false);
-		panCURR.setWidth("261px");
+		panCURR.setWidth("241px");
 		panCURR.setHeight("-1px");
 		
 		// absLCURR
@@ -637,7 +634,7 @@ public class Productor extends CustomComponent implements Formulario
 		// txtCURR
 		txtCURR = new TextField();
 		txtCURR.setImmediate(false);
-		txtCURR.setWidth("240px");
+		txtCURR.setWidth("220px");
 		txtCURR.setHeight("25px");
 		absLCURR.addComponent(txtCURR, "top:10.0px;left:10.0px;");
 		
@@ -719,7 +716,6 @@ public class Productor extends CustomComponent implements Formulario
 		txtNombre.setImmediate(false);
 		txtNombre.setWidth("260px");
 		txtNombre.setHeight("25px");
-		txtNombre.setInvalidAllowed(false);
 		absLGenerales1.addComponent(txtNombre, "top:28.0px;left:10.0px;");
 		
 		// txtApP
