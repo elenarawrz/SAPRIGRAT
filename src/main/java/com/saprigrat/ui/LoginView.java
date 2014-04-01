@@ -129,7 +129,7 @@ public class LoginView extends CustomComponent
 		imgLogo.setImmediate(false);
 		imgLogo.setWidth("700px");
 		imgLogo.setHeight("-1px");
-		imgLogo.setSource(new ThemeResource("img/portada1.1.jpg"));
+		imgLogo.setSource(new ThemeResource("img/portadav2.jpg"));
 		imgLogo.setType(1);
 		imgLogo.setMimeType("image/png");
 		verLFormulario.addComponent(imgLogo);

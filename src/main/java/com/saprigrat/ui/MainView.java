@@ -105,7 +105,7 @@ public class MainView extends CustomComponent
 		MenuItem menu = mbrMenu.addItem("Niveles de Administración", null);
 		if(usuario.getTipo() == usuario.ADMINISTRADOR)
 		{
-			menu.addItem("Administrador", com(new Tecnico(usuario.ADMINISTRADOR, usuario)));
+			menu.addItem("Administrador de Distrito", com(new Tecnico(usuario.ADMINISTRADOR, usuario)));
 			menu.addItem("Supervisor Técnico", com(new Tecnico(usuario.SUPERVISOR, usuario)));
 		}
 		if(usuario.getTipo() <= usuario.SUPERVISOR)
@@ -113,14 +113,11 @@ public class MainView extends CustomComponent
 		menu.addItem("Usuario/Productor", com(new Productor(usuario)));
 		
 		menu = mbrMenu.addItem("Parcelas", null);
-		menu.addItem("Aprovechamiento", com(new Aprovechamiento(usuario)));
-		menu.addItem("Parcela", com(new Parcela(usuario)));
-		
-		menu = mbrMenu.addItem("Riegos", null);
+		menu.addItem("Datos Generales", com(new Aprovechamiento(usuario)));
+		menu.addItem("Caracterización", com(new Parcela(usuario)));
 		menu.addItem("Riego", com(new Riego(usuario)));
 		menu.addItem("Regador", com(new Regador(usuario)));
-		
-		mbrMenu.addItem("Reporte de Visita", com(new ReporteVisita(usuario)));
+		menu.addItem("Reporte de Visita", com(new ReporteVisita(usuario)));
 		
 //		mbrMenu.addItem("Pozo", com(new Pozo()));
 //		mbrMenu.addItem("Prueba de Riego", com(new PruebaRiego(usuario)));
@@ -218,7 +215,7 @@ public class MainView extends CustomComponent
 		imgHeader.setImmediate(false);
 		imgHeader.setWidth("-1px");
 		imgHeader.setHeight("80px");
-		imgHeader.setSource(new ThemeResource("img/header.png"));
+		imgHeader.setSource(new ThemeResource("img/logos/headerv3.png"));
 		imgHeader.setType(1);
 		imgHeader.setMimeType("image/png");
 		absLHead.addComponent(imgHeader, "top:20.0px;left:20.0px;");
@@ -240,7 +237,7 @@ public class MainView extends CustomComponent
 		imgUach.setDescription("Universidad Autónoma Chapingo");
 		imgUach.setWidth("-1px");
 		imgUach.setHeight("30px");
-		imgUach.setSource(new ThemeResource("img/logos/uach.png"));
+		imgUach.setSource(new ThemeResource("img/logos/uach.jpg"));
 		imgUach.setType(1);
 		imgUach.setMimeType("image/png");
 		absLHead.addComponent(imgUach, "top:65.0px;right:110.0px;");
