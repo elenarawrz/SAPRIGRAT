@@ -91,13 +91,13 @@ public class LoginView extends CustomComponent
 		// common part: create layout
 		mainLayout = new VerticalLayout();
 		mainLayout.setImmediate(false);
-		mainLayout.setWidth("701px");
+		mainLayout.setWidth("-1px");
 		mainLayout.setHeight("-1px");
 		mainLayout.setMargin(false);
 		mainLayout.setSpacing(true);
 		
 		// top-level component properties
-		setWidth("701px");
+		setWidth("901px");
 		setHeight("-1px");
 		
 		// verLFormulario
@@ -127,7 +127,7 @@ public class LoginView extends CustomComponent
 		// imgLogo
 		imgLogo = new Embedded();
 		imgLogo.setImmediate(false);
-		imgLogo.setWidth("700px");
+		imgLogo.setWidth("900px");
 		imgLogo.setHeight("-1px");
 		imgLogo.setSource(new ThemeResource("img/portadav2.jpg"));
 		imgLogo.setType(1);

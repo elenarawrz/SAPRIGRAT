@@ -88,7 +88,7 @@ public class Foto extends CustomComponent
 		panFoto = new Panel();
 		panFoto.setCaption("Foto");
 		panFoto.setImmediate(false);
-		panFoto.setWidth("311px");
+		panFoto.setWidth("451px");
 		panFoto.setHeight("-1px");
 		
 		// absLFoto
@@ -125,7 +125,7 @@ public class Foto extends CustomComponent
 		// common part: create layout
 		verLFoto = new VerticalLayout();
 		verLFoto.setImmediate(false);
-		verLFoto.setWidth("290px");
+		verLFoto.setWidth("430px");
 		verLFoto.setHeight("-1px");
 		verLFoto.setMargin(false);
 		

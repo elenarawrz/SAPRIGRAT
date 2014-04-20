@@ -19,6 +19,33 @@ public class Datos
 		return cons.getRegistro("login", new Object[]{user, pass});
 	}
 	
+	//region Administradores
+	public String registrarAdministrador(LinkedList<Object> valores)
+	{
+		return ins.insertarRegistro("administrador", valores);
+	}
+
+	public String modificarAdministrador(LinkedList<Object> valores)
+	{
+		return ins.modificarRegistro("administrador", valores);
+	}
+
+	public LinkedList<Object> getAdministrador(int idAdministrador)
+	{
+		return cons.getRegistro("administrador", new Object[]{idAdministrador});
+	}
+	
+	public LinkedList<Object[]> getAdministradores(int tipoPersona)
+	{
+		return cons.getTabla("administradores", new Object[]{tipoPersona});
+	}
+
+	public int getIdAdministradorGeneral(int tipoPersona)
+	{
+		return (Integer)cons.getRegistro("idAdministrador", new Object[]{tipoPersona}).getFirst();
+	}
+	//endregion
+	
 	//region Técnicos
 	public String registrarTecnico(LinkedList<Object> valores)
 	{
@@ -73,42 +100,6 @@ public class Datos
 	}
 	//endregion
 	
-	//region Aprovechamientos
-	public String registrarAprovechamiento(LinkedList<Object> valores)
-	{
-		return ins.insertarRegistro("aprovechamiento", valores);
-	}
-
-	public String modificarAprovechamiento(LinkedList<Object> valores)
-	{
-		return ins.modificarRegistro("aprovechamiento", valores);
-	}
-
-	public LinkedList<Object> getAprovechamiento(int idAprovechamiento)//String padron)
-	{
-		LinkedList<Object> aprovechamiento = cons.getRegistro("aprovechamiento", new Object[]{idAprovechamiento/*padron*/});
-		aprovechamiento = bigDecimalToDoubleList(aprovechamiento);//.set(4, Double.parseDouble((BigDecimal)aprovechamiento.get(4) + "") + "");
-		return aprovechamiento;
-	}
-	
-	public LinkedList<Object[]> getAprovechamientos(String currResp)
-	{
-		LinkedList<Object[]> aprovechamientos = cons.getTabla("aprovechamientos", new Object[]{currResp});
-		aprovechamientos = bigDecimalToDoubleArr(aprovechamientos);
-//		for(int i = 1; i<aprovechamientos.size(); i++)
-//		{
-//			Object[] aprovechamiento = aprovechamientos.get(i);
-//			aprovechamiento[3] = Double.parseDouble((BigDecimal)aprovechamiento[3] + "");
-//		}
-		return aprovechamientos;
-	}
-	
-	public LinkedList<String> getCtasPadron(String currProd)
-	{
-		return cons.getListado("ctasPadron", new Object[]{currProd});
-	}
-	//endregion
-	
 	//region Parcelas
 	public String registrarParcela(LinkedList<Object> valores)
 	{
@@ -123,20 +114,46 @@ public class Datos
 	public LinkedList<Object> getParcela(int idParcela)
 	{
 		LinkedList<Object> parcela = cons.getRegistro("parcela", new Object[]{idParcela});
-		parcela = bigDecimalToDoubleList(parcela);
+		parcela = bigDecimalToDoubleList(parcela);//.set(4, Double.parseDouble((BigDecimal)aprovechamiento.get(4) + "") + "");
 		return parcela;
 	}
 	
-	public LinkedList<Object[]> getParcelas(String CURRtec)
+	public LinkedList<Object[]> getParcelas(String currResp)
 	{
-		LinkedList<Object[]> parcelas = cons.getTabla("parcelas", new Object[]{CURRtec});
+		LinkedList<Object[]> parcelas = cons.getTabla("parcelas", new Object[]{currResp});
 		parcelas = bigDecimalToDoubleArr(parcelas);
 		return parcelas;
 	}
 	
-	public LinkedList<String> getCtasPadronParcelas(String CURRprod)
+	public LinkedList<String> getCtasPadron(String currProd)
 	{
-		return cons.getListado("ctasPadronParcelas", new Object[]{CURRprod});
+		return cons.getListado("ctasPadron", new Object[]{currProd});
+	}
+	//endregion
+	
+	//region Caracterización Parcela
+	public String registrarCaracterizacion(LinkedList<Object> valores)
+	{
+		return ins.insertarRegistro("caracterizacionParcela", valores);
+	}
+
+	public String modificarCaracterizacion(LinkedList<Object> valores)
+	{
+		return ins.modificarRegistro("caracterizacionParcela", valores);
+	}
+
+	public LinkedList<Object> getCaracterizacion(int idCaracterizacion)
+	{
+		LinkedList<Object> parcela = cons.getRegistro("caracterizacionParcela", new Object[]{idCaracterizacion});
+		parcela = bigDecimalToDoubleList(parcela);
+		return parcela;
+	}
+	
+	public LinkedList<Object[]> getCaracterizaciones(String CURRtec)
+	{
+		LinkedList<Object[]> caracterizaciones = cons.getTabla("caracterizacionParcelas", new Object[]{CURRtec});
+		caracterizaciones = bigDecimalToDoubleArr(caracterizaciones);
+		return caracterizaciones;
 	}
 	//endregion
 	
@@ -337,6 +354,11 @@ public class Datos
 	public LinkedList<String> getModRiego(String distrito)
 	{
 		return cons.getListado("modRiego", new Object[]{distrito});
+	}
+	
+	public LinkedList<String> getAllSRL()
+	{
+		return cons.getListado("allSRL", new Object[]{});
 	}
 	
 	public LinkedList<String> getSRL(String distrito)

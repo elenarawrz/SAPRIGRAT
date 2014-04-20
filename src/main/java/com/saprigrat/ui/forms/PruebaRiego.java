@@ -153,7 +153,7 @@ public class PruebaRiego extends CustomComponent implements Formulario
 																	
 																	llenarLista(datos.getRespProductores(((String)cmbResponsable.getValue()).split(" ")[0]), cmbProductor);
 																	cmbProductor.setValue(valores.remove());
-																	llenarLista(datos.getCtasPadronParcelas(((String)cmbProductor.getValue()).split(" ")[0]), cmbParcela);
+																	llenarLista(datos.getCtasPadron(((String)cmbProductor.getValue()).split(" ")[0]), cmbParcela);
 																	cmbParcela.setValue(valores.remove());
 																	llenarLista(datos.getRespRegadores((String)cmbParcela.getValue()), cmbRegador);
 																	cmbRegador.setValue(valores.remove());
@@ -229,7 +229,7 @@ public class PruebaRiego extends CustomComponent implements Formulario
 															@Override
 															public void valueChange(ValueChangeEvent event)
 															{
-																llenarLista(datos.getCtasPadronParcelas(((String)cmbProductor.getValue()).split(" ")[0]), cmbParcela);
+																llenarLista(datos.getCtasPadron(((String)cmbProductor.getValue()).split(" ")[0]), cmbParcela);
 																if(cmbParcela.size() == 0)
 																	Notification.show("No se podrá agregar el registro ya que este productor no está relacionado con ninguna parcela.", Notification.Type.ERROR_MESSAGE);
 															}

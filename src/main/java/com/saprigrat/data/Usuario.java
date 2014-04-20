@@ -10,7 +10,8 @@ public class Usuario
 					apMaterno,
 					estado;
 	
-	public int  ADMINISTRADOR = 0,
+	public int  ADMINISTRADOR_GENERAL = -1,
+				ADMINISTRADOR = 0,
 				SUPERVISOR = 1,
 				RESPONSABLE = 2,
 				PRODUCTOR = 3,
