@@ -1,4 +1,4 @@
-package com.saprigrat.data;
+package com.saprigrat.entities;
 
 public class Usuario
 {

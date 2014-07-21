@@ -83,8 +83,8 @@ public class InterfazInsercion
 								if(valor instanceof Double)
 									cs.setBigDecimal(i + 2, new BigDecimal((Double)valor));
 								else
-									if(valor instanceof Long[])
-										cs.setArray(i + 2, con.createArrayOf("decimal", (Long[]) valor));
+									if(valor instanceof Double[])
+										cs.setArray(i + 2, con.createArrayOf("decimal", (Double[]) valor));
 									else
 										if(valor instanceof Integer[])
 											cs.setArray(i + 2, con.createArrayOf("int", (Integer[]) valor));

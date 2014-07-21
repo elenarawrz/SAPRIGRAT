@@ -22,7 +22,7 @@ public class InterfazConsulta
 		LinkedList<Object[]> listado = new LinkedList<Object[]>();
 		try
 		{
-			ResultSet rs = getResultset(tabla, valores);
+			ResultSet rs = (ResultSet) getResult(tabla, Types.OTHER, valores);
 			if(rs != null)
 			{
 				int cols = rs.getMetaData().getColumnCount();
@@ -55,7 +55,7 @@ public class InterfazConsulta
 		LinkedList<Object> listado = new LinkedList<Object>();
 		try
 		{
-			ResultSet rs = getResultset(tabla, valores);
+			ResultSet rs = (ResultSet) getResult(tabla, Types.OTHER, valores);
 			if(rs != null)
 			{
 				while (rs.next())
@@ -66,9 +66,7 @@ public class InterfazConsulta
 		}
 		catch (SQLException e)
 		{
-			System.out.println("Error al obtener el " + (tabla.indexOf("Resp") == -1
-													  ? "registro."
-									  				  : "listado."));
+			System.out.println("Error al obtener el registro.");
 			conexion.errorlog(e);//e.printStackTrace();
 		}
 		return listado;
@@ -79,7 +77,7 @@ public class InterfazConsulta
 		LinkedList<String> listado = new LinkedList<String>();
 		try
 		{
-			ResultSet rs = getResultset(tabla, valores);
+			ResultSet rs = (ResultSet) getResult(tabla, Types.OTHER, valores);
 			if(rs != null)
 			{
 				while (rs.next())
@@ -89,17 +87,32 @@ public class InterfazConsulta
 		}
 		catch (SQLException e)
 		{
-			System.out.println("Error al obtener el " + (tabla.indexOf("Resp") == -1
-													  ? "registro."
-									  				  : "listado."));
+			System.out.println("Error al obtener el listado.");
 			conexion.errorlog(e);//e.printStackTrace();
 		}
 		return listado;
 	}
 	
-	private ResultSet getResultset(String tabla, Object[] valores) throws SQLException
+	public int getId(String tabla, Object[] valores)
 	{
-		ResultSet rs = null;
+		int id = 0;
+		try
+		{
+			Object result = getResult(tabla, Types.INTEGER, valores);
+			if (result != null)
+				id = (Integer)result;
+		}
+		catch (SQLException e)
+		{
+			System.out.println("Error al obtener el id.");
+			conexion.errorlog(e);//e.printStackTrace();
+		}
+		return id;
+	}
+	
+	private Object getResult(String tabla, int returns, Object[] valores) throws SQLException
+	{
+		Object result = null;
 		Connection con = conexion.openConexion();
 		if(con != null)
 		{
@@ -112,7 +125,7 @@ public class InterfazConsulta
 				vars = vars.substring(0, vars.length() - 1);
 			
 			CallableStatement cs = con.prepareCall("{? = call " + tabla + "Select (" + vars + ")}");
-			cs.registerOutParameter(1, Types.OTHER);
+			cs.registerOutParameter(1, returns);
 			for(int i = 0; i<valores.length; i++)
 			{
 				if(valores[i]!=null)
@@ -137,12 +150,12 @@ public class InterfazConsulta
 			}
 			cs.execute();
 			
-			rs = (ResultSet) cs.getObject(1);
+			result = cs.getObject(1);
 			
 			cs.close();
 			conexion.closeConexion(con);
 		}
 		
-		return rs;
+		return result;
 	}
 }

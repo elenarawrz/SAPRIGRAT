@@ -3,7 +3,7 @@ package com.saprigrat.ui.forms;
 import java.util.LinkedList;
 
 import com.saprigrat.data.Datos;
-import com.saprigrat.data.Usuario;
+import com.saprigrat.entities.Usuario;
 import com.saprigrat.ui.components.pruebaderiego.Aforo;
 import com.saprigrat.ui.components.pruebaderiego.Caracteristicas;
 import com.saprigrat.ui.components.pruebaderiego.LecturaInicial;

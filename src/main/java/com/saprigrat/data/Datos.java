@@ -8,10 +8,12 @@ public class Datos
 {
 	InterfazConsulta cons;
 	InterfazInsercion ins;
+	InterfazEliminacion elim;
 	public Datos()
 	{
 		cons = new InterfazConsulta();
 		ins = new InterfazInsercion();
+		elim = new InterfazEliminacion();
 	}
 	
 	public LinkedList<Object> autenticacion(String user, String pass)
@@ -30,6 +32,11 @@ public class Datos
 		return ins.modificarRegistro("administrador", valores);
 	}
 
+	public String eliminarAdministrador(int idAdministrador, String CURR)
+	{
+		return elim.eliminarRegistro("administrador", new Object[]{idAdministrador, CURR});
+	}
+
 	public LinkedList<Object> getAdministrador(int idAdministrador)
 	{
 		return cons.getRegistro("administrador", new Object[]{idAdministrador});
@@ -42,7 +49,7 @@ public class Datos
 
 	public int getIdAdministradorGeneral(int tipoPersona)
 	{
-		return (Integer)cons.getRegistro("idAdministrador", new Object[]{tipoPersona}).getFirst();
+		return cons.getId("administradorId", new Object[]{tipoPersona});
 	}
 	//endregion
 	
@@ -55,6 +62,11 @@ public class Datos
 	public String modificarTecnico(LinkedList<Object> valores)
 	{
 		return ins.modificarRegistro("tecnico", valores);
+	}
+
+	public String eliminarTecnico(int idTecnico, String CURR, int tipoEliminar)
+	{
+		return elim.eliminarRegistro("tecnico", new Object[]{idTecnico, CURR, tipoEliminar});
 	}
 
 	public LinkedList<Object> getTecnico(int idTecnico)
@@ -82,6 +94,11 @@ public class Datos
 	public String modificarProductor(LinkedList<Object> valores)
 	{
 		return ins.modificarRegistro("productor", valores);
+	}
+
+	public String eliminarProductor(int idProductor)
+	{
+		return elim.eliminarRegistro("productor", new Object[]{idProductor});
 	}
 
 	public LinkedList<Object> getProductor(int idProductor)
@@ -117,6 +134,14 @@ public class Datos
 		parcela = bigDecimalToDoubleList(parcela);//.set(4, Double.parseDouble((BigDecimal)aprovechamiento.get(4) + "") + "");
 		return parcela;
 	}
+
+	public LinkedList<Object[]> getListaArrendatarios(int idParcela)
+	{
+		LinkedList<Object[]> listaArrendatarios = cons.getTabla("parcelaArrendatariosLista", new Object[]{idParcela});
+		listaArrendatarios = bigDecimalToDoubleArr(listaArrendatarios);
+		listaArrendatarios.remove();
+		return listaArrendatarios;
+	}
 	
 	public LinkedList<Object[]> getParcelas(String currResp)
 	{
@@ -125,9 +150,28 @@ public class Datos
 		return parcelas;
 	}
 	
+	public LinkedList<Object[]> getParcelasByResponsable(String currResp)
+	{
+		LinkedList<Object[]> parcelas = cons.getTabla("parcelasByResponsable", new Object[]{currResp});
+		parcelas = bigDecimalToDoubleArr(parcelas);
+		return parcelas;
+	}
+	
+	public LinkedList<Object[]> getParcelasByProductor(String currProd)
+	{
+		LinkedList<Object[]> parcelas = cons.getTabla("parcelasByProductor", new Object[]{currProd});
+		parcelas = bigDecimalToDoubleArr(parcelas);
+		return parcelas;
+	}
+	
 	public LinkedList<String> getCtasPadron(String currProd)
 	{
 		return cons.getListado("ctasPadron", new Object[]{currProd});
+	}
+	
+	public int getIdParcela(String padron)
+	{
+		return cons.getId("parcelaId", new Object[]{padron});
 	}
 	//endregion
 	
@@ -154,6 +198,11 @@ public class Datos
 		LinkedList<Object[]> caracterizaciones = cons.getTabla("caracterizacionParcelas", new Object[]{CURRtec});
 		caracterizaciones = bigDecimalToDoubleArr(caracterizaciones);
 		return caracterizaciones;
+	}
+	
+	public int getIdCaracterizacionByParcela(int idParcela)
+	{
+		return cons.getId("caracterizacionParcelaId", new Object[]{idParcela});
 	}
 	//endregion
 	
@@ -184,6 +233,11 @@ public class Datos
 	{
 		return cons.getListado("regadoresResp", new Object[]{padronParcela});
 	}
+	
+	public LinkedList<Object[]> getRegadoresByParcela(int idParcela)
+	{
+		return cons.getTabla("regadoresByParcela", new Object[]{idParcela});
+	}
 	//endregion
 	
 	//region Riegos
@@ -200,14 +254,14 @@ public class Datos
 	public LinkedList<Object> getRiego(int idRiego)
 	{
 		LinkedList<Object> riego = cons.getRegistro("riego", new Object[]{idRiego});
-		riego = bigDecimalToLongList(riego);
+		riego = bigDecimalToDoubleList(riego);
 		return riego;
 	}
 
 	public LinkedList<Object[]> getListaRiego(int idRiego)
 	{
 		LinkedList<Object[]> listaRiego = cons.getTabla("riegoLista", new Object[]{idRiego});
-		listaRiego = bigDecimalToLongArr(listaRiego);
+		listaRiego = bigDecimalToDoubleArr(listaRiego);
 		listaRiego.remove();
 		return listaRiego;
 	}
@@ -215,6 +269,11 @@ public class Datos
 	public LinkedList<Object[]> getRiegos(String CURRresp)
 	{
 		return cons.getTabla("riegos", new Object[]{CURRresp});
+	}
+	
+	public LinkedList<Object[]> getRiegosByParcela(int idParcela)
+	{
+		return cons.getTabla("riegosByParcela", new Object[]{idParcela});
 	}
 	//endregion
 	
@@ -266,6 +325,11 @@ public class Datos
 		LinkedList<Object[]> reporte = cons.getTabla("reportesVisita", new Object[]{CURRtec});
 		reporte = bigDecimalToDoubleArr(reporte);
 		return reporte;
+	}
+	
+	public LinkedList<Object[]> getReportesByParcela(int idParcela)
+	{
+		return cons.getTabla("reportesVisitaByParcela", new Object[]{idParcela});
 	}
 	//endregion
 	
@@ -321,9 +385,15 @@ public class Datos
 	{
 		return cons.getListado("municipios", new Object[]{estado});
 	}
-	public LinkedList<String> getFormacion()
+	
+	public LinkedList<String> getLicenciaturas()
 	{
 		return cons.getListado("formacion", new Object[]{});
+	}
+	
+	public LinkedList<String> getInstituciones()
+	{
+		return cons.getListado("instituciones", new Object[]{});
 	}
 	
 	public LinkedList<String> getAbastecimiento()
@@ -379,6 +449,16 @@ public class Datos
 	public LinkedList<String> getEtapaFenologica()
 	{
 		return cons.getListado("etapaFenologica", new Object[]{});
+	}
+	
+	public LinkedList<String> getPropiedadParcela()
+	{
+		return cons.getListado("propiedadParcela", new Object[]{});
+	}
+	
+	public LinkedList<String> getDatosRiegoDisponibles()
+	{
+		return cons.getListado("datosRiegoDisponibles", new Object[]{});
 	}
 	//endregion
 	
