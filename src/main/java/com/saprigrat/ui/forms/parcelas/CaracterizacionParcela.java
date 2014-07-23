@@ -564,70 +564,16 @@ public class CaracterizacionParcela extends CustomComponent implements Formulari
 		if(chkNivelada.getValue() && datNivelacion.getValue() == null)
 			return u.notificar("Se requiere especificar la fecha en que fue nivelada", datNivelacion, u.MSJ_ERROR);
 
-		if(cmbTipoSuelo.getValue() == null)
-			return u.notificar("Se requiere especificar el tipo de suelo", cmbTipoSuelo, u.MSJ_ERROR);
-		if(txtLongitud.getValue().isEmpty())
-			return u.notificar("Se requiere especificar la longitud de la parcela", txtLongitud, u.MSJ_ERROR);
-		if(txtAncho.getValue().isEmpty())
-			return u.notificar("Se requiere especificar el ancho de la parcela", txtAncho, u.MSJ_ERROR);
-		if(txtSupRegada.getValue().isEmpty())
-			return u.notificar("Se requiere especificar la superficie regada", txtSupRegada, u.MSJ_ERROR);
-		if(txtAnchoSurco.getValue().isEmpty())
-			return u.notificar("Se requiere especificar el ancho del surco", txtAnchoSurco, u.MSJ_ERROR);
-		if(txtAnchoTendido.getValue().isEmpty())
-			return u.notificar("Se requiere especificar el ancho del tendido", txtAnchoTendido, u.MSJ_ERROR);
-		if(txtHumSat.getValue().isEmpty())
-			return u.notificar("Se requiere especificar el contenido de humedad a saturación", txtHumSat, u.MSJ_ERROR);
-		if(txtHumCC.getValue().isEmpty())
-			return u.notificar("Se requiere especificar el contenido de humedad a CC", txtHumCC, u.MSJ_ERROR);
-		if(txtHumPMP.getValue().isEmpty())
-			return u.notificar("Se requiere especificar el contenido de humedad a PMP", txtHumPMP, u.MSJ_ERROR);
-		if(txtCondHidSat.getValue().isEmpty())
-			return u.notificar("Se requiere especificar la conductividad hidráulica a saturación", txtCondHidSat, u.MSJ_ERROR);
-		if(txtParamHF.getValue().isEmpty())
-			return u.notificar("Se requiere especificar el parámetro HF", txtParamHF, u.MSJ_ERROR);
-		if(txtRugosidad.getValue().isEmpty())
-			return u.notificar("Se requiere especificar la rugosidad del suelo", txtRugosidad, u.MSJ_ERROR);
-		if(txtDensidad.getValue().isEmpty())
-			return u.notificar("Se requiere especificar la densidad aparente", txtDensidad, u.MSJ_ERROR);
-		if(txtArena.getValue().isEmpty())
-			return u.notificar("Se requiere especificar el porcentaje de arena", txtArena, u.MSJ_ERROR);
-		if(txtArcilla.getValue().isEmpty())
-			return u.notificar("Se requiere especificar el porcentaje de arcilla", txtArcilla, u.MSJ_ERROR);
-		if(txtLimo.getValue().isEmpty())
-			return u.notificar("Se requiere especificar el porcentaje de limo", txtLimo, u.MSJ_ERROR);
-		if(txtPendiente.getValue().isEmpty())
-			return u.notificar("Se requiere especificar el porcentaje de pendiente", txtPendiente, u.MSJ_ERROR);
-
-		/*if(cmbCicloAnt.getValue() == null)
-			return notificar("Se requiere especificar el ciclo del cultivo anterior", cmbCicloAnt);
-		if(txtCultivoAnt.getValue().isEmpty())
-			return notificar("Se requiere especificar la variedad del cultivo anterior", txtCultivoAnt);
-		if(txtRendimientoAnt.getValue().isEmpty())
-			return notificar("Se requiere especificar el rendimiento del cultivo anterior", txtRendimientoAnt);
-		if(datSiembraAnt.getValue() == null)
-			return notificar("Se requiere especificar la fecha de siembra del cultivo anterior", datSiembraAnt);
-		if(datCosechaAnt.getValue() == null)
-			return notificar("Se requiere especificar la fecha de cosecha del cultivo anterior", datCosechaAnt);*/
-		
-		if(cmbCiclo.getValue() == null)
-			return u.notificar("Se requiere especificar el ciclo del cultivo actual", cmbCiclo, u.MSJ_ERROR);
-		if(txtCultivo.getValue().isEmpty())
-			return u.notificar("Se requiere especificar la variedad del cultivo actual", txtCultivo, u.MSJ_ERROR);
 		if(chkTerminoCiclo.getValue() && txtRendimiento.getValue().isEmpty())
 			return u.notificar("Se requiere especificar el rendimiento del cultivo actual", txtRendimiento, u.MSJ_ERROR);
-		if(datSiembra.getValue() == null)
-			return u.notificar("Se requiere especificar la fecha de siembra del cultivo actual", datSiembra, u.MSJ_ERROR);
-		if(datCosecha.getValue() == null)
-			return u.notificar("Se requiere especificar la fecha de cosecha del cultivo actual", datCosecha, u.MSJ_ERROR);
-
+		
 		if(!(txtLongitud.isValid() && txtAncho.isValid() && txtSupRegada.isValid() &&
 			txtAnchoSurco.isValid() && txtAnchoTendido.isValid() && txtHumSat.isValid() &&
 			txtHumCC.isValid() && txtHumPMP.isValid() && txtCondHidSat.isValid() &&
 			txtParamHF.isValid() && txtRugosidad.isValid() && txtDensidad.isValid() &&
 			txtArena.isValid() && txtArcilla.isValid() && txtLimo.isValid() &&
 			txtPendiente.isValid() && txtRendimiento.isValid() && txtRendimientoAnt.isValid() ))
-			return u.notificar("Los valores indicados deben ser estríctamente numéricos", txtLongitud, u.MSJ_ERROR);
+			return u.notificar("Los campos marcados deben contener un valor estríctamente numérico", null, u.MSJ_ERROR);
 		
 		return true;
 	}
@@ -642,31 +588,31 @@ public class CaracterizacionParcela extends CustomComponent implements Formulari
 		valores.add(chkRequiere.getValue() && chkProyecto.getValue());
 		valores.add(chkTrazo.getValue());
 		valores.add(cmbTipoSuelo.getValue());
-		valores.add(Double.parseDouble(txtLongitud.getValue()));
-		valores.add(Double.parseDouble(txtAncho.getValue()));
-		valores.add(Double.parseDouble(txtSupRegada.getValue()));
-		valores.add(Double.parseDouble(txtAnchoSurco.getValue()));
-		valores.add(Double.parseDouble(txtAnchoTendido.getValue()));
-		valores.add(Double.parseDouble(txtHumSat.getValue()));
-		valores.add(Double.parseDouble(txtHumCC.getValue()));
-		valores.add(Double.parseDouble(txtHumPMP.getValue()));
-		valores.add(Double.parseDouble(txtCondHidSat.getValue()));
-		valores.add(Double.parseDouble(txtParamHF.getValue()));
-		valores.add(Double.parseDouble(txtRugosidad.getValue()));
-		valores.add(Double.parseDouble(txtDensidad.getValue()));
-		valores.add(Double.parseDouble(txtArena.getValue()));
-		valores.add(Double.parseDouble(txtArcilla.getValue()));
-		valores.add(Double.parseDouble(txtLimo.getValue()));
-		valores.add(Double.parseDouble(txtPendiente.getValue()));
+		valores.add(u.stringToDouble(txtLongitud.getValue()));
+		valores.add(u.stringToDouble(txtAncho.getValue()));
+		valores.add(u.stringToDouble(txtSupRegada.getValue()));
+		valores.add(u.stringToDouble(txtAnchoSurco.getValue()));
+		valores.add(u.stringToDouble(txtAnchoTendido.getValue()));
+		valores.add(u.stringToDouble(txtHumSat.getValue()));
+		valores.add(u.stringToDouble(txtHumCC.getValue()));
+		valores.add(u.stringToDouble(txtHumPMP.getValue()));
+		valores.add(u.stringToDouble(txtCondHidSat.getValue()));
+		valores.add(u.stringToDouble(txtParamHF.getValue()));
+		valores.add(u.stringToDouble(txtRugosidad.getValue()));
+		valores.add(u.stringToDouble(txtDensidad.getValue()));
+		valores.add(u.stringToDouble(txtArena.getValue()));
+		valores.add(u.stringToDouble(txtArcilla.getValue()));
+		valores.add(u.stringToDouble(txtLimo.getValue()));
+		valores.add(u.stringToDouble(txtPendiente.getValue()));
 		valores.add(cmbCiclo.getValue());
 		valores.add(txtCultivo.getValue());
 		valores.add(chkTerminoCiclo.getValue());
-		valores.add(chkTerminoCiclo.getValue() ? Double.parseDouble(txtRendimiento.getValue()) : 0);
+		valores.add(chkTerminoCiclo.getValue() ? u.stringToDouble(txtRendimiento.getValue()) : null);
 		valores.add(u.fechaUtilToSQL(datSiembra.getValue()));
 		valores.add(u.fechaUtilToSQL(datCosecha.getValue()));
 		valores.add(cmbCicloAnt.getValue());
 		valores.add(txtCultivoAnt.getValue());
-		valores.add(Double.parseDouble(txtRendimientoAnt.getValue()));
+		valores.add(u.stringToDouble(txtRendimientoAnt.getValue()));
 		valores.add(u.fechaUtilToSQL(datSiembraAnt.getValue()));
 		valores.add(u.fechaUtilToSQL(datCosechaAnt.getValue()));
 		
@@ -711,32 +657,32 @@ public class CaracterizacionParcela extends CustomComponent implements Formulari
 		chkProyecto.setValue((Boolean)valores.remove());
 		chkTrazo.setValue((Boolean)valores.remove());
 		cmbTipoSuelo.setValue(valores.remove());
-		txtLongitud.setValue(valores.remove() + "");
-		txtAncho.setValue(valores.remove() + "");
-		txtSupRegada.setValue(valores.remove() + "");
-		txtAnchoSurco.setValue(valores.remove() + "");
-		txtAnchoTendido.setValue(valores.remove() + "");
-		txtHumSat.setValue(valores.remove() + "");
-		txtHumCC.setValue(valores.remove() + "");
-		txtHumPMP.setValue(valores.remove() + "");
-		txtCondHidSat.setValue(valores.remove() + "");
-		txtParamHF.setValue(valores.remove() + "");
-		txtRugosidad.setValue(valores.remove() + "");
-		txtDensidad.setValue(valores.remove() + "");
-		txtArena.setValue(valores.remove() + "");
-		txtArcilla.setValue(valores.remove() + "");
-		txtLimo.setValue(valores.remove() + "");
-		txtPendiente.setValue(valores.remove() + "");
+		txtLongitud.setValue(u.doubleToString(valores.remove()));
+		txtAncho.setValue(u.doubleToString(valores.remove()));
+		txtSupRegada.setValue(u.doubleToString(valores.remove()));
+		txtAnchoSurco.setValue(u.doubleToString(valores.remove()));
+		txtAnchoTendido.setValue(u.doubleToString(valores.remove()));
+		txtHumSat.setValue(u.doubleToString(valores.remove()));
+		txtHumCC.setValue(u.doubleToString(valores.remove()));
+		txtHumPMP.setValue(u.doubleToString(valores.remove()));
+		txtCondHidSat.setValue(u.doubleToString(valores.remove()));
+		txtParamHF.setValue(u.doubleToString(valores.remove()));
+		txtRugosidad.setValue(u.doubleToString(valores.remove()));
+		txtDensidad.setValue(u.doubleToString(valores.remove()));
+		txtArena.setValue(u.doubleToString(valores.remove()));
+		txtArcilla.setValue(u.doubleToString(valores.remove()));
+		txtLimo.setValue(u.doubleToString(valores.remove()));
+		txtPendiente.setValue(u.doubleToString(valores.remove()));
 		cmbCiclo.setValue(valores.remove());
 		txtCultivo.setValue((String)valores.remove());
 		Object terminoCiclo = valores.remove();
 		chkTerminoCiclo.setValue(terminoCiclo != null ? (Boolean)terminoCiclo : false);
-		txtRendimiento.setValue(valores.remove() + "");
+		txtRendimiento.setValue(u.doubleToString(valores.remove()));
 		datSiembra.setValue(u.fechaSQLToUtil((Date)valores.remove()));
 		datCosecha.setValue(u.fechaSQLToUtil((Date)valores.remove()));
 		cmbCicloAnt.setValue(valores.remove());
 		txtCultivoAnt.setValue((String)valores.remove());
-		txtRendimientoAnt.setValue(valores.remove() + "");
+		txtRendimientoAnt.setValue(u.doubleToString(valores.remove()));
 		datSiembraAnt.setValue(u.fechaSQLToUtil((Date)valores.remove()));
 		datCosechaAnt.setValue(u.fechaSQLToUtil((Date)valores.remove()));
 	}
@@ -1162,7 +1108,7 @@ public class CaracterizacionParcela extends CustomComponent implements Formulari
 		
 		// cmbTipoSuelo
 		cmbTipoSuelo = new ComboBox();
-		cmbTipoSuelo.setCaption("Tipo de Suelo");
+		cmbTipoSuelo.setCaption("Textura de Suelo");
 		cmbTipoSuelo.setImmediate(false);
 		cmbTipoSuelo.setWidth("465px");
 		cmbTipoSuelo.setHeight("25px");
@@ -1594,7 +1540,7 @@ public class CaracterizacionParcela extends CustomComponent implements Formulari
 		lblRendimientoAnt.setImmediate(false);
 		lblRendimientoAnt.setWidth("-1px");
 		lblRendimientoAnt.setHeight("-1px");
-		lblRendimientoAnt.setValue("ton/ha");
+		lblRendimientoAnt.setValue("t/ha");
 		absLCultivoAnt.addComponent(lblRendimientoAnt,
 				"top:122.0px;left:190.0px;");
 		
@@ -1715,7 +1661,7 @@ public class CaracterizacionParcela extends CustomComponent implements Formulari
 		lblRendimiento.setImmediate(false);
 		lblRendimiento.setWidth("-1px");
 		lblRendimiento.setHeight("-1px");
-		lblRendimiento.setValue("ton/ha");
+		lblRendimiento.setValue("t/ha");
 		absLRendimiento
 				.addComponent(lblRendimiento, "top:22.0px;left:210.0px;");
 		

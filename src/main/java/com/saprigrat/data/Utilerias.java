@@ -97,6 +97,22 @@ public class Utilerias
 			return new LocalDate(fecha.getTime());
 	}
 	
+	public Double stringToDouble(String str)
+	{
+		if(str.isEmpty())
+			return null;
+		else
+			return Double.parseDouble(str);
+	}
+	
+	public String doubleToString(Object dbl)
+	{
+		if(dbl == null)
+			return "";
+		else
+			return Double.toString((Double)dbl);
+	}
+	
 	public String llenarTabla(Table tbl, LinkedList<Object[]> rows, String elemento)
 	{
 		int rowCount = rows.size() - 1;

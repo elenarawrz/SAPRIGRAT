@@ -94,7 +94,7 @@ public class InterfazInsercion
 											else
 												System.out.println(valor.getClass().toString());
 			else
-				cs.setString(i + 2, null);
+				cs.setNull(i + 2, Types.OTHER);
 		}
 		cs.execute();
 		

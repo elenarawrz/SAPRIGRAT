@@ -442,16 +442,9 @@ public class Productor extends CustomComponent implements Formulario
 			return notificar("Se requiere especificar la fecha de ingreso", datIngreso);
 		if(cmbEdo.getValue() == null)
 			return notificar("Se requiere especificar el estado", cmbEdo);
-		if(cmbMpio.getValue() == null)
-			return notificar("Se requiere especificar el municipio", cmbMpio);
-		if(txtLoc.getValue().isEmpty())
-			return notificar("Se requiere especificar la localidad", txtLoc);
-		if(txtCalle.getValue().isEmpty())
-			return notificar("Se requiere especificar la calle", txtCalle);
-		if(txtNoExt.getValue().isEmpty())
-			return notificar("Se requiere especificar el número exterior", txtNoExt);
-		if(txtTel.getValue().isEmpty() && txtCel.getValue().isEmpty())
-			return notificar("Se requiere especificar al menos un número de teléfono", txtTel);
+		
+		if(!txtEmail.isValid())
+			return u.notificar("El correo electrónico debe cumplir con el formato 'usuario@dominio.com'", txtEmail, u.MSJ_ERROR);
 		
 		return true;
 	}

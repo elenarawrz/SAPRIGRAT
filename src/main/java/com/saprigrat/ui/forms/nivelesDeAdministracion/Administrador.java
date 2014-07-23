@@ -453,6 +453,9 @@ public class Administrador extends CustomComponent implements Formulario
 		if(!txtPass.getValue().equals(txtPass2.getValue()))
 			return notificar("Los valores de contraseña no coinciden", txtPass);
 		
+		if(!txtEmail.isValid())
+			return u.notificar("El correo electrónico debe cumplir con el formato 'usuario@dominio.com'", txtEmail, u.MSJ_ERROR);
+		
 		return true;
 	}
 	

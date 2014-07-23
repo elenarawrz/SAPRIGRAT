@@ -598,8 +598,6 @@ public class GeneralesParcela extends CustomComponent implements Formulario, For
 			return u.notificar("Se requiere especificar la superficie en hectáreas", txtSuperficie, u.MSJ_ERROR);
 		if(cmbFAbast.getValue() == null)
 			return u.notificar("Se requiere especificar la fuente de abastecimiento", cmbFAbast, u.MSJ_ERROR);
-		if(cmbTenencia.getValue() == null)
-			return u.notificar("Se requiere especificar la tenencia de la tierra", cmbTenencia, u.MSJ_ERROR);
 		if(cmbOrgCuenca.getValue() == null)
 			return u.notificar("Se requiere especificar el organismo de cuenca", cmbOrgCuenca, u.MSJ_ERROR);
 		if(optUnidadoDto.getValue() == null)
@@ -633,7 +631,7 @@ public class GeneralesParcela extends CustomComponent implements Formulario, For
 		valores.add(txtNoCtaPadron.getValue());
 		valores.add(txtNoSubctaPadron.getValue());
 		valores.add(txtNoLote.getValue());
-		valores.add(Double.parseDouble(txtSuperficie.getValue()));
+		valores.add(u.stringToDouble(txtSuperficie.getValue()));
 		valores.add(cmbFAbast.getValue());
 		valores.add(cmbTenencia.getValue());
 		valores.add(cmbOrgCuenca.getValue());
@@ -678,7 +676,7 @@ public class GeneralesParcela extends CustomComponent implements Formulario, For
 			if(index == 1)
 			{
 				arrNombre[0] = txtArrendatario.getValue();
-				arrSuperficie[0] = Double.parseDouble(txtSuperficieArrendada.getValue());
+				arrSuperficie[0] = u.stringToDouble(txtSuperficieArrendada.getValue());
 			}
 			else
 			{
@@ -736,7 +734,7 @@ public class GeneralesParcela extends CustomComponent implements Formulario, For
 		txtNoCtaPadron.setValue((String)valores.remove());
 		txtNoSubctaPadron.setValue((String)valores.remove());
 		txtNoLote.setValue((String)valores.remove());
-		txtSuperficie.setValue(valores.remove() + "");
+		txtSuperficie.setValue(u.doubleToString(valores.remove()));
 		cmbFAbast.select(valores.remove());
 		cmbTenencia.select(valores.remove());
 		cmbOrgCuenca.select(valores.remove());
@@ -757,7 +755,7 @@ public class GeneralesParcela extends CustomComponent implements Formulario, For
 		{
 			Object[] arrendatario = listaArrendatariosBD.pop();
 			txtArrendatario.setValue((String)arrendatario[0]);
-			txtSuperficieArrendada.setValue(arrendatario[1] + "");
+			txtSuperficieArrendada.setValue(u.doubleToString(arrendatario[1]));
 		}
 		else
 		{
@@ -848,7 +846,7 @@ public class GeneralesParcela extends CustomComponent implements Formulario, For
 		LinkedList<Object> arrendatario = new LinkedList<Object>();
 		arrendatario.add(0);
 		arrendatario.add(txtArrendatario.getValue());
-		arrendatario.add(Double.parseDouble(txtSuperficieArrendada.getValue()));
+		arrendatario.add(u.stringToDouble(txtSuperficieArrendada.getValue()));
 		return arrendatario;
 	}
 	
