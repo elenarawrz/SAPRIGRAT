@@ -759,11 +759,12 @@ public class GeneralesParcela extends CustomComponent implements Formulario, For
 		}
 		else
 		{
-			for(Object[] riego : listaArrendatariosBD)
+			listaArrendatarios.clear();
+			for(Object[] arrendatario : listaArrendatariosBD)
 			{
 				LinkedList<Object> row = new LinkedList<Object>();
 				row.add(0);
-				for(Object valor : riego)
+				for(Object valor : arrendatario)
 					row.add(valor);
 				listaArrendatarios.add(row);
 			}
