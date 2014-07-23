@@ -107,7 +107,7 @@ public class Utilerias
 	
 	public String doubleToString(Object dbl)
 	{
-		if(dbl == null)
+		if(dbl == null || dbl == "")
 			return "";
 		else
 			return Double.toString((Double)dbl);
