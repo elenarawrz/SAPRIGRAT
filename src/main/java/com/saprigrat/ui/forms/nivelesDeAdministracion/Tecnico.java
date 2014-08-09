@@ -562,8 +562,8 @@ public class Tecnico extends CustomComponent implements Formulario
 		valores.add(txtAcreditacion.getValue());
 		valores.add("");//TODO
 		valores.add(panFoto.getFoto());
-		valores.add(txtUser.getValue());
-		valores.add(txtPass.getValue());
+		valores.add(txtUser.getValue().trim());
+		valores.add(txtPass.getValue().trim());
 		return valores;
 	}
 

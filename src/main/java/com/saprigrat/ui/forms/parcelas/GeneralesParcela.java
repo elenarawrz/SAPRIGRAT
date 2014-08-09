@@ -328,8 +328,8 @@ public class GeneralesParcela extends CustomComponent implements Formulario, For
 				
 				private boolean validarArrendatario()
 				{
-					if(txtSuperficie.getValue().isEmpty() || !txtSuperficie.isValid())
-						return u.notificar("Se requiere especificar la superficie total para poder agregar arrendatarios", txtSuperficie, u.MSJ_ERROR);
+//					if(txtSuperficie.getValue().isEmpty() || !txtSuperficie.isValid())
+//						return u.notificar("Se requiere especificar la superficie total para poder agregar arrendatarios", txtSuperficie, u.MSJ_ERROR);
 					if(txtArrendatario.getValue().isEmpty())
 						return u.notificar("Se requiere especificar el nombre del arrendatario", txtArrendatario, u.MSJ_ERROR);
 					if(txtSuperficieArrendada.getValue().isEmpty() || !txtSuperficieArrendada.isValid())
@@ -338,12 +338,12 @@ public class GeneralesParcela extends CustomComponent implements Formulario, For
 						if(Double.parseDouble(txtSuperficieArrendada.getValue()) == 0)
 							return u.notificar("La superficie arrendada no puede ser igual a 0", txtSuperficieArrendada, u.MSJ_ERROR);
 					
-					Double sumaSup = Double.parseDouble(txtSuperficieArrendada.getValue()) -
-									 (arrendatarioSel != -1 ? (Double)listaArrendatarios.get(arrendatarioSel).getLast() : 0);
-					for(LinkedList<Object> arrendatario : listaArrendatarios)
-						sumaSup += (Double)arrendatario.getLast();
-					if(sumaSup > Double.parseDouble(txtSuperficie.getValue()))
-						return u.notificar("Está excediendo la superficie total definida en la sección de datos generales", txtSuperficieArrendada, u.MSJ_ERROR);
+//					Double sumaSup = Double.parseDouble(txtSuperficieArrendada.getValue()) -
+//									 (arrendatarioSel != -1 ? (Double)listaArrendatarios.get(arrendatarioSel).getLast() : 0);
+//					for(LinkedList<Object> arrendatario : listaArrendatarios)
+//						sumaSup += (Double)arrendatario.getLast();
+//					if(sumaSup > Double.parseDouble(txtSuperficie.getValue()))
+//						return u.notificar("Está excediendo la superficie total definida en la sección de datos generales", txtSuperficieArrendada, u.MSJ_ERROR);
 					
 					return true;
 				}
@@ -854,12 +854,15 @@ public class GeneralesParcela extends CustomComponent implements Formulario, For
 	private void recargarListaArrendatario()
 	{
 		tblArrendatarios.removeAllItems();
+		double suma = 0;
 		for(int i = 0; i < listaArrendatarios.size(); i++)
 		{
 			LinkedList<Object> arrendatario = listaArrendatarios.get(i);
 			arrendatario.set(0, i + 1);
 			tblArrendatarios.addItem(arrendatario.toArray(), null);
+			suma += (Double)arrendatario.getLast();
 		}
+		txtSuperficie.setValue(String.valueOf(suma));
 	}
 	//region UI
 	

@@ -481,8 +481,8 @@ public class Administrador extends CustomComponent implements Formulario
 		valores.add(((String)cmbEntidad.getValue()).equals("SRL"));
 		valores.add(cmbNombreEnt.isVisible() ? cmbNombreEnt.getValue() : txtNombreEnt.getValue());
 		valores.add(txtCargo.getValue());
-		valores.add(txtUser.getValue());
-		valores.add(txtPass.getValue());
+		valores.add(txtUser.getValue().trim());
+		valores.add(txtPass.getValue().trim());
 		return valores;
 	}
 
