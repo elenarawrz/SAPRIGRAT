@@ -39,6 +39,26 @@ public enum TipoUsuario
 		return this.value;
 	}
 	
+	public static TipoUsuario getValue(String description)
+	{
+		if (description.equals("Administrador General"))
+			return ADMINISTRADOR_GENERAL;
+		else
+			if (description.equals("Administrador de Distrito"))
+				return ADMINISTRADOR_DISTRITO;
+			else
+				if (description.equals("Supervisor Técnico"))
+					return SUPERVISOR_TECNICO;
+				else
+					if (description.equals("Responsable Técnico"))
+						return RESPONSABLE_TECNICO;
+					else
+						if (description.equals("Usuario"))
+							return PRODUCTOR;
+						else
+							return REGADOR;
+	}
+	
 	@Override
 	public String toString()
 	{

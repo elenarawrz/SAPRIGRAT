@@ -93,6 +93,20 @@ public class InterfazConsulta
 		return listado;
 	}
 	
+	public ResultSet getReporte(String tabla, Object[] valores)
+	{
+		try
+		{
+			return (ResultSet) getResult(tabla, Types.OTHER, valores);
+		}
+		catch (SQLException e)
+		{
+			System.out.println("Error al obtener el listado.");
+			conexion.errorlog(e);//e.printStackTrace();
+			return null;
+		}
+	}
+	
 	public int getId(String tabla, Object[] valores)
 	{
 		int id = 0;

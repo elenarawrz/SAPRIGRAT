@@ -1,6 +1,7 @@
 package com.saprigrat.data;
 
 import java.math.BigDecimal;
+import java.sql.ResultSet;
 import java.util.LinkedList;
 
 
@@ -333,26 +334,29 @@ public class Datos
 	}
 	//endregion
 	
-	//region Conversión de tipos
-	private LinkedList<Object[]> bigDecimalToLongArr(LinkedList<Object[]> lista)
+	//region Reportes
+	public int getCantRiegos()
 	{
-		for(int i = 1; i<lista.size(); i++)
-		{
-			Object[] parcela = lista.get(i);
-			for(int j=0; j<parcela.length; j++)
-				if(parcela[j] instanceof BigDecimal)
-					parcela[j] = Long.parseLong((BigDecimal)parcela[j] + "");
-		}
-		return lista;
-	}
-	private LinkedList<Object> bigDecimalToLongList(LinkedList<Object> lista)
-	{
-		for(int i=0; i<lista.size(); i++)
-			if(lista.get(i) instanceof BigDecimal)
-				lista.set(i, Long.parseLong((BigDecimal)lista.get(i) + ""));
-		return lista;
+		return cons.getId("getCantRiegos", new Object[]{});
 	}
 	
+	public LinkedList<String> getCultivos()
+	{
+		return cons.getListado("getCultivos", new Object[]{});
+	}
+	
+	public ResultSet getReporteLaminas(String filtrado)
+	{
+		return cons.getReporte("rptLaminasRendimiento", new Object[]{filtrado});
+	}
+	
+	public ResultSet getReporteCultivos(String filtrado)
+	{
+		return cons.getReporte("rptCultivos", new Object[]{filtrado});
+	}
+	//endregion
+	
+	//region Conversión de tipos
 	private LinkedList<Object> bigDecimalToDoubleList(LinkedList<Object> lista)
 	{
 		for(int i=0; i<lista.size(); i++)

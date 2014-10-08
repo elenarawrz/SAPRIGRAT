@@ -826,7 +826,7 @@ public class Riego extends CustomComponent implements Formulario, FormParcela
 		{
 			tiempo = (int)((datFin.getValue().getTime() - datInicio.getValue().getTime()) / 3600000);
 			gasto = u.stringToDouble(txtGasto.getValue());
-			volumen = gasto * 3600 * tiempo * 1000; //Gasto[L/s]*3600:[L/h] -> Gasto[L/h]*Tiempo[h]:[L] -> [L]*1000 = Volumen[m3]
+			volumen = gasto * 3600 * tiempo / 1000; //Gasto[L/s]*3600:[L/h] -> Gasto[L/h]*Tiempo[h]:[L] -> [L]/1000 = Volumen[m3]
 			laminaApl = (volumen / (superficie * 10000)) * 100; //Superficie[ha]*10000:[m2] -> Volumen[m3]/Superficie[m2]:[m] -> [m]*100 = LaminaApl[cm]
 			fechaIni = new SimpleDateFormat(formatoFechaTbl).format(datInicio.getValue());
 			fechaFin = new SimpleDateFormat(formatoFechaTbl).format(datFin.getValue());

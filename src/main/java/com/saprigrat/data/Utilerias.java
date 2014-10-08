@@ -70,7 +70,12 @@ public class Utilerias
 	{
 		cal.setWeekendDisabled(false);
 		cal.setDateTextReadOnly(readOnly);
-		cal.setLocale(new Locale("es", "MX"));
+		cal.setLocale(getLocale());
+	}
+	
+	public Locale getLocale()
+	{
+		return new Locale("es", "MX");
 	}
 	
 	public Date fechaUtilToSQL(java.util.Date fechaUtil)
@@ -308,6 +313,15 @@ public class Utilerias
 	public void msjRegistroNoObtenido()
 	{
 		notificar("Error al obtener el registro, comuníquese con el administrador", null, MSJ_ERROR);
+	}
+	
+	/**
+     * Muestra el siguiente mensaje de error:
+     * <b>"Ocurrió un error al intentar generar el reporte"</b>
+     */
+	public void msjReporteNoGenerado()
+	{
+		notificar("Ocurrió un error al intentar generar el reporte", null, MSJ_ERROR);
 	}
 	
 	/**
