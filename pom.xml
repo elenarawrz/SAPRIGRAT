@@ -29,6 +29,10 @@
 			</snapshots>
 		</repository>
 		<repository>
+			<id>jasperreports</id>
+			<url>http://jasperreports.sourceforge.net/maven2</url>
+		</repository>
+		<repository>
 			<id>fdvsolution.public</id>
 			<url>http://archiva.fdvs.com.ar/repository/public1/</url>
 		</repository>
@@ -53,8 +57,9 @@
 		</dependency>
 		<dependency>
 			<groupId>com.vaadin</groupId>
-			<artifactId>vaadin-client-compiled</artifactId>
+			<artifactId>vaadin-client-compiler</artifactId>
 			<version>${vaadin.version}</version>
+			<scope>provided</scope>
 		</dependency>
 		<!--
 		  Needed when using the widgetset optimizer (custom ConnectorBundleLoaderFactory).
@@ -112,6 +117,11 @@
 		   <groupId>org.vaadin.addons</groupId>
 		   <artifactId>tuning-datefield</artifactId>
 		   <version>0.6.0</version>
+		</dependency>
+		<dependency>
+			<groupId>net.sf.jasperreports</groupId>
+			<artifactId>jasperreports</artifactId>
+			<version>5.6.0</version>
 		</dependency>
 		<dependency>
 			<groupId>ar.com.fdvs</groupId>
@@ -202,6 +212,30 @@
 		</plugins>
 		<pluginManagement>
 			<plugins>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>jasperreports-maven-plugin</artifactId>
+					<executions>
+						<execution>
+							<goals>
+								<goal>compile-reports</goal>
+							</goals>
+							<phase>compile</phase>
+						</execution>
+					</executions>
+					<dependencies>
+						<dependency>
+							<groupId>jasperreports</groupId>
+							<artifactId>jasperreports</artifactId>
+							<version>5.6.0</version>
+						</dependency>
+						<dependency>
+							<groupId>log4j</groupId>
+							<artifactId>log4j</artifactId>
+							<version>1.2.16</version>
+						</dependency>
+					</dependencies>
+				</plugin>
 				<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
 				<plugin>
 					<groupId>org.eclipse.m2e</groupId>
