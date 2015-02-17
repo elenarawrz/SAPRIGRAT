@@ -43,8 +43,8 @@ public class InterfazReportes
 	{
 		try
 		{
-			String filePath = "tmp/reporte" + tipoReporte + new SimpleDateFormat("ddMMyyHHmmss").format(new Date()) + formato;
-			String rptPath = "src/main/java/com/saprigrat/ui/forms/reportes/";
+			String filePath = "/opt/tomcat/temp/reporte" + tipoReporte + new SimpleDateFormat("ddMMyyHHmmss").format(new Date()) + formato;
+			String rptPath = "/opt/tomcat/webapps/ROOT/RptTemplates/";
 
 			if(resultset != null)
 			{
