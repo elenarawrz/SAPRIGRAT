@@ -104,6 +104,7 @@ public class InterfazReportes
 		catch (Exception e)
 		{
 			new Utilerias().msjReporteNoGenerado();
+			e.printStackTrace();
 		}
 	}
 	
