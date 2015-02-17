@@ -72,7 +72,9 @@ public class Datos
 
 	public LinkedList<Object> getTecnico(int idTecnico)
 	{
-		return cons.getRegistro("tecnico", new Object[]{idTecnico});
+		LinkedList<Object> resultado = cons.getRegistro("tecnico", new Object[]{idTecnico});
+		resultado = bigDecimalToDoubleList(resultado);
+		return resultado;
 	}
 	
 	public LinkedList<Object[]> getTecnicos(String currResp, int tipoPersona)
@@ -220,9 +222,9 @@ public class Datos
 
 	public LinkedList<Object> getRegador(int idRegador)
 	{
-		LinkedList<Object> parcela = cons.getRegistro("regador", new Object[]{idRegador});
-		parcela = bigDecimalToDoubleList(parcela);
-		return parcela;
+		LinkedList<Object> regador = cons.getRegistro("regador", new Object[]{idRegador});
+		regador = bigDecimalToDoubleList(regador);
+		return regador;
 	}
 	
 	public LinkedList<Object[]> getRegadores(String CURRresp)
@@ -356,6 +358,131 @@ public class Datos
 	}
 	//endregion
 	
+	//region Resultados
+	public LinkedList<Object> getResultadoGeneral(String orgCuenca, String dtoRiego, String modRiego, String currST, String currRT)
+	{
+		LinkedList<Object> resultado = cons.getRegistro("resultadoGeneral", new Object[]{ orgCuenca, dtoRiego, modRiego, currST, currRT });
+		resultado = bigDecimalToDoubleList(resultado);
+		return resultado;
+	}
+	
+	public LinkedList<Object> getResultadoProduccion(String orgCuenca, String dtoRiego, String modRiego, String currST, String currRT, String cultivo)
+	{
+		LinkedList<Object> resultado = cons.getRegistro("resultadoProduccion", new Object[]{ orgCuenca, dtoRiego, modRiego, currST, currRT, cultivo });
+		resultado = bigDecimalToDoubleList(resultado);
+		return resultado;
+	}
+	
+	public LinkedList<Object> getResultadoHidrometrico(String orgCuenca, String dtoRiego, String modRiego, String currST, String currRT, String cultivo)
+	{
+		LinkedList<Object> resultado = cons.getRegistro("resultadoHidrometrico", new Object[]{ orgCuenca, dtoRiego, modRiego, currST, currRT, cultivo });
+		resultado = bigDecimalToDoubleList(resultado);
+		return resultado;
+	}
+	
+	public LinkedList<Object> getResultadoIndicadores(String orgCuenca, String dtoRiego, String modRiego, String currST, String currRT)
+	{
+		LinkedList<Object> resultado = cons.getRegistro("resultadoIndicadores", new Object[]{ orgCuenca, dtoRiego, modRiego, currST, currRT });
+		resultado = bigDecimalToDoubleList(resultado);
+		return resultado;
+	}
+	
+	public LinkedList<Object[]> getIndicadoresRendimiento(String orgCuenca, String dtoRiego, String modRiego, String currST, String currRT)
+	{
+		return cons.getTabla("resultadoSubReporteIndicadores", new Object[]{ orgCuenca, dtoRiego, modRiego, currST, currRT });
+	}
+	
+	public ResultSet getResultadoSubReporteIndicadores(String orgCuenca, String dtoRiego, String modRiego, String currST, String currRT)
+	{
+		return cons.getReporte("resultadoSubReporteIndicadores", new Object[]{ orgCuenca, dtoRiego, modRiego, currST, currRT });
+	}
+	
+	public ResultSet getResultadoSubReporte(String orgCuenca, String dtoRiego, String modRiego, String currST, String currRT, String cultivo)
+	{
+		return cons.getReporte("resultadoSubReporte", new Object[]{ orgCuenca, dtoRiego, modRiego, currST, currRT, cultivo });
+	}
+	
+//	public LinkedList<String> getOC(String currRT, String currST, String dtoRiego)
+//	{
+//		return cons.getListado("oc", new Object[]{ currRT, currST, dtoRiego });
+//	}
+//	
+//	public LinkedList<String> getDR(String currRT, String currST, String orgCuenca)
+//	{
+//		return cons.getListado("dr", new Object[]{ currRT, currST, orgCuenca });
+//	}
+//	
+//	public LinkedList<String> getST(String currRT, String dtoRiego, String orgCuenca)
+//	{
+//		return cons.getListado("st", new Object[]{ currRT, dtoRiego, orgCuenca });
+//	}
+//	
+//	public LinkedList<String> getRT(String currST, String dtoRiego, String orgCuenca)
+//	{
+//		return cons.getListado("rt", new Object[]{ currST, dtoRiego, orgCuenca });
+//	}
+	
+	public LinkedList<String> getDRByOC(String orgCuenca)
+	{
+		return cons.getListado("drByOC", new Object[]{ orgCuenca });
+	}
+	
+	public LinkedList<String> getSTByDR(String dtoRiego)
+	{
+		return cons.getListado("stByDR", new Object[]{ dtoRiego });
+	}
+	
+	public LinkedList<String> getRTByDR(String dtoRiego)
+	{
+		return cons.getListado("rtByDR", new Object[]{ dtoRiego });
+	}
+	
+	public LinkedList<String> getSTByMR(String modRiego)
+	{
+		return cons.getListado("stByMR", new Object[]{ modRiego });
+	}
+	
+	public LinkedList<String> getRTByMR(String modRiego)
+	{
+		return cons.getListado("rtByMR", new Object[]{ modRiego });
+	}
+	
+	public LinkedList<String> getRTByST(String currST)
+	{
+		return cons.getListado("rtByST", new Object[]{ currST });
+	}
+	
+	public LinkedList<String> getRTBySTyDR(String currST, String dtoRiego)
+	{
+		return cons.getListado("rtBySTyDR", new Object[]{ currST, dtoRiego });
+	}
+	
+	public LinkedList<String> getTecnicosByTipo(int tipo)
+	{
+		return cons.getListado("tecnicosByTipo", new Object[]{ tipo });
+	}
+	
+	public LinkedList<String> getCultivosByDR(String dtoRiego)
+	{
+		return cons.getListado("cultivosByDR", new Object[]{ dtoRiego });
+	}
+	
+	public LinkedList<String> getCultivosByMR(String modRiego)
+	{
+		return cons.getListado("cultivosByMR", new Object[]{ modRiego });
+	}
+	
+	public LinkedList<String> getCultivosByST(String currST)
+	{
+		return cons.getListado("cultivosByST", new Object[]{ currST });
+	}
+	
+	public LinkedList<String> getCultivosByRT(String currRT)
+	{
+		return cons.getListado("cultivosByRT", new Object[]{ currRT });
+	}
+	//endregion
+	
 	//region Conversión de tipos
 	private LinkedList<Object> bigDecimalToDoubleList(LinkedList<Object> lista)
 	{
@@ -420,14 +547,19 @@ public class Datos
 		return cons.getListado("dtoRiego", new Object[]{});
 	}
 	
-//	public LinkedList<String> getDtoRiego(String organismo)
-//	{
-//		return cons.getListado("dtoRiego", new Object[]{organismo});
-//	}
-	
-	public LinkedList<String> getModRiego(String distrito)
+	public LinkedList<String> getDtoRiego(String organismo)
 	{
-		return cons.getListado("modRiego", new Object[]{distrito});
+		return cons.getListado("dtoRiego", new Object[]{ organismo });
+	}
+	
+	public LinkedList<String> getModuloRiego()
+	{
+		return cons.getListado("modRiego", new Object[]{});
+	}
+	
+	public LinkedList<String> getModuloRiego(String distrito)
+	{
+		return cons.getListado("modRiego", new Object[]{ distrito });
 	}
 	
 	public LinkedList<String> getAllSRL()
@@ -437,7 +569,7 @@ public class Datos
 	
 	public LinkedList<String> getSRL(String distrito)
 	{
-		return cons.getListado("SRL", new Object[]{distrito});
+		return cons.getListado("SRL", new Object[]{ distrito });
 	}
 	
 	public LinkedList<String> getTipoSuelo()

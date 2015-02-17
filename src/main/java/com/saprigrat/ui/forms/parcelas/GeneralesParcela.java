@@ -278,7 +278,7 @@ public class GeneralesParcela extends CustomComponent implements Formulario, For
 				{
 					cmbModuloR.addItem("No Aplica");
 					cmbSRL.addItem("No Aplica");
-					u.llenarCombo(cmbModuloR, datos.getModRiego((String)cmbDtoR.getValue()));
+					u.llenarCombo(cmbModuloR, datos.getModuloRiego((String)cmbDtoR.getValue()));
 					u.llenarCombo(cmbSRL, datos.getSRL((String)cmbDtoR.getValue()));
 				}
 			};

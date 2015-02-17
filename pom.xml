@@ -57,9 +57,8 @@
 		</dependency>
 		<dependency>
 			<groupId>com.vaadin</groupId>
-			<artifactId>vaadin-client-compiler</artifactId>
+			<artifactId>vaadin-client-compiled</artifactId>
 			<version>${vaadin.version}</version>
-			<scope>provided</scope>
 		</dependency>
 		<!--
 		  Needed when using the widgetset optimizer (custom ConnectorBundleLoaderFactory).
@@ -127,6 +126,11 @@
 			<groupId>ar.com.fdvs</groupId>
 			<artifactId>DynamicJasper</artifactId>
 			<version>5.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.11</version>
 		</dependency>
 	</dependencies>
 

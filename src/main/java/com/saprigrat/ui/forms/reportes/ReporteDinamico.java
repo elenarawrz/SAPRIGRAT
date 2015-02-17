@@ -155,7 +155,7 @@ public class ReporteDinamico
 			  .setFooterVariablesHeight(80)
 			  .addAutoText(new SimpleDateFormat("'Fecha de emisión:'  dd 'de' MMMM 'de' yyyy',' hh:mm:ss").format(new Date()), AutoText.POSITION_FOOTER, AutoText.ALIGNMENT_LEFT, 300, footerStyle)
 			  .addAutoText(AutoText.AUTOTEXT_PAGE_X_OF_Y, AutoText.POSITION_FOOTER, AutoText.ALIGNMENT_RIGHT, 300, 25, footerStyle)
-			  .addFirstPageImageBanner("C:\\Users\\avalle\\Dropbox\\Negocios\\Proyectos Freelance\\SAPRIGRAT\\Resources\\Imágenes\\Logos\\Grandes\\RIGRAT v3.jpg", 110, 50, ImageBanner.ALIGN_RIGHT);
+			  .addFirstPageImageBanner("C:\\Users\\Elena\\Dropbox\\Negocios\\Proyectos Freelance\\SAPRIGRAT\\Resources\\Imágenes\\Logos\\Grandes\\RIGRAT v3.jpg", 110, 50, ImageBanner.ALIGN_RIGHT);
 		
 		return report.build();
 	}

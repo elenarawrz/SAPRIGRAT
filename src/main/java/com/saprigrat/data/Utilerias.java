@@ -45,7 +45,8 @@ public class Utilerias
 	{
 		cmb.removeAllItems();
 		for(String elemento : elementos)
-			cmb.addItem(elemento);
+			if(elemento != null)
+				cmb.addItem(elemento);
 	}
 	
 	/**
@@ -115,7 +116,36 @@ public class Utilerias
 		if(dbl == null || dbl == "")
 			return "";
 		else
-			return Double.toString((Double)dbl);
+			return decimalFormat((Double)dbl);
+	}
+	
+	public Double getDouble(Object dbl)
+	{
+		if(dbl == null || dbl == "")
+			return 0D;
+		else
+			return (Double)dbl;
+	}
+	
+	public Long stringToLong(String str)
+	{
+		if(str.isEmpty())
+			return null;
+		else
+			return Long.parseLong(str);
+	}
+	
+	public String longToString(Object lng)
+	{
+		if(lng == null || lng == "")
+			return "";
+		else
+			return Long.toString((Long)lng);
+	}
+	
+	public String decimalFormat(Double dbl)
+	{
+		return new DecimalFormat("#,##0.00").format(dbl);
 	}
 	
 	public String llenarTabla(Table tbl, LinkedList<Object[]> rows, String elemento)
@@ -133,7 +163,8 @@ public class Utilerias
 			//Notification.show("No se encontró ningún " + elemento, Notification.Type.HUMANIZED_MESSAGE);
 			rowCount = 0;
 		}
-		tbl.setColumnCollapsed("ID",true);
+		if (tbl.containsId("ID"))
+			tbl.setColumnCollapsed("ID",true);
 		return rowCount + (rowCount != 1 ? " registros encontrados" : " registro encontrado");
 	}
 													
@@ -334,6 +365,15 @@ public class Utilerias
 	public void msjNoSeleccionEliminar(String elemento)
 	{
 		notificar("No ha seleccionado ningún " + elemento + " a eliminar", null, MSJ_ADVERTENCIA);
+	}
+	
+	/**
+     * Muestra el siguiente mensaje de advertencia:
+     * <b>"Debe seleccionar un filtro para continuar"</b>
+     */
+	public void msjNoSeleccionFiltros()
+	{
+		notificar("Debe seleccionar un filtro para continuar", null, MSJ_ADVERTENCIA);
 	}
 	
 	private void msjCorrecto(String accion, String msjExtra)

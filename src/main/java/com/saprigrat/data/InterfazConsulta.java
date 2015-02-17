@@ -101,7 +101,7 @@ public class InterfazConsulta
 		}
 		catch (SQLException e)
 		{
-			System.out.println("Error al obtener el listado.");
+			System.out.println("Error al obtener el reporte.");
 			conexion.errorlog(e);//e.printStackTrace();
 			return null;
 		}
