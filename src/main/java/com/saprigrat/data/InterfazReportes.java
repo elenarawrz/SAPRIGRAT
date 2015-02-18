@@ -43,8 +43,8 @@ public class InterfazReportes
 	{
 		try
 		{
-			String filePath = "opt/tomcat/temp/reporte" + tipoReporte + new SimpleDateFormat("ddMMyyHHmmss").format(new Date()) + formato;
-			String rptPath = "opt/tomcat/temp/RptTemplates/";
+			String filePath = System.getProperty("user.home") + "/RptTmp/reporte" + tipoReporte + new SimpleDateFormat("ddMMyyHHmmss").format(new Date()) + formato;
+			String rptPath = System.getProperty("user.home") + "/RptTemplates/";
 
 			if(resultset != null)
 			{
