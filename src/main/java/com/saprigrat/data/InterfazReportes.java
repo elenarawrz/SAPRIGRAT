@@ -47,11 +47,9 @@ public class InterfazReportes
 			String rptPath = System.getProperty("user.home") + "/RptTemplates/";
 
 			if(resultset != null)
-			{
 				parametros.put("subreportDS", new JRResultSetDataSource(resultset));
-				compilarReporte(rptPath + (tipoReporte != TipoResultado.INDICADORES ? "rptDetalle" : "rptIndicadoresRendimiento"));
-			}
 			
+			compilarReporte(rptPath + (tipoReporte != TipoResultado.INDICADORES ? "rptDetalle" : "rptIndicadoresRendimiento"));
 			compilarReporte(rptPath += "rpt" + tipoReporte);
 			
 			//JRResultSetDataSource dataSource = resultset != null ? new JRResultSetDataSource(resultset) : null;
