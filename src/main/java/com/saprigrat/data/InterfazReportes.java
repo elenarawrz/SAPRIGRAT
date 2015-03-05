@@ -66,7 +66,7 @@ public class InterfazReportes
 								catch(Exception e) { return null; }
 							}
 						};
-						JasperExportManager.exportReportToPdfFile(jasperPrint, filePath);
+						JasperExportManager.exportReportToPdfFile(jasperPrint, filePath);System.out.print(filePath);
 						StreamResource resource = new StreamResource(source, filePath);
 						Embedded e = new Embedded("", resource);
 						e.setType(Embedded.TYPE_BROWSER);
