@@ -1,24 +1,16 @@
 package com.saprigrat.data;
 
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.InputStream;
-import java.io.OutputStream;
 import java.sql.ResultSet;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Map;
 
-import com.saprigrat.data.AdvancedFileDownloader.AdvancedDownloaderListener;
-import com.saprigrat.data.AdvancedFileDownloader.DownloaderEvent;
 import com.saprigrat.data.Utilerias;
 import com.saprigrat.enums.Formato;
 import com.saprigrat.enums.TipoResultado;
-import com.vaadin.server.FileDownloader;
-import com.vaadin.server.FileResource;
-import com.vaadin.server.Resource;
 import com.vaadin.server.StreamResource;
 import com.vaadin.server.StreamResource.StreamSource;
 import com.vaadin.ui.Embedded;
@@ -37,6 +29,7 @@ import net.sf.jasperreports.engine.export.JRXlsExporter;
 import net.sf.jasperreports.engine.export.JRXlsExporterParameter;
 import net.sf.jasperreports.engine.export.ooxml.JRDocxExporter;
 
+@SuppressWarnings("deprecation")
 public class InterfazReportes
 {
 	public void getReport(TipoResultado tipoReporte, Map<String, Object> parametros, ResultSet resultset, final Formato formato, Label lbl) 

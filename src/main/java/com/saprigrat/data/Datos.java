@@ -131,6 +131,11 @@ public class Datos
 		return ins.modificarRegistro("parcela", valores);
 	}
 
+	public String eliminarParcela(int idParcela, boolean modoCascade)
+	{
+		return elim.eliminarRegistro("parcela", new Object[]{ idParcela, modoCascade });
+	}
+
 	public LinkedList<Object> getParcela(int idParcela)
 	{
 		LinkedList<Object> parcela = cons.getRegistro("parcela", new Object[]{idParcela});

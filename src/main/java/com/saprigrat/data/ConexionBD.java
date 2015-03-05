@@ -70,14 +70,14 @@ public class ConexionBD
 		sqle.printStackTrace(new PrintWriter(sw));
 		String stackTrace = sw.toString();
 		try {
-			File log = new File("C:/saprigrat_error.log");
+			File log = new File(System.getProperty("user.home") + "/saprigrat_error.log");
 			FileWriter fw = new FileWriter(log);
 			fw.write(stackTrace);
 			fw.close();
 		}
 		catch (IOException ioe)
 		{
-			Notification.show(stackTrace, Notification.Type.ERROR_MESSAGE);
+			//Notification.show(stackTrace, Notification.Type.ERROR_MESSAGE);
 		}
 	}
 }

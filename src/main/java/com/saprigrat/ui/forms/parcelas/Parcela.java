@@ -2,6 +2,8 @@ package com.saprigrat.ui.forms.parcelas;
 
 import java.util.Collection;
 
+import org.vaadin.dialogs.ConfirmDialog;
+
 import com.saprigrat.entities.Usuario;
 import com.saprigrat.enums.TipoUsuario;
 import com.saprigrat.ui.interfaces.FormParcela;
@@ -11,6 +13,8 @@ import com.vaadin.data.Property.ValueChangeEvent;
 import com.vaadin.data.Property.ValueChangeListener;
 import com.vaadin.event.ItemClickEvent;
 import com.vaadin.event.ItemClickEvent.ItemClickListener;
+import com.vaadin.event.ShortcutAction.KeyCode;
+import com.vaadin.event.ShortcutAction.ModifierKey;
 import com.vaadin.shared.ui.combobox.FilteringMode;
 import com.vaadin.shared.ui.label.ContentMode;
 import com.vaadin.ui.AbsoluteLayout;
@@ -26,6 +30,7 @@ import com.vaadin.ui.Panel;
 import com.vaadin.ui.TabSheet;
 import com.vaadin.ui.Table;
 import com.vaadin.ui.TextField;
+import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
 
 @SuppressWarnings("serial")
@@ -189,17 +194,76 @@ public class Parcela extends CustomComponent implements Formulario
 					guardandoNuevo = true;
 				}
 			};
-	private ClickListener volverListener = new ClickListener()
+	private ClickListener volverEliminarListener = new ClickListener()
 			{
 				@Override
 				public void buttonClick(ClickEvent event)
 				{
-					setTipo(MODO_LISTA);
-					guardandoNuevo = false;
-					if(cmbProductor.getValue() != null)
-						cmbProductor.setValue(cmbProductor.getValue());
+					if(btnVolver.getCaption().equals("Volver"))
+					{
+						setTipo(MODO_LISTA);
+						guardandoNuevo = false;
+						if(cmbProductor.getValue() != null)
+							cmbProductor.setValue(cmbProductor.getValue());
+						else
+							cmbResponsable.setValue(cmbResponsable.getValue());
+					}
 					else
-						cmbResponsable.setValue(cmbResponsable.getValue());
+					{
+						if(tblListado.getValue() != null)
+						{
+							final UI ui = event.getButton().getUI();
+							ConfirmDialog.show( ui, "Atención:",
+												"Está a punto de eliminar una parcela" +
+												" y esta acción no se puede deshacer. ¿Desea continuar?", "Si", "No",
+												new ConfirmDialog.Listener()
+												{
+													public void onClose(ConfirmDialog dialog)
+													{
+														if (dialog.isConfirmed())
+														{
+															int rowSel = (Integer)tblListado.getContainerProperty((Integer)tblListado.getValue(), "ID").getValue();
+															String status = datos.eliminarParcela(rowSel, false);
+															if(!status.isEmpty() && status.indexOf("err") == -1)
+															{
+																lblRowCount.setValue(u.llenarTabla(tblListado, cmbProductor.getValue() != null
+																								   ? datos.getParcelasByProductor(((String)cmbProductor.getValue()).split(" ")[0])
+																								   : datos.getParcelasByResponsable(((String)cmbResponsable.getValue()).split(" ")[0]), "parcela"));
+																u.msjEliminado("La parcela");
+															}
+															else
+															{
+																ConfirmDialog.show( ui, "Atención:",
+																					"La parcela contiene datos de cultivos y/o riegos, y si se elimina estos no podrán recuperarse.\n" +
+																					"¿Seguro que desea continuar?", "Si", "No",
+																					new ConfirmDialog.Listener()
+																					{
+																						public void onClose(ConfirmDialog dialog)
+																						{
+																							if (dialog.isConfirmed())
+																							{
+																								int rowSel = (Integer)tblListado.getContainerProperty((Integer)tblListado.getValue(), "ID").getValue();
+																								String status = datos.eliminarParcela(rowSel, true);
+																								if(!status.isEmpty() && status.indexOf("err") == -1)
+																								{
+																									lblRowCount.setValue(u.llenarTabla(tblListado, cmbProductor.getValue() != null
+																																	   ? datos.getParcelasByProductor(((String)cmbProductor.getValue()).split(" ")[0])
+																																	   : datos.getParcelasByResponsable(((String)cmbResponsable.getValue()).split(" ")[0]), "parcela"));
+																									u.msjEliminado("La parcela");
+																								}
+																								else
+																									u.msjNoEliminado("parcela");
+																							}
+																						}
+																					});
+															}
+														}
+													}
+												});
+						}
+						else
+							u.msjNoSeleccionEliminar("parcela");
+					}
 				}
 			};
 	//endregion
@@ -240,7 +304,7 @@ public class Parcela extends CustomComponent implements Formulario
 		inicializarTab(tabReporteVisita);
 		tabGenerales.setTxtParcela(txtParcela);
 		//Buttons
-		btnVolver.addClickListener(volverListener);
+		btnVolver.addClickListener(volverEliminarListener);
 		btnNuevo.addClickListener(nuevoListener);
 		//Inicializar en modo lista
 		setTipo(MODO_LISTA);
@@ -254,11 +318,15 @@ public class Parcela extends CustomComponent implements Formulario
 			panParcela.setVisible(false);
 			verLListado.setVisible(true);
 			tabs.setVisible(false);
+			btnVolver.setClickShortcut(KeyCode.E, ModifierKey.ALT);
+			btnVolver.setCaption("Eliminar");
 			if(cmbResponsable.size() == 0)
 				setResponsableTecnico(usuario.getTipo());
 		}
 		else
 		{
+			btnVolver.setClickShortcut(KeyCode.V, ModifierKey.ALT);
+			btnVolver.setCaption("Volver");
 			String padron = "";
 			if (modoOperacion == MODO_AGREGAR)
 			{

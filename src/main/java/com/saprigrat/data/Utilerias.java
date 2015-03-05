@@ -364,7 +364,7 @@ public class Utilerias
      */
 	public void msjNoSeleccionEliminar(String elemento)
 	{
-		notificar("No ha seleccionado ningún " + elemento + " a eliminar", null, MSJ_ADVERTENCIA);
+		notificar("No ha seleccionado ning" + (elemento.equalsIgnoreCase("parcela") ? "una " : "ún ") + elemento + " a eliminar", null, MSJ_ADVERTENCIA);
 	}
 	
 	/**
