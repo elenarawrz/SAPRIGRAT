@@ -57,7 +57,7 @@ public class InterfazReportes
 				switch(formato)
 				{
 					case PDF:
-						@SuppressWarnings("serial")
+						/*@SuppressWarnings("serial")
 						StreamSource source = new StreamSource()
 						{
 							public InputStream getStream()
@@ -65,14 +65,14 @@ public class InterfazReportes
 								try { return new ByteArrayInputStream(JasperExportManager.exportReportToPdf(jasperPrint)); }
 								catch(Exception e) { return null; }
 							}
-						};
-						JasperExportManager.exportReportToPdfFile(jasperPrint, filePath);System.out.print(filePath);
-						StreamResource resource = new StreamResource(source, filePath);
+						};*/
+						JasperExportManager.exportReportToPdfFile(jasperPrint, filePath);
+						/*StreamResource resource = new StreamResource(source, filePath);
 						Embedded e = new Embedded("", resource);
 						e.setType(Embedded.TYPE_BROWSER);
 						e.setMimeType("application/pdf");
 						e.setSizeFull();
-						UI.getCurrent().addWindow(getWindow(e));
+						UI.getCurrent().addWindow(getWindow(e));*/
 						break;
 						
 					case EXCEL:
