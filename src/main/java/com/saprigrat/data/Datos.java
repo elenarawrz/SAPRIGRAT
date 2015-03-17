@@ -486,6 +486,29 @@ public class Datos
 	{
 		return cons.getListado("cultivosByRT", new Object[]{ currRT });
 	}
+	
+	public LinkedList<String> getOCByRT(String currRT)
+	{
+		return cons.getListado("ocByRT", new Object[]{ currRT });
+	}
+	
+	public LinkedList<String> getDRByRT(String currRT)
+	{
+		return cons.getListado("drByRT", new Object[]{ currRT });
+	}
+	
+	public LinkedList<String> getMRByRT(String currRT)
+	{
+		return cons.getListado("mrByRT", new Object[]{ currRT });
+	}
+	
+	public String getSTByRT(String currRT)
+	{
+		LinkedList<String> result = cons.getListado("stByRT", new Object[]{ currRT });
+		return result.isEmpty() ? "" : result.getFirst();
+	}
+	
+	   
 	//endregion
 	
 	//region Conversión de tipos

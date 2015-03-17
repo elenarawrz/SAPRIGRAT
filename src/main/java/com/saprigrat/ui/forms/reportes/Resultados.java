@@ -604,8 +604,15 @@ public class Resultados extends CustomComponent implements Formulario
 //				reloadCombo(cmbDR, datos.getDR(getRT(), getST(), getOC()));
 //			if(absLST.isVisible())
 //				reloadCombo(cmbST, datos.getST(getRT(), getDR(), getOC()));
-			
 			reloadCombo(cmbCultivo, datos.getCultivosByRT(getCURRRT()));
+			
+			if(tipoResultadoAbs == TipoResultado.RESPONSABLE_TECNICO)
+			{
+				reloadCombo(cmbOC, datos.getOCByRT(getCURRRT()));
+				reloadCombo(cmbDR, datos.getDRByRT(getCURRRT()));
+				reloadCombo(cmbMR, datos.getMRByRT(getCURRRT()));
+				u.llenarCombo(cmbST, datos.getSTByRT(getCURRRT()));
+			}
 		}
 	};
 	//endregion
@@ -653,10 +660,13 @@ public class Resultados extends CustomComponent implements Formulario
 		u.setupCombo(cmbST, null, "Busque por nombre o CURR.", FilteringMode.CONTAINS, true, true);
 		u.setupCombo(cmbRT, null, "Busque por nombre o CURR.", FilteringMode.CONTAINS, true, true);
 		u.setupCombo(cmbCultivo, null, "Busque por cultivo.", FilteringMode.CONTAINS, true, true);
-		cmbOC.addValueChangeListener(onChangeOCListener);
-		cmbDR.addValueChangeListener(onChangeDRListener);
-		cmbMR.addValueChangeListener(onChangeMRListener);
-		cmbST.addValueChangeListener(onChangeSTListener);
+		if(tipoResultadoAbs != TipoResultado.RESPONSABLE_TECNICO)
+		{
+			cmbOC.addValueChangeListener(onChangeOCListener);
+			cmbDR.addValueChangeListener(onChangeDRListener);
+			cmbMR.addValueChangeListener(onChangeMRListener);
+			cmbST.addValueChangeListener(onChangeSTListener);
+		}
 		cmbRT.addValueChangeListener(onChangeRTListener);
 		
 		tblIRP.setSelectable(true);
@@ -708,7 +718,10 @@ public class Resultados extends CustomComponent implements Formulario
 									break;
 			case RESPONSABLE_TECNICO://inicializarTecnico(usuario.SUPERVISOR, cmbST, datos.getST("", "", ""));
 									inicializarTecnico(usuario.RESPONSABLE, cmbRT, datos.getTecnicosByTipo(usuario.RESPONSABLE));//datos.getRT(cmbST.getValue() != null ? cmbST.getValue().toString().split(" ")[0] : "", "", ""));
-									//cmbOC.setEnabled(false);
+//									cmbOC.setEnabled(false);
+//									cmbDR.setEnabled(false);
+//									cmbMR.setEnabled(false);
+									cmbST.setEnabled(false);
 									btnDR.setVisible(false);
 									btnMR.setVisible(false);
 									btnST.setVisible(false);
